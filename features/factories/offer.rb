@@ -1,5 +1,5 @@
-# FactoryGirl.define do
-# 	factory :offer do
-# 		business 'Nike'
-# 	end
-# end
+FactoryGirl.define do
+	factory :offer do
+		business 'Nike'
+	end
+end

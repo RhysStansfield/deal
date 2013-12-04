@@ -3,5 +3,8 @@
 <p><%= link_to 'Create New Deal', new_offer_path %></p>                    
 
 <% @offers.each do |offer| %>
-	<p><%= offer.business %></p>
+	<p>
+		<%= offer.business %><br />
+		<small><a href="<%= offer_path(offer) %>">See Offer</a></small>
+	</p>
 <% end %>

@@ -13,7 +13,7 @@ Feature: Viewing offers
 			When I follow "Create New Deal"
 			Then I should see "Create New Deal"
 
-#		Scenario: Viewing a single offer
-#			Given "Nike" has added an offer
-#			Then I should see "Nike"
-#			And I should see "See Offer"
+		Scenario: Viewing a single offer
+			And "Nike" has added an offer
+			And I follow "See Offer"
+			Then I should see "Nike"
