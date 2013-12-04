@@ -32,6 +32,10 @@ Then(/^I should be signed in$/) do
   expect(page).to have_content "Signed in successfully"
 end
 
-Given(/^that I am signed in$/) do
-  
+Given(/^that I click sign out$/) do
+  click_link 'Sign Out'
+end
+
+Then(/^I should be signed out$/) do
+  expect(page).to have_content "Signed out successfully"
 end

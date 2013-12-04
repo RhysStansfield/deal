@@ -15,6 +15,5 @@ Feature: Signing up, signing in and signing out
 
   @sign_in
   Scenario: Signing Out
-    Given 
-    When I click Sign out
+    Given that I click sign out
     Then I should be signed out
