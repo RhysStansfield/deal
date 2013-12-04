@@ -16,6 +16,9 @@ module NavigationHelpers
     when 'the offers page'
       '/offers'
 
+    when 'the create offer page'
+      '/offers/new'
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

@@ -1,1 +1,7 @@
 <h1>Available Offers</h1>
+
+<p><%= link_to 'Create New Deal', new_offer_path %></p>                    
+
+<% @offers.each do |offer| %>
+	<p><%= offer.business %></p>
+<% end %>

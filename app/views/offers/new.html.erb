@@ -1,0 +1,12 @@
+<h1>Create New Deal</h1>
+<%= form_for @offer do |f| %>
+	<p>
+		<%= f.label :business %><br>
+		<%= f.text_field :business %><br>
+	</p>
+	<p>
+		<%= f.submit "Initiate Offer" %>
+	</p>
+<% end %>
+
+<%= link_to 'Back', :back %>
