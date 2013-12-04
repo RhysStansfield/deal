@@ -1,5 +1,7 @@
 Deal::Application.routes.draw do
 
+  devise_for :businesses
+  devise_for :users
   devise_for :admins
   root 'home#index'
 
