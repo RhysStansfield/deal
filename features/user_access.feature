@@ -1,3 +1,4 @@
+
 Feature: Signing up, signing in and signing out 
   As a user who wants to get incredible deals
   In order to do so

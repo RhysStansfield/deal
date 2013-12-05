@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'devise'
+gem "open-companies-house", "~> 0.2.0", require: 'companies_house'
 
 group :test, :development do
   gem 'capybara'

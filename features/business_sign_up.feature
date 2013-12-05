@@ -6,4 +6,4 @@ Feature: Business users signing in, signing up, signing out
   Scenario: Signing up 
     Given I visit the business sign up page 
     When I fill in the form 
-    Then I should see "Welcome business"
+    Then I should see "Welcome! You have signed up successfully."

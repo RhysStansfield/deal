@@ -10,7 +10,7 @@ When(/^I fill in the form$/) do
   click_button 'Sign up'
 end
 
-Then(/^I should see "(.*?)"$/) do |arg1|
-  expect(page).to have_content 'Welcome! You have signed up successfully.'
+Then(/^I should see "(.*?)"$/) do |content|
+  expect(page).to have_content content
 end
 
