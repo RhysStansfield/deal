@@ -6,7 +6,8 @@ Feature: Creating & Viewing an Offer
 
 	Scenario: Creating a deal
 		Given I am on the create offer page
-		And I fill in the form with:
-			| business	|
-			| Nike		|
+		And I create the "Nike Fuelband" offer
 		Then I should see "Nike"
+		And I should see "Fuelband"
+		And I should see "Fitness tracker"
+		And I should see "£90.00"

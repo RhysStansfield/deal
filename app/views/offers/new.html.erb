@@ -5,8 +5,22 @@
 		<%= f.text_field :business %><br>
 	</p>
 	<p>
+		<%= f.label :product %><br>
+		<%= f.text_field :product %><br>
+	</p>
+	<p>
+		<%= f.label :product_description %><br>
+		<%= f.text_field :product_description %><br>
+	</p>
+	<p>
+		<%= f.label :price %><br>
+		<%= f.text_field :price %><br>
+	</p>
+	<p>
 		<%= f.submit "Initiate Offer" %>
 	</p>
 <% end %>
 
 <%= link_to 'Back', :back %>
+
+<!-- unit: "&pound" -->
