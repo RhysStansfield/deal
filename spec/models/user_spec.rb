@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  let(:user) { FactoryGirl.create(:user) }
+
+  it 'defaults type to customer' do
+    expect(user.type).to eq "Customer"
+  end
+
 end

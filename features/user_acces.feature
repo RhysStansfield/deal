@@ -6,7 +6,7 @@ Feature: Signing up, signing in and signing out
   Scenario: Signing Up 
     Given that I click the sign up button 
     When I enter my details and submit
-    Then I should be signed up 
+    Then I should be signed up
 
   Scenario: Signing In
     Given that I click the sign in button

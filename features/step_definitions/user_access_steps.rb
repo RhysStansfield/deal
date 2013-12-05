@@ -5,10 +5,9 @@ end
 
 When(/^I enter my details and submit$/) do
   fill_in 'Email', with: 'a@a.com'
-  fill_in 'Password', with: 'abcdefghij'
+  fill_in 'Password', with: 'abcdefghij', match: :prefer_exact
   fill_in 'Password confirmation', with: 'abcdefghij'
   click_button 'Sign up'
-
 end
 
 Then(/^I should be signed up$/) do

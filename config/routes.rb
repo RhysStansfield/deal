@@ -1,8 +1,10 @@
 Deal::Application.routes.draw do
 
-  devise_for :businesses
   devise_for :users
-  devise_for :admins
+  
+  devise_scope :user do
+    get '/business/sign_up' => "devise/registrations#new"
+  end
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
