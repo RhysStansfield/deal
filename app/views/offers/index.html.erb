@@ -5,6 +5,11 @@
 <% @offers.each do |offer| %>
 	<p>
 		<%= offer.business %><br />
+		<small>Created <%= time_ago_in_words(offer.created_at) %> ago</small><br />
 		<small><a href="<%= offer_path(offer) %>">See Offer</a></small>
+		
 	</p>
 <% end %>
+
+
+

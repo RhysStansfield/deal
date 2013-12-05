@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
 	def index
-		@offers = Offer.all
+		@offers = Offer.all.order("offers.created_at desc")
 	end
 
 	def new
