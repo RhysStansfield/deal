@@ -1,0 +1,9 @@
+
+<% @users.select do |user|  %>
+<p>
+<%= user.company_name %>
+<!-- <button class="button" onclick="window.location.href='/'">Follow</button> -->
+<a class='button submit' href='/'>Follow</a>
+</p>
+
+<% end %>
