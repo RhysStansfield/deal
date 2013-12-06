@@ -30,6 +30,9 @@
               <li><a href='#'>Something</a></li>
             </ul>
           </li>
+          <% if current_user %>
+            <%= image_tag current_user.avatar.url(:tiny) %>
+          <% end %>
         </ul>
 
         <ul class="left">
