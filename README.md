@@ -7,3 +7,5 @@ A snapchat and groupon inspired app developed for Makers Academy final project.
     Michael Bottjer
     Nadia Odunayo
     Rhys Stansfield
+    James Jenkins-Yates
+    [a link](http://jamesjenkinsyates.com)
