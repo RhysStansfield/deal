@@ -30,8 +30,13 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'simple_form'
 gem 'foundation-rails'
+
+# User Log in Gems
 gem 'devise'
 gem "paperclip", "~> 3.0"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :test, :development do
   gem 'capybara'

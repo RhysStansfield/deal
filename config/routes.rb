@@ -9,12 +9,14 @@ Deal::Application.routes.draw do
     end
   end
   
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   
   devise_scope :user do
     get '/business/sign_up' => "devise/registrations#new"
   end
-  
+
+
 
   resources :users, only: 'show'
 
