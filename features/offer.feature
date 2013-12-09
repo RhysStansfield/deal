@@ -15,6 +15,6 @@ Feature: Viewing offers
 
 		Scenario: Viewing a single offer
 			And "Nike" has added an offer
-			And I follow "See Offer"
+			And I follow "See offer"
 			Then I should see "Nike"
 			And I should see "Purchase Offer!"

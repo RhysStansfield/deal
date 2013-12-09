@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :offer do
-    business 'Nike'
+    product 'Nike fuelband'
+    product_description 'Fitness tracker' 
+    price 90
+    business
   end
 end

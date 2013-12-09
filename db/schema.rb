@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20131209093728) do
     t.string   "product"
     t.text     "product_description"
     t.decimal  "price"
+    t.integer  "business_id"
   end
+
+  add_index "offers", ["business_id"], name: "index_offers_on_business_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",         null: false

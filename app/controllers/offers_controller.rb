@@ -10,6 +10,8 @@ class OffersController < ApplicationController
 
 	def create
 		@offer = Offer.new(offer_params)
+		@offer.business = current_user
+		@offer.business_id = current_user.id
 		@offer.save
 		redirect_to @offer
 	end

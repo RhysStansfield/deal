@@ -3,7 +3,8 @@ Given(/^I visit the edit profile page$/) do
 end
 
 When(/^I upload a photo$/) do
-  attach_file ''
+  attach_file 'user_avatar', Rails.root.join('features/images/rhysweird.jpg')
+  fill_in "Current password", with: "devesh1234"
   click_button 'Update'
 end
 

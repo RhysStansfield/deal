@@ -1,0 +1,14 @@
+%h1 Available Offers
+%p
+  = link_to 'Create New Deal', new_offer_path                    
+
+- @offers.each do |offer|
+  %p
+    = offer.business.company_name
+    %small 
+      Created 
+      = time_ago_in_words(offer.created_at)
+      ago
+    %small
+      = link_to "See offer", offer_path(offer)
+    

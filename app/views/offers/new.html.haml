@@ -1,0 +1,22 @@
+%h1 Create New Deal
+= form_for @offer do |f|
+	%p
+		= f.label :product
+		%br
+		= f.text_field :product
+		%br
+	%p
+		= f.label :product_description
+		%br
+		= f.text_field :product_description
+		%br
+	%p
+		= f.label :price
+		%br
+		= f.text_field :price
+		%br
+	%p
+		= f.submit "Initiate Offer"
+		%br
+
+= link_to 'Back', :back
