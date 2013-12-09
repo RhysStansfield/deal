@@ -1,9 +1,31 @@
-Given(/^I create the "(.*?)" offer$/) do |arg1|
-  fill_in 'Business', :with => "Nike"
+When(/^I create an offer$/) do
   fill_in 'Product', :with => "Fuelband"
   fill_in 'Product description', :with => "Fitness tracker"
   fill_in 'Price', :with => 90
   click_button 'Initiate Offer'
 end
 
+Then(/^I should see the brand's post on the offers page$/) do
+  visit '/offers'
+  expect(page).to have_content "Nike"
+end
 
+Given(/^I have added a product, the Nike fuelband$/) do
+  FactoryGirl.create(:offer)
+  visit '/offers'
+end
+
+When(/^I follow the see offer link on the offers page$/) do
+  click_link 'See offer'
+end
+
+Then(/^I should see the product details$/) do
+  expect(page).to have_content "Nike"
+  expect(page).to have_content "Nike"
+  expect(page).to have_content "N"
+  expect(page).to have_content "£90.00"
+end
+
+Given(/^I have added an offer$/) do
+  FactoryGirl.create(:offer)
+end

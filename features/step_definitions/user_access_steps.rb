@@ -21,7 +21,7 @@ Given(/^that I click the sign in button$/) do
 end
 
 When(/^I enter my details and click sign in$/) do
-  FactoryGirl.create(:user)
+  FactoryGirl.create(:customer)
   fill_in 'Email', with: 'michaelbottjer@hotmail.com'
   fill_in 'Password', with: 'devesh1234'
   click_button 'Sign in'

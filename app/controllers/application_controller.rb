@@ -7,8 +7,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_update_path_for(resource)
+    edit_user_registration_path(resource)
+  end
+
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:type, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:type, :email, :password, :password_confirmation, :remember_me, :company_name) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :current_password, :avatar) }
   end
 
 end

@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe User do
   
-  let(:user) { FactoryGirl.create(:user) }
+  let(:customer) { FactoryGirl.create(:customer) }
 
   it 'defaults type to customer' do
-    expect(user.type).to eq "Customer"
+    expect(customer.type).to eq "Customer"
   end
 
 end

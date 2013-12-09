@@ -43,5 +43,16 @@ class User < ActiveRecord::Base
     end
   end
 
+  has_attached_file :avatar, :styles => {
+    thumb: '100x100>', tiny: '40x40>'
+  }
+
+  def follow(business)
+    unless business.customers.include? self
+      business.customers << self
+    else
+      business.customers.delete(self)
+    end 
+  end
 
 end
