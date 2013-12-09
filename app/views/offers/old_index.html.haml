@@ -9,5 +9,5 @@
       Created 
       = time_ago_in_words(offer.created_at)
       ago
-    %small{href: offer_path(offer) } See Offer
-    
+    %small
+      = link_to "See Offer", offer_path(offer)
