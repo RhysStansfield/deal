@@ -1,0 +1,4 @@
+- @businesses.each do |business|
+  = business.company_name
+  = button_to 'Follow', follow_business_path(business)
+  = business.customers.length
