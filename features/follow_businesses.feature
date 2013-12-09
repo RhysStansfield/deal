@@ -10,8 +10,5 @@ Feature: Following Businesses
                 And  I follow Nike
                 Then Nike should have "1" follower
 
-        Scenario: Unfollowing a business
-                Given I have 
-
 
 

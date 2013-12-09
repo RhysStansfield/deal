@@ -38,7 +38,11 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# Stripe
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 group :test, :development do
+  gem 'dotenv-rails'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
