@@ -4,10 +4,10 @@
 
 - @offers.each do |offer|
   %p
-    = offer.business
+    = offer.business.company_name
     %small 
       Created 
       = time_ago_in_words(offer.created_at)
       ago
     %small
-      = link_to "See Offer", offer_path(offer)
+      = link_to "See offer", offer_path(offer)

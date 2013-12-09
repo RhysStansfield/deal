@@ -1,0 +1,24 @@
+- if user_signed_in?
+  %li
+    = link_to 'Participating Businesses', businesses_path
+  %li 
+    = link_to 'Sign Out', destroy_user_session_path, method: :delete
+  %li
+    - if current_user.avatar.exists?
+      = image_tag current_user.avatar.url(:tiny)
+- else
+  %ul
+    %li{class: "active"}
+      = link_to 'Sign Up', new_user_registration_path
+    %li{class: "has-dropdown"}
+      %a{href: "#"}
+        Sign in
+      %ul{class: "dropdown"}
+        %li
+          = link_to "Facebook", user_omniauth_authorize_path(:facebook)
+        %li
+          = link_to "Google", user_omniauth_authorize_path(:google_oauth2)
+        %li
+          = link_to 'Email', new_user_session_path
+    
+      

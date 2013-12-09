@@ -1,7 +1,13 @@
 class OffersController < ApplicationController
 
+	# impressionist actions: [:index]
+
 	def index
-		@offers = Offer.all.order("offers.created_at desc")
+		@offers = Offer.all #.order("offers.created_at desc")
+	end
+
+	def cock
+
 	end
 
 	def new
@@ -10,6 +16,8 @@ class OffersController < ApplicationController
 
 	def create
 		@offer = Offer.new(offer_params)
+		@offer.business = current_user
+		@offer.business_id = current_user.id
 		@offer.save
 		redirect_to @offer
 	end

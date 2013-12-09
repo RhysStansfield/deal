@@ -3,14 +3,24 @@ Deal::Application.routes.draw do
   root 'home#index'
 
   resources :offers
+  resources :businesses do
+    member do
+      post :follow
+    end
+  end
   
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   
   devise_scope :user do
     get '/business/sign_up' => "devise/registrations#new"
   end
-  
 
+
+
+  resources :users, only: 'show'
+
+  # post 'users/follow/:business_id' => 'users#follow', as: 'follow'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
