@@ -16,7 +16,7 @@ end
 
 Given(/^that I click the sign in button$/) do
   visit '/'
-  click_link 'Email'
+  click_link 'Login'
   expect(current_path).to eq '/users/sign_in'
 end
 

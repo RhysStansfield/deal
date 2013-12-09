@@ -1,6 +1,9 @@
-# To call: = render partial: 'offer', locals: {offer: offer}
-
-= offer.product
-= offer.business
-= offer.product_description
-= offer.price
+.example-basic
+  %p
+    = offer.business.company_name
+    %small
+      Created
+      = time_ago_in_words(offer.created_at)
+      ago
+    %small
+      = link_to "See offer", offer_path(offer)
