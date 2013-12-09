@@ -1,6 +1,11 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
+FactoryGirl.define do
 
-# FactoryGirl.define do
-#   factory :business do
-#   end
-# end
+  factory :business do
+    company_name 'Nike'
+    email 'ceo@nike.com'
+    password '12345678'
+    password_confirmation '12345678'
+    type 'Business'
+  end
+
+end

@@ -3,6 +3,11 @@ Deal::Application.routes.draw do
   root 'home#index'
 
   resources :offers
+  resources :businesses do
+    member do
+      post :follow
+    end
+  end
   
   devise_for :users
   
@@ -13,7 +18,7 @@ Deal::Application.routes.draw do
 
   resources :users, only: 'show'
 
-  post 'users/follow/:business_id' => 'users#follow', as: 'follow'
+  # post 'users/follow/:business_id' => 'users#follow', as: 'follow'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

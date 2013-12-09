@@ -6,6 +6,14 @@ class User < ActiveRecord::Base
 
   # def follow business_user
   #   User.last.businesses << business_user.last
-  # end 
+  # end
+
+  def follow(business)
+    unless business.customers.include? self
+      business.customers << self
+    else
+      business.customers.delete(self)
+    end 
+  end
 
 end

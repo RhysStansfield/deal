@@ -8,7 +8,7 @@ When(/^I go to the participating businesses page$/) do
 end
 
 When(/^I follow Nike$/) do
-  click_link 'Follow'
+  click_button 'Follow'
 end
 
 Then(/^Nike should have "(.*?)" follower$/) do |arg1|
