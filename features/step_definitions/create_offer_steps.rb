@@ -16,6 +16,7 @@ Given(/^I have added a product, the Nike fuelband$/) do
 end
 
 When(/^I follow the see offer link on the offers page$/) do
+  expect(current_path).to eq '/offers'
   click_link 'See offer'
 end
 
