@@ -29,6 +29,23 @@ $('.example-basic').bind('inview', function(event, isInView, visiblePartX, visib
       $(this).unbind('inview');
     }
   } else {
-    console.log("element has left viewport");
+    // console.log("element has left viewport");
   }
 });
+
+
+
+
+// http://patik.com/blog/within-viewport-javascript-and-jquery-plugin/
+// https://github.com/patik/within-viewport
+// http://www.appelsiini.net/projects/viewport
+
+
+// google search: jquery check if something is in the view
+// http://imakewebthings.com/jquery-waypoints/#get-started
+
+
+// THEN: page visibility api
+// https://github.com/protonet/jquery.inview
+// http://www.w3.org/TR/page-visibility/
+// http://www.samdutton.com/pageVisibility/
