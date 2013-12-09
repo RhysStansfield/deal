@@ -16,7 +16,7 @@ end
 
 Given(/^that I click the sign in button$/) do
   visit '/'
-  click_link 'Sign In'
+  click_link 'Email'
   expect(current_path).to eq '/users/sign_in'
 end
 
@@ -38,3 +38,26 @@ end
 Then(/^I should be signed out$/) do
   expect(page).to have_content "Signed out successfully"
 end
+
+When(/^I visit the home page$/) do
+  visit '/'
+end
+
+Given(/^A user who has connected with "(.*?)"$/) do |provider|
+  provider.downcase!
+  provider = (provider << "_user").to_sym
+  FactoryGirl.create(provider)
+end
+
+When(/^I login with "(.*?)"$/) do |provider_name|
+  provider = provider_name.downcase!.to_sym
+  provider = 'google_oauth2' if provider.eql?(:google)
+  OmniAuth.config.add_mock(provider, {uid: '1234', provider: provider, info: {name: 'Alex', email: 'a@a.com'}})
+
+  click_link provider_name.capitalize
+end
+
+Then(/^I should be signed in with "(.*?)"$/) do |provider|
+  expect(page).to have_content "Successfully authenticated from #{provider}"
+end
+

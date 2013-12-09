@@ -14,6 +14,18 @@ Feature: Signing up, signing in and signing out
     When I enter my details and click sign in
     Then I should be signed in
 
+  @omniauth_test
+  Scenario Outline: User Login
+    Given A user who has connected with "<provider>"
+    When I visit the home page
+    And I login with "<provider>"
+    Then I should be signed in with "<provider>"
+
+    Examples:
+    |provider|
+    |Facebook|
+    |Google  |
+
   @sign_in
   Scenario: Signing Out
     Given that I click sign out
