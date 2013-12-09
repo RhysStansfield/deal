@@ -1,0 +1,7 @@
+- @businesses.each do |business|
+  = business.company_name
+  - unless business.customers.include?(current_user)
+    = button_to 'Follow', follow_business_path(business)
+  - else
+    = button_to 'Unfollow', follow_business_path(business)
+  = business.customers.length

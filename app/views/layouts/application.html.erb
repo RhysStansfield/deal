@@ -9,13 +9,15 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+
+
   </head>
 
-  <body>
+  <body cz-shortcut-listen="true">
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
         <li class="name">
-          <h1><a href="/">My Site</a></h1>
+          <h1><a href="/">Snapper</a></h1>
         </li>
       </ul>
 
@@ -36,5 +38,10 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "waypoints.min.js" %>
+    <%= javascript_include_tag "jquery.inview.js" %>
+
+
+
   </body>
 </html>
