@@ -3,7 +3,7 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
   <%= f.error_notification %>
 
-  <%= image_tag @user.avatar.url(:thumb) %>
+  <%= image_tag @user.avatar.url(:thumb), class: 'uploaded-avatar' %>
 
   <div class="form-inputs">
     <div><%= f.file_field :avatar %></div>

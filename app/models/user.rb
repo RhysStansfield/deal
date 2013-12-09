@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
     thumb: '100x100>', tiny: '40x40>'
   }
 
+  def follow(business)
+    unless business.customers.include? self
+      business.customers << self
+    else
+      business.customers.delete(self)
+    end 
+  end
+
 end
