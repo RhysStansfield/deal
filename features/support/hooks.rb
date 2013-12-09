@@ -1,5 +1,5 @@
 Before ('@sign_in') do 
-  FactoryGirl.create(:user)
+  FactoryGirl.create(:customer)
   visit '/users/sign_in'
   fill_in 'Email', with: 'michaelbottjer@hotmail.com'
   fill_in 'Password', with: 'devesh1234'

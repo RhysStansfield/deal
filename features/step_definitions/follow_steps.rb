@@ -1,5 +1,5 @@
 Given(/^I have added Nike as a business$/) do
-  FactoryGirl.create(:business_user)
+  FactoryGirl.create(:business)
   visit '/'
 end
 
