@@ -21,15 +21,7 @@
 
       <section class="top-bar-section">
         <ul class="right">
-          <li class="active"><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <li class="has-dropdown">
-            <a href="#">Right Button with Dropdown</a>
-            <ul class="dropdown">
-              <li><a href='#'>Something</a></li>
-            </ul>
-          </li>
+          <%= render 'layouts/login' %>
         </ul>
 
         <ul class="left">

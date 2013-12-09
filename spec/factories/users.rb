@@ -5,5 +5,17 @@ FactoryGirl.define do
     email 'michaelbottjer@hotmail.com'
     password 'devesh1234'
     password_confirmation 'devesh1234'
+
+    factory :facebook_user do
+      uid '1234'
+      provider 'facebook'
+    end
+
+    factory :google_user do
+      uid '1234'
+      provider 'google'
+    end
+
+
   end
 end
