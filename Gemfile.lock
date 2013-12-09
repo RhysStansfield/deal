@@ -72,8 +72,6 @@ GEM
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
-    faraday (0.8.8)
-      multipart-post (~> 1.2.0)
     foundation-rails (5.0.2.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -82,7 +80,11 @@ GEM
     haml (4.0.4)
       tilt
     hike (1.2.3)
+    httpclient (2.3.4.1)
     i18n (0.6.9)
+    impressionist (1.4.13)
+      httpclient (~> 2.2)
+      nokogiri (>= 1.5.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -98,12 +100,8 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_test (0.0.2)
-    multipart-post (1.2.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    open-companies-house (0.2.5)
-      faraday (~> 0.8.4)
-      json
     orm_adapter (0.5.0)
     pg (0.17.0)
     poltergeist (1.4.1)
@@ -196,9 +194,9 @@ DEPENDENCIES
   factory_girl_rails
   foundation-rails
   haml
+  impressionist
   jbuilder (~> 1.2)
   jquery-rails
-  open-companies-house (~> 0.2.0)
   pg
   poltergeist
   rails (= 4.0.1)
