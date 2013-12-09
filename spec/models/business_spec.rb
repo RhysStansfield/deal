@@ -1,5 +1,7 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe Business do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+describe Business do
+
+  it { should have_and_belong_to_many(:customers) }
+
+end

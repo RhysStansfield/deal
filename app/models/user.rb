@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def follow business_user
-    self.followers << business_user
-  end 
+  # def follow business_user
+  #   User.last.businesses << business_user.last
+  # end 
 
 end
