@@ -1,0 +1,7 @@
+%p= @offer.business
+%p= @offer.product
+%p= @offer.product_description
+%p= number_to_currency(@offer.price, unit: '£')
+
+= form_tag offer_charges_path(@offer) do
+  %script.stripe-button{"data-amount" => (@offer.price * 100).to_i, "data-currency" => "GBP", "data-description" => "Purchase offer", "data-key" => Rails.configuration.stripe[:publishable_key], "data-label" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}
