@@ -17,4 +17,4 @@ Feature: Viewing offers
 			And "Nike" has added an offer
 			And I follow "See offer"
 			Then I should see "Nike"
-			And I should see "Purchase Offer!"
+			And I should see purchase button
