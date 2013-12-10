@@ -8,7 +8,7 @@ describe Business do
 
   it { should have_many :offers }
 
-  it { should belong_to :category}
+  it { should belong_to :category }
 
   it 'should have a category when created' do
     expect(business.category.name).to eq 'Sports & Outdoors'

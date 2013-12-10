@@ -23,8 +23,6 @@ Deal::Application.routes.draw do
     get '/business/sign_up' => "devise/registrations#new"
   end
 
-
-
   resources :users, only: 'show'
 
 
