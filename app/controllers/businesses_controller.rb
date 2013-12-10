@@ -12,4 +12,8 @@ class BusinessesController < ApplicationController
     redirect_to businesses_path
   end
 
+  def dashboard
+  	
+  end
+
 end

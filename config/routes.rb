@@ -11,6 +11,7 @@ Deal::Application.routes.draw do
   resources :businesses do
     member do
       post :follow
+      get :dashboard
     end
   end
   
