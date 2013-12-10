@@ -39,6 +39,8 @@ gem 'omniauth-google-oauth2'
 
 gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'paperclip'
+gem 'dotenv-rails'
+gem 'facebox-rails'
 
 group :test, :development do
   gem 'capybara'
