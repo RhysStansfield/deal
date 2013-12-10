@@ -5,6 +5,8 @@ Deal::Application.routes.draw do
   resources :offers do
     resources :charges
   end
+
+  resources :impressions
   
   resources :businesses do
     member do

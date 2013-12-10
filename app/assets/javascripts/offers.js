@@ -26,6 +26,8 @@ $('.example-basic').bind('inview', function(event, isInView, visiblePartX, visib
       // console.log("bottom is visible");
     } else {
       console.log("whole element is visible");
+      var offerId = $(this).data('id');
+      $.post( "/impressions", { "offer_id": offerId } );
       $(this).unbind('inview');
     }
   } else {
