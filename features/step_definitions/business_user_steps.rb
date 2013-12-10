@@ -7,6 +7,7 @@ When(/^I fill in the form$/) do
   fill_in 'Password', with: 'abcdefghij', match: :prefer_exact
   fill_in 'Password confirmation', with: 'abcdefghij'
   fill_in 'Company name', with: 'Nike'
+  choose 'Books'
   click_button 'Sign up'
 end
 

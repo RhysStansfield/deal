@@ -4,4 +4,6 @@ class Business < User
   
   has_many :offers
 
+  belongs_to :category
+
 end
