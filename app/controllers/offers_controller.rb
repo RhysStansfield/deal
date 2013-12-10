@@ -1,13 +1,7 @@
 class OffersController < ApplicationController
 
-	# impressionist actions: [:index]
-
 	def index
 		@offers = Offer.all #.order("offers.created_at desc")
-	end
-
-	def cock
-
 	end
 
 	def new
@@ -28,7 +22,7 @@ class OffersController < ApplicationController
 		
 private
 	def offer_params
-		params.require(:offer).permit(:business, :product, :product_description, :price)
+		params.require(:offer).permit(:business, :product, :product_description, :price )
 	end
 
 
