@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Impression do
+describe Click do
 
   it { should belong_to :offer }
 

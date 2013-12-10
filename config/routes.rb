@@ -8,6 +8,7 @@ Deal::Application.routes.draw do
   end
 
   resources :impressions
+  resources :clicks
   
   resources :businesses do
     member do
@@ -22,8 +23,6 @@ Deal::Application.routes.draw do
   devise_scope :user do
     get '/business/sign_up' => "devise/registrations#new"
   end
-
-
 
   resources :users, only: 'show'
 

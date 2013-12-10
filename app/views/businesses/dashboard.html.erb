@@ -1,7 +1,8 @@
 <h1>Welcome to your Dashboard :: <%= @business.company_name %></h1>
 
 <div style="height:200px; padding:20px; background-color: #ddd;">
-Total Impressions: <%= @impressions.flatten.size %>
+Impressions: <%= @impressions.flatten.size %><br />
+Clicks: <%= @clicks.flatten.size %>
 </div>
 
 
@@ -10,6 +11,7 @@ Total Impressions: <%= @impressions.flatten.size %>
     	<td>Offer</td>
     	<td>Impressions</td>
     	<td>Unique Impressions</td>
+    	<td>Clicks</td>
 
     </tr>
 <% i = 0 %>
@@ -18,10 +20,8 @@ Total Impressions: <%= @impressions.flatten.size %>
     	<td><a href="<%= offer_path(offer) %>"><%= offer.product %></a></td>
     	<td><%= @impressions[i].size %></td>
     	<td><%= @impressions[i].map(&:user_id).uniq.size %></td>
-    	
+			<td><%= @clicks[i].size %></td>
 <% i += 1 %>
-			
-
   </tr>
   </div>
 <% end %>

@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20131210160529) do
     t.datetime "updated_at"
   end
 
+  create_table "clicks", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "offer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "impressions", force: true do |t|
     t.integer  "user_id"
     t.integer  "offer_id"

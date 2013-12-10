@@ -8,12 +8,11 @@ class TimeWindow < ActiveRecord::Base
 
   def set_start_time_end_time
     self.start_time = Time.now
-    self.end_time = 30.seconds.from_now
+    if self.users_time_availablity != nil
+      self.end_time = (self.users_time_availablity).seconds.from_now
+    else
+      self.end_time = 30.seconds.from_now
+    end
     save
   end
-
-  def had_offer_opportunity?
-
-  end
-
 end
