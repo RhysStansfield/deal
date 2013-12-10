@@ -1,0 +1,4 @@
+.time_remaining
+  = (@time_window.end_time - Time.now).to_i
+.offer_details
+  = @time_window.offer.inspect

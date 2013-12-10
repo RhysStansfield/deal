@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/stripe/stripe-ruby
+  remote: git://github.com/stripe/stripe-ruby.git
   revision: f369ca16f956979d7e2a68242399417197f43168
   specs:
     stripe (1.9.9)
@@ -247,7 +247,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  paperclip (~> 3.0)
+  paperclip
   pg
   poltergeist
   rails (= 4.0.1)

@@ -4,6 +4,7 @@ Deal::Application.routes.draw do
 
   resources :offers do
     resources :charges
+    resources :time_windows, only: [:show, :create]
   end
 
   resources :impressions
@@ -24,6 +25,7 @@ Deal::Application.routes.draw do
   end
 
   resources :users, only: 'show'
+
 
 
   # post 'users/follow/:business_id' => 'users#follow', as: 'follow'

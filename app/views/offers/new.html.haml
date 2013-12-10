@@ -13,7 +13,12 @@
 	%p
 		= f.label :price
 		%br
-		= f.text_field :price
+		= f.number_field :price 
+		%br
+	%p
+		= f.label :users_time_availablity
+		%br
+		= f.number_field(:users_time_availablity, options={min: 30})
 		%br
 	%p
 		= f.submit "Initiate Offer"

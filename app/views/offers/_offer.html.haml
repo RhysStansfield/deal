@@ -6,4 +6,5 @@
       = time_ago_in_words(offer.created_at)
       ago
     %small
-      = link_to "See offer", offer_path(offer), :class => 'see-offer-link', data: { id: offer.id }
+
+      = link_to "See offer", offer_time_windows_path(offer), :class => 'see-offer-link', data: { id: offer.id }, method: :post
