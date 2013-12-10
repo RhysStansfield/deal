@@ -6,10 +6,13 @@ Deal::Application.routes.draw do
     resources :charges
     resources :time_windows, only: [:show, :create]
   end
+
+  resources :impressions
   
   resources :businesses do
     member do
       post :follow
+      get :dashboard
     end
   end
   

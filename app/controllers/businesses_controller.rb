@@ -12,4 +12,15 @@ class BusinessesController < ApplicationController
     redirect_to businesses_path
   end
 
+  def dashboard
+  	@business = Business.find params[:id]
+  	@offers = @business.offers
+  	@impressions = []
+  	@offers.each do |offer|
+  	  @impressions << offer.impressions
+  	end
+  end
+
+
+
 end
