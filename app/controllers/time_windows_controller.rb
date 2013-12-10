@@ -6,11 +6,11 @@ class TimeWindowsController < ApplicationController
 
   def create
     @offer = Offer.find params[:offer_id]      
+    @time_window = TimeWindow.find_or_create_by(user: current_user, offer: @offer)
 
-    if (@time_window = TimeWindow.create(user: current_user, offer: @offer)).valid?
-      redirect_to [@offer, @time_window] 
+    if @time_window.end_time > Time.now
+      redirect_to [@offer, @time_window]
     else
-      flash.now[:error] = "Failed: "
       redirect_to offers_path
     end
     #{@prediction.errors.full_messages}
