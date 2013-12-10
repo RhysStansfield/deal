@@ -11,35 +11,12 @@
       <%= f.input :company_name, required: true %>
       <%= f.hidden_field :type, value: 'Business' %>
 
-      <%= f.label :category_id, 'Books', value: :books %>
-      <%= f.radio_button :category_id, :books %>
+      <% Category.all.each do |category| %>
 
-      <%= f.label :category_id, 'Music, Games, Movies & TV', value: :music_games_movies_and_tv %>
-      <%= f.radio_button :category_id, :music_games_movies_and_tv %>
+        <%= f.label :category_id, category.name, value: category.id %>
+        <%= f.radio_button :category_id, category.id %>
 
-      <%= f.label :category_id, 'Electronics & Computers', value: :electronics_and_computers %>
-      <%= f.radio_button :category_id, :electronics_and_computers %>
-
-       <%= f.label :category_id, 'Home, Garden, Pets & DIY', value: :home_garden_pets_and_diy %>
-      <%= f.radio_button :category_id, :home_garden_pets_and_diy %>
-
-      <%= f.label :category_id, 'Toys, Children & Baby', value: :toys_children_and_baby %>
-      <%= f.radio_button :category_id, :toys_children_and_baby %>
-
-      <%= f.label :category_id, 'Clothes, Shoes & Jewellery', value: :clothes_shoes_and_jewellery %>
-      <%= f.radio_button :category_id, :clothes_shoes_and_jewellery %>
-
-      <%= f.label :category_id, 'Sports & Outdoors', value: :sports_and_outdoors %>
-      <%= f.radio_button :category_id, :sports_and_outdoors %>
-
-       <%= f.label :category_id, 'Grocery, Health & Beauty', value: :grocery_health_and_beauty %>
-      <%= f.radio_button :category_id, :grocery_health_and_beauty %>
-
-       <%= f.label :category_id, 'Car & Motorbike', value: :car_and_motorbike %>
-      <%= f.radio_button :category_id, :car_and_motorbike %>
-
-
-      
+      <% end %>
 
     <% end %>
 
