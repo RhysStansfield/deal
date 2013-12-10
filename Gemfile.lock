@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/stripe/stripe-ruby
+  remote: git://github.com/stripe/stripe-ruby.git
   revision: f369ca16f956979d7e2a68242399417197f43168
   specs:
     stripe (1.9.9)
@@ -78,14 +78,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    dotenv (0.9.0)
-    dotenv-rails (0.9.0)
-      dotenv (= 0.9.0)
     erubis (2.7.0)
     execjs (2.0.2)
-    facebox-rails (0.2.0)
-      railties (>= 3.0, < 5.0)
-      thor (>= 0.14, < 2.0)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.3.0)
@@ -237,8 +231,6 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
-  dotenv-rails
-  facebox-rails
   factory_girl_rails
   foundation-rails
   haml
@@ -247,7 +239,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  paperclip (~> 3.0)
+  paperclip
   pg
   poltergeist
   rails (= 4.0.1)

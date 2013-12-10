@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-gem 'facebox-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'haml'
@@ -34,16 +33,14 @@ gem 'foundation-rails'
 
 # User Log in Gems
 gem 'devise'
-gem "paperclip", "~> 3.0"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-# Stripe
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe', github: 'stripe/stripe-ruby'
+gem 'paperclip'
 
 group :test, :development do
-  gem 'dotenv-rails'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
@@ -58,7 +55,7 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
+ 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
