@@ -6,4 +6,6 @@ describe Business do
 
   it { should have_many :offers }
 
+  it { should belong_to :category}
+
 end
