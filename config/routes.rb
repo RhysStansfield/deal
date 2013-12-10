@@ -7,6 +7,7 @@ Deal::Application.routes.draw do
   end
 
   resources :impressions
+  resources :clicks
   
   resources :businesses do
     member do
