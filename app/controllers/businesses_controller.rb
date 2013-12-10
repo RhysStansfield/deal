@@ -13,7 +13,14 @@ class BusinessesController < ApplicationController
   end
 
   def dashboard
-  	
+  	@business = Business.find params[:id]
+  	@offers = Offer.find(:all, conditions: { business_id: @business.id })
+  	@impressions = []
+  	@offers.each do |offer|
+  	  @impressions << Impression.find(:all, conditions: { offer_id: offer.id })
+  	end
   end
+
+
 
 end
