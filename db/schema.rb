@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20131210160529) do
   end
 
   create_table "offers", force: true do |t|
-    t.string   "business"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "product"
