@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20131211084935) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "offer_id"
-    t.string   "user"
   end
 
   create_table "users", force: true do |t|
