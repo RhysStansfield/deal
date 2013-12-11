@@ -15,4 +15,9 @@ class Customer < User
     self.categories.include? category_id
   end
 
+  # def filter_by_category_ids
+  #   return true if current_customer.category_ids.include? business.category_id
+  #   false
+  # end
+
 end
