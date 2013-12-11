@@ -8,7 +8,7 @@
 			= f.text_field :product, {"ng-model" => "product"}
 			%br
 		%p
-			= f.label :product_description
+			= f.label :product_description, "Description"
 			%br
 			= f.text_field :product_description, {"ng-model" => "product_description"}
 			%br
@@ -18,7 +18,7 @@
 			= f.number_field :price, {"ng-model" => "price"}
 			%br
 		%p
-			= f.label :users_time_availablity
+			= f.label :users_time_availablity, "How long should customers get to buy the item? (in seconds)"
 			%br
 			= f.number_field :users_time_availablity, {"ng-model" => "time"}
 			%br
