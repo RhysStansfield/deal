@@ -15,3 +15,11 @@ Category.create name: 'Clothes, Shoes & Jewellery'
 Category.create name: 'Sports & Outdoors'
 Category.create name: 'Grocery, Health & Beauty'
 Category.create name: 'Car & Motorbike'
+
+Business.create company_name: 'Waterstones', email: 'ceo@waterstones.com', password: '123456789', password_confirmation: '123456789', category_id: 1
+Business.create company_name: 'Bookplace', email: 'ceo@bookplace.com', password: '123456789', password_confirmation: '123456789', category_id: 1
+Business.create company_name: 'HMV', email: 'ceo@hmv.com', password: '123456789', password_confirmation: '123456789', category_id: 2
+Business.create company_name: 'Virgin', email: 'ceo@virgin.com', password: '123456789', password_confirmation: '123456789', category_id: 2
+Business.create company_name: 'Apple', email: 'ceo@apple.com', password: '123456789', password_confirmation: '123456789', category_id: 3
+Business.create company_name: 'Nike', email: 'ceo@nike.com', password: '123456789', password_confirmation: '123456789', category_id: 7
+Business.create company_name: 'Adidas', email: 'ceo@adidas.com', password: '123456789', password_confirmation: '123456789', category_id: 7

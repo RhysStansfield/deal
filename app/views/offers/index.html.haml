@@ -11,6 +11,15 @@
     .form-actions
       = f.button :submit
 
+- @businesses.each do |business|
+  - if current_customer.category_ids.include? business.category_id
+    = business.company_name
+    - unless business.customers.include?(current_user)
+      = button_to 'Follow', follow_business_path(business)
+    - else
+      = button_to 'Unfollow', follow_business_path(business)
+    = business.customers.length
+
 
 %h1 
   Available Offers
