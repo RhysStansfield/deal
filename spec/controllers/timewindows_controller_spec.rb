@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe TimewindowsController do
+# describe TimewindowsController do
 
-end
+# end
