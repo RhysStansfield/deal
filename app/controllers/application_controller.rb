@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_customer, :current_business
 
+  helper_method :current_customer
+  
   protected
 
   def after_update_path_for(resource)
@@ -17,7 +19,7 @@ class ApplicationController < ActionController::Base
     if current_user.type == "Business"
       dashboard_business_path(resource)
     else
-      offers_path
+      root_path
     end
   end
 

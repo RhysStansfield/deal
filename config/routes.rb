@@ -16,6 +16,8 @@ Deal::Application.routes.draw do
       get :dashboard
     end
   end
+
+  resources :customers 
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -26,6 +28,8 @@ Deal::Application.routes.draw do
 
   resources :users, only: 'show'
 
+
+  patch '/users/edit'
 
   # post 'users/follow/:business_id' => 'users#follow', as: 'follow'
   # The priority is based upon order of creation: first created -> highest priority.

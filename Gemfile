@@ -52,6 +52,7 @@ group :test, :development do
   gem 'shoulda-matchers'
   gem 'capybara-email'
   gem 'brakeman', require: false
+  gem 'launchy'
 end
 
 group :doc do
