@@ -2,3 +2,9 @@
   = (@time_window.end_time - Time.now).to_i
 .offer_details
   = @time_window.offer.inspect
+  %br
+  = @time_window.offer.product
+  %br
+  = @time_window.offer.product_description
+  %br
+  = number_to_currency(@time_window.offer.price, unit: '£')

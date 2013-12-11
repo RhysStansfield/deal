@@ -51,6 +51,7 @@ group :test, :development do
   gem 'poltergeist'
   gem 'shoulda-matchers'
   gem 'capybara-email'
+  gem 'brakeman', require: false
 end
 
 group :doc do
