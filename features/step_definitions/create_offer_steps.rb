@@ -1,7 +1,8 @@
 When(/^I create an offer$/) do
-  fill_in 'Product', :with => "Fuelband"
-  fill_in 'Product description', :with => "Fitness tracker"
-  fill_in 'Price', :with => 90
+  fill_in 'Product', with: "Fuelband"
+  fill_in 'Description', with: "Fitness tracker"
+  fill_in 'Price', with: 90
+  fill_in 'How long should customers get', with: 50
   click_button 'Initiate Offer'
 end
 

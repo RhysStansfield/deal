@@ -1,13 +1,9 @@
 class OffersController < ApplicationController
 
-	# impressionist actions: [:index]
+	helper_method :already_checked?
 
 	def index
 		@offers = Offer.all #.order("offers.created_at desc")
-	end
-
-	def cock
-
 	end
 
 	def new
@@ -25,11 +21,14 @@ class OffersController < ApplicationController
 	def show
 		@offer = Offer.find(params[:id])
 	end
+
+	def already_checked? category_id
+		current_customer.category_ids.include?(category_id)
+	end
 		
 private
 	def offer_params
-		params.require(:offer).permit(:business, :product, :product_description, :price)
+		params.require(:offer).permit(:business, :product, :product_description, :price, :users_time_availablity)
 	end
-
 
 end

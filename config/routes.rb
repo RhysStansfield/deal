@@ -4,13 +4,20 @@ Deal::Application.routes.draw do
 
   resources :offers do
     resources :charges
+    resources :time_windows, only: [:show, :create]
   end
+
+  resources :impressions
+  resources :clicks
   
   resources :businesses do
     member do
       post :follow
+      get :dashboard
     end
   end
+
+  resources :customers 
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -19,10 +26,10 @@ Deal::Application.routes.draw do
     get '/business/sign_up' => "devise/registrations#new"
   end
 
-
-
   resources :users, only: 'show'
 
+
+  patch '/users/edit'
 
   # post 'users/follow/:business_id' => 'users#follow', as: 'follow'
   # The priority is based upon order of creation: first created -> highest priority.

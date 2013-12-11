@@ -3,8 +3,11 @@
 # newer version of cucumber-rails. Consider adding your own code to a new file
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
-
+require 'simplecov'
+SimpleCov.start
 require 'cucumber/rails'
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -34,6 +37,10 @@ begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+Before do
+  load Rails.root + "db/seeds.rb" 
 end
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.

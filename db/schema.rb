@@ -11,32 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131209143739) do
+ActiveRecord::Schema.define(version: 20131211084935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "businesses", force: true do |t|
+  create_table "categories", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "customers", force: true do |t|
+  create_table "categories_customers", id: false, force: true do |t|
+    t.integer "customer_id", null: false
+    t.integer "category_id", null: false
+  end
+
+  create_table "clicks", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "offer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "impressions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "offer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "offers", force: true do |t|
-    t.string   "business"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "product"
     t.text     "product_description"
     t.decimal  "price"
     t.integer  "business_id"
+    t.datetime "available_from"
+    t.datetime "available_to"
+    t.integer  "users_time_availablity", default: 30
   end
 
   add_index "offers", ["business_id"], name: "index_offers_on_business_id", using: :btree
+
+  create_table "time_windows", force: true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "offer_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",         null: false
@@ -60,6 +86,7 @@ ActiveRecord::Schema.define(version: 20131209143739) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.integer  "category_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -12,4 +12,19 @@ class BusinessesController < ApplicationController
     redirect_to businesses_path
   end
 
+  def dashboard
+  	@business = Business.find params[:id]
+  	@offers = @business.offers
+  	@impressions = []
+  	@offers.each do |offer|
+  	  @impressions << offer.impressions
+  	end
+  	@clicks = []
+  	@offers.each do |offer|
+  	  @clicks << Click.find(:all, conditions: { offer_id: offer.id })
+  	end
+  end
+
+
+
 end

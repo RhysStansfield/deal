@@ -9,6 +9,7 @@ Feature: Creating & Viewing an Offer
 		When I create an offer
 		Then I should see the brand's post on the offers page
 
+	@sign_in
 	Scenario: Viewing details of a deal	
 		Given I have added a product, the Nike fuelband
 		When I follow the see offer link on the offers page
