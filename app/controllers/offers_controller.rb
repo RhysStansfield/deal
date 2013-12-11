@@ -6,10 +6,6 @@ class OffersController < ApplicationController
 		@offers = Offer.all #.order("offers.created_at desc")
 	end
 
-	def cock
-
-	end
-
 	def new
 		@offer = Offer.new
 	end

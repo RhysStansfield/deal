@@ -1,0 +1,19 @@
+- if current_customer
+
+  %h2
+    Please select from the categories below
+
+  = form_for current_customer do |f|
+    - Category.all.each do |category|
+      = f.label :category_id, category.name
+      - unless already_checked? category.id
+        = check_box_tag 'category_ids[]', category.id
+      - else
+        = check_box_tag 'category_ids[]', category.id, :input_html => { :checked => true }
+
+    .form-actions
+      = f.button :submit
+
+
+  = render 'offers/offers'
+
