@@ -5,15 +5,15 @@
 
   = form_for current_customer do |f|
     - Category.all.each do |category|
-      = f.label :category_id, category.name
-      - unless already_checked? category.id
-        = check_box_tag 'category_ids[]', category.id
-      - else
-        = check_box_tag 'category_ids[]', category.id, :input_html => { :checked => true }
-
+      = f.label :category_id, category.name, for: "category_#{category.id}"
+      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}" }
+                                                               
     .form-actions
       = f.button :submit
 
 
   = render 'offers/offers'
+
+
+
 

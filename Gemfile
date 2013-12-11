@@ -52,6 +52,7 @@ group :test, :development do
   gem 'poltergeist'
   gem 'shoulda-matchers'
   gem 'capybara-email'
+  gem 'launchy'
 end
 
 group :doc do

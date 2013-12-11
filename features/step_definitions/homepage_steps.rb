@@ -9,6 +9,13 @@ end
 
 When(/^I choose the categories I am interested in$/) do
   expect(current_path).to eq '/'
-  check 'Books'
-  check 'Sports & Outdoors'
+  check('Sports & Outdoors')
+end
+
+Given(/^show me the page$/) do
+  save_and_open_page
+end
+
+Then(/^I should see the relevant companies$/) do
+  pending # express the regexp above with the code you wish you had
 end
