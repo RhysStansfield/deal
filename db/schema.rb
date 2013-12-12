@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20131211084935) do
     t.integer  "business_id"
     t.datetime "available_from"
     t.datetime "available_to"
-    t.integer  "users_time_availablity", default: 30
+    t.integer  "users_time_availablity"
   end
 
   add_index "offers", ["business_id"], name: "index_offers_on_business_id", using: :btree

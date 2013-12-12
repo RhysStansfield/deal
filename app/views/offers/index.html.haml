@@ -6,10 +6,9 @@
   = form_for current_customer do |f|
     - Category.all.each do |category|
       = f.label :category_id, category.name, for: "category_#{category.id}"
-      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}" }
+      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", onclick: "this.form.submit();", type: "checkbox" }
                                                                
-    .form-actions
-      = f.button :submit
+
 
   - @businesses.each do |business|
     - if current_customer.category_ids.include? business.category_id
