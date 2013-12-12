@@ -5,7 +5,7 @@
 
     <% unless business.customers.include?(current_user) %>
 
-      <%= button_to 'Follow', follow_business_path(business) %>
+      <%= button_to 'Follow', follow_business_path(business), :id => "business_#{business.id}" %>
 
     <% else %>
 
