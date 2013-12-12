@@ -3,7 +3,7 @@ When(/^I create an offer$/) do
   fill_in 'Description', with: "Fitness tracker"
   fill_in 'Price', with: 90
   fill_in 'How long should customers get', with: 50
-  click_button 'Initiate Offer'
+  click_button 'Activate Offer'
 end
 
 Then(/^I should see the brand's post on the offers page$/) do
