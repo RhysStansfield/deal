@@ -23,7 +23,7 @@
 
 %h1 
   Available Offers
-= link_to 'Create New Deal', new_offer_path
-
 - @offers.each do |offer|
   = render partial: "offer", locals: { offer: offer }
+
+= render partial: "new_offer"
