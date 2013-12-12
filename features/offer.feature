@@ -9,6 +9,7 @@ Feature: Viewing offers
 	Scenario: Viewing all offers
 		Then I should see "Available Offers"
 
+	@business_sign_in
 	Scenario: Seeing the Create New Deal page
 		When I follow "Create New Deal"
 		Then I should see "Create New Deal"
