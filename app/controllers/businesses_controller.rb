@@ -23,6 +23,10 @@ class BusinessesController < ApplicationController
   	@offers.each do |offer|
   	  @clicks << Click.find(:all, conditions: { offer_id: offer.id })
   	end
+    @conversions = []
+    @offers.each do |offer|
+      @conversions << offer.conversions
+    end
   end
 
 

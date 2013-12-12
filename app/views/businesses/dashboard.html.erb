@@ -2,7 +2,10 @@
 
 <div style="height:200px; padding:20px; background-color: #ddd;">
 Impressions: <%= @impressions.flatten.size %><br />
-Clicks: <%= @clicks.flatten.size %>
+Clicks: <%= @clicks.flatten.size %><br />
+Conversions: <%= @conversions.flatten.size %><br/>
+Conv./Click: <%= (Conversion.conv_per_click(@clicks.flatten.size, @conversions.flatten.size)).round(2) %><br/>
+Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2) %>
 </div>
 
 
@@ -12,6 +15,9 @@ Clicks: <%= @clicks.flatten.size %>
     	<td>Impressions</td>
     	<td>Unique Impressions</td>
     	<td>Clicks</td>
+        <td>Conversions</td>
+        <td>Conv./Click</td>
+        <td>Click Thru</td>
 
     </tr>
 <% i = 0 %>
@@ -20,8 +26,11 @@ Clicks: <%= @clicks.flatten.size %>
     	<td><a href="<%= offer_path(offer) %>"><%= offer.product %></a></td>
     	<td><%= @impressions[i].size %></td>
     	<td><%= @impressions[i].map(&:user_id).uniq.size %></td>
-			<td><%= @clicks[i].size %></td>
-<% i += 1 %>
+		<td><%= @clicks[i].size %></td>
+        <td><%= @conversions[i].size %></td>
+        <td><%= (@conversions[i].conv_per_click @conversions[i].size, @clicks[i].size).round(2) %></td>
+        <td><%= (@clicks[i].size.to_f / @impressions[i].size).round(2) %></td>
+    <% i += 1 %>
   </tr>
   </div>
 <% end %>
