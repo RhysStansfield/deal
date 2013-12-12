@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :offer do
-  	business
     product 'Nike fuelband'
     product_description 'Fitness tracker' 
     price 90
