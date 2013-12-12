@@ -27,6 +27,7 @@ $('.see-offer-link').click(function() {
 
 
 
+
 // http://patik.com/blog/within-viewport-javascript-and-jquery-plugin/
 // https://github.com/patik/within-viewport
 // http://www.appelsiini.net/projects/viewport
