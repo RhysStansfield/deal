@@ -10,7 +10,7 @@ Feature: Viewing offers
 
 	@business_sign_in
 	Scenario: Seeing the Create New Deal page
-		Given I am on the offers page
+		Given I am on my dashboard
 		When I follow "Create New Deal"
 		Then I should see "Create New Deal"
 
