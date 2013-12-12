@@ -15,3 +15,8 @@ Feature: Following Businesses
       Given I have pressed follow Nike
       When I press "Unfollow"
       Then Nike should have "0" followers
+
+    @business_sign_in
+    Scenario: Cannot follow another business as a business
+      When I go to the participating businesses page
+      Then I should not see a follow button
