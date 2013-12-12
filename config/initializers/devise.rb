@@ -4,13 +4,13 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = 'cf6cdc94ae953c51bdbc61882bcdceca8f71730d80f8e7a84ed6f23f9da05bf8f1f0078f63c490b09f29734948436815d84a92d304e8169f6f1deae1bd9a58c9'
+  config.secret_key = ENV['DEVISE_SECRET']
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'welcome@snapperdeals.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -21,13 +21,17 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  # Facebook Login App Details (#####DO NOT PUSH TO GITHUB!#####)
+  # Facebook Login App Details
   require "omniauth-facebook"
-  config.omniauth :facebook, "783837081631600", "8f53eab5845b72c234d624e6e4b586f0"
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
 
-  # Google Login App Details  (#####DO NOT PUSH TO GITHUB!#####)
+  # Google Login App Details
   require "omniauth-google-oauth2"
-  config.omniauth :google_oauth2, "766561719280.apps.googleusercontent.com", "n2Be-EsLUJXUkm8deVGPz25C", { access_type: "offline", approval_prompt: "" }
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_SECRET'], { access_type: "offline", approval_prompt: "" }
+
+  # Twitter Login App Details
+  require 'omniauth-twitter'
+  config.omniauth :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

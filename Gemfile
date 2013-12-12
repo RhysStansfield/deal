@@ -36,6 +36,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter' 
 
 gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'paperclip'
