@@ -19,5 +19,3 @@ end
 Then(/^I should see purchase button$/) do
   page.has_css? '.stripe-button'
 end
-
-

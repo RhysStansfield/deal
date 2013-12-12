@@ -3,19 +3,20 @@ Feature: Viewing offers
 	As a user who wants to see the offers
 	I want to be able to view the offers
 
-	Background: Offers main page
-		Given I am on the offers page
-
+	@business_sign_in
 	Scenario: Viewing all offers
+		Given I am on the offers page
 		Then I should see "Available Offers"
 
 	@business_sign_in
 	Scenario: Seeing the Create New Deal page
+		Given I am on the offers page
 		When I follow "Create New Deal"
 		Then I should see "Create New Deal"
 
 	@sign_in
 	Scenario: Viewing a single offer
+		Given I am on the offers page
 		And "Nike" has added an offer
 		And I follow "See offer"
 		Then I should see "Nike"
