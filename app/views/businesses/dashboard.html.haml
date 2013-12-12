@@ -1,0 +1,21 @@
+%h1
+  Welcome to your Dashboard :: #{@business.company_name}
+%div{:style => "height:200px; padding:20px; background-color: #ddd;"}
+  Impressions: #{@impressions.flatten.size}
+  %br/
+  Clicks: #{@clicks.flatten.size}
+%table
+  %tr
+    %td Offer
+    %td Impressions
+    %td Unique Impressions
+    %td Clicks
+  - i = 0
+  - @offers.each do |offer|
+    %tr
+      %td
+        %a{:href => offer_path(offer)}= offer.product
+      %td= @impressions[i].size
+      %td= @impressions[i].map(&:user_id).uniq.size
+      %td= @clicks[i].size
+      - i += 1
