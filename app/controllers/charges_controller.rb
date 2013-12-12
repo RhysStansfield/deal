@@ -19,6 +19,8 @@ class ChargesController < ApplicationController
       :currency    => 'GBP',
     )
 
+    Conversion.create(customer_id: current_customer.id, offer_id: @offer.id)
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path
