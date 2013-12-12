@@ -5,7 +5,8 @@ end
 
 When(/^I log in$/) do
   expect(current_path).to eq '/users/sign_in'
-  fill_in 'Email', with: 'ceo@nike.com'
+  business = Business.last
+  fill_in 'Email', with: business.email
   fill_in 'Password', with: '12345678'
   click_button 'Sign in'
 end
@@ -26,10 +27,10 @@ end
 
 Then(/^I should see the offer impressions increase by one$/) do
   visit '/users/sign_in'
-  fill_in 'Email', with: 'ceo@nike.com'
+  business = Business.last
+  fill_in 'Email', with: business.email
   fill_in 'Password', with: '12345678'
   click_button 'Sign in'
-  business = Business.last
 
   expect(current_path).to eq dashboard_business_path(business.id)
   expect(page).to have_content 1
