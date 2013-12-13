@@ -4,7 +4,7 @@ describe Conversion do
 
 	let(:business) { FactoryGirl.create(:business) }
 
-	let(:business2) { FactoryGirl.create(:business2) }
+	let(:business2) { FactoryGirl.create(:with_conversions) }
 
 	it { should belong_to :customer }
 
