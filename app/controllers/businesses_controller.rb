@@ -12,6 +12,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(sign_up_params)
     if @business.save
       flash[:notice] = 'Signed up as a business'
+      sign_in(:user, @business)
       redirect_to dashboard_business_path(@business)
     else
       render 'new'
