@@ -32,7 +32,7 @@ gem 'simple_form'
 gem 'foundation-rails'
 
 # User Log in Gems
-gem 'devise'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

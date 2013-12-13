@@ -4,6 +4,20 @@ class BusinessesController < ApplicationController
     @businesses = Business.all
   end
 
+  def new
+    @business = Business.new
+  end
+
+  def create
+    @business = Business.new(sign_up_params)
+    if @business.save
+      flash[:notice] = 'Signed up as a business'
+      redirect_to dashboard_business_path(@business)
+    else
+      render 'new'
+    end
+  end
+
   def follow
     customer = current_user
     @business = Business.find params[:id]
@@ -28,6 +42,13 @@ class BusinessesController < ApplicationController
       @conversions << offer.conversions
     end
   end
+
+
+  def sign_up_params
+    params[:business].permit(:email, :password, :password_confirmation, :company_name, :category_id)
+  end
+
+  
 
 
 
