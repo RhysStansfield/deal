@@ -20,7 +20,7 @@ Feature: Creating & Viewing an Offer
 		When I am on the offers page
 		Then I should see "Created less than a minute ago"
 
-	@sing_in
+	@sign_in
 	Scenario: Customer cannot create new deal
 		Given I am on the offers page
 		Then I should not see "Create new deal"

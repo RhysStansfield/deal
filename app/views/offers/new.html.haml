@@ -4,22 +4,22 @@
 	%p
 		= f.label :product, "Product (Required)"
 		%br
-		= f.text_field :product
+		= f.text_field :product, { ng_model: 'product' }
 		%br
 	%p
 		= f.label :product_description, "Description (Required)"
 		%br
-		= f.text_field :product_description
+		= f.text_field :product_description, { ng_model: 'product_description' }
 		%br
 	%p
 		= f.label :price, "Price (Required)"
 		%br
-		= f.number_field :price 
+		= f.number_field :price, { ng_model: 'price' }
 		%br
 	%p
 		= f.label :users_time_availablity, "How long should customers get to buy the item? (in seconds)"
 		%br
-		= f.number_field(:users_time_availablity, options={min: 30})
+		= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, step: 1 })
 		%br
 	%p
 		= f.submit "Activate Offer"
