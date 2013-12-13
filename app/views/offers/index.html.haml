@@ -12,9 +12,9 @@
     - @businesses.each do |business|
       .business
         - if current_customer.category_ids.include? business.category_id
-          = business.customers.length
+          %span.follower_count= business.customers.length
           = business.company_name
-          %button.follow
+          %button.follow{ data: { id: business.id, customer: current_customer.id } }
             - if current_customer.businesses.include?(business)
               Unfollow
             - else

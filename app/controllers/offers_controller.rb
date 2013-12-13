@@ -1,7 +1,6 @@
 class OffersController < ApplicationController
 
 	helper_method :already_checked?
-	respond_to :json
 
 	def index
 		@offers = Offer.all #.order("offers.created_at desc")
