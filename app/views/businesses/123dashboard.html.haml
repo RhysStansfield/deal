@@ -1,0 +1,34 @@
+%h1
+  Welcome to your Dashboard :: #{@business.company_name}
+%h5= link_to "Create New Deal", new_offer_path
+%div{:style => "height:200px; padding:20px; background-color: #ddd;"}
+  Impressions: #{@impressions.flatten.size}
+  %br/
+  Clicks: #{@clicks.flatten.size}
+  %br/
+  Conversions: #{@conversions.flatten.size}
+  %br/
+  Conv./Click: #{(Conversion.conv_per_click(@clicks.flatten.size, @conversions.flatten.size)).round(2)}
+  %br/
+  Click Thru: #{(@clicks.flatten.size.to_f / @impressions.flatten.size).round(2)}
+%table
+  %tr
+    %td Offer
+    %td Impressions
+    %td Unique Impressions
+    %td Clicks
+    %td Conversions
+    %td Conv./Click
+    %td Click Thru
+  - i = 0
+  - @offers.each do |offer|
+    %tr
+      %td
+        %a{:href => offer_path(offer)}= offer.product
+      %td= @impressions[i].size
+      %td= @impressions[i].map(&:user_id).uniq.size
+      %td= @clicks[i].size
+      %td= @conversions[i].size
+      %td= (@conversions[i].conv_per_click @conversions[i].size, @clicks[i].size).round(2)
+      %td= (@clicks[i].size.to_f / @impressions[i].size).round(2)
+      - i += 1

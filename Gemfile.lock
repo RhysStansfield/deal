@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 380ab682c5208b70913d80b13d15c7619a5ca0d1
+  specs:
+    devise (3.2.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
+GIT
   remote: git://github.com/stripe/stripe-ruby.git
   revision: f369ca16f956979d7e2a68242399417197f43168
   specs:
@@ -38,6 +49,10 @@ GEM
     angularjs-rails (1.2.4)
     arel (4.0.1)
     atomic (1.1.14)
+    aws-sdk (1.30.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
     brakeman (2.2.0)
       erubis (~> 2.6)
@@ -84,12 +99,6 @@ GEM
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
     database_cleaner (1.2.0)
-    devise (3.2.2)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.1)
     dotenv (0.9.0)
@@ -262,6 +271,7 @@ GEM
     uglifier (2.3.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
     websocket-driver (0.3.1)
@@ -273,13 +283,14 @@ PLATFORMS
 
 DEPENDENCIES
   angularjs-rails
+  aws-sdk
   brakeman
   capybara
   capybara-email
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
-  devise
+  devise!
   dotenv-rails
   facebox-rails
   factory_girl_rails

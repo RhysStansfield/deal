@@ -52,12 +52,11 @@ end
 When(/^I login with "(.*?)"$/) do |provider_name|
   provider = provider_name.downcase!.to_sym
   provider = 'google_oauth2' if provider.eql?(:google)
-  OmniAuth.config.add_mock(provider, {uid: '1234', provider: provider, info: {name: 'Alex', email: 'a@a.com'}})
-
+  OmniAuth.config.add_mock(provider, {uid: '1234', provider: provider})
   click_link provider_name.capitalize
 end
 
 Then(/^I should be signed in with "(.*?)"$/) do |provider|
-  expect(page).to have_content "Successfully authenticated from #{provider}"
+  # save_and_open_page
+  expect(page).to have_content "Successfully authenticated from #{provider} account"
 end
-

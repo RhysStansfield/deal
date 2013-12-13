@@ -3,14 +3,20 @@ Feature: Business users signing in, signing up, signing out
   In order to do so 
   I should be able to sign up, sign in and sign out
 
+  Background: The sign up page
+    Given I visit the business sign up page     
+
   Scenario: Signing up 
-    Given I visit the business sign up page 
     When I fill in the form 
-    Then I should see "Welcome! You have signed up successfully."
+    Then I should see "Welcome to your Dashboard"
+
+  Scenario: Signing up with incorrect details
+    When I fill in the form with non matching passwords
+    Then I should see "doesn't match Password"
+    And I should see "Company name"
 
   @wip
   Scenario: Setting a category during sign up
-    Given I visit the business sign up page 
     When I choose my business category as "Books"
     And I fill in the form
     And I visit my business profile page

@@ -8,7 +8,12 @@ class TimeWindow < ActiveRecord::Base
 
   def set_start_time_end_time
     self.start_time = Time.now
-    self.end_time = self.offer.users_time_availablity.seconds.from_now
+    offer_length = self.offer.users_time_availablity
+    if offer_length > 120
+      self.end_time = 120.seconds.from_now
+    else
+      self.end_time = offer_length.seconds.from_now
+    end
     save
   end
 end

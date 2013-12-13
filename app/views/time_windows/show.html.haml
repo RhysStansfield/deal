@@ -2,6 +2,10 @@
   = (@time_window.end_time - Time.now).to_i
 .offer_details
   %br
+  = image_tag @time_window.offer.business.avatar.url(:thumb)
+  %br
+  = image_tag @time_window.offer.avatar.url(:medium)
+  %br
   = @time_window.offer.product
   %br
   = @time_window.offer.product_description
