@@ -10,8 +10,8 @@ end
 Before ('@business_sign_in') do
   business = FactoryGirl.create(:business)
   visit '/users/sign_in'
-  fill_in 'Email', with: 'ceo@nike.com'
-  fill_in 'Password', with: '12345678'
+  fill_in 'Email', with: business.email
+  fill_in 'Password', with: business.password
   click_button 'Sign in'
   expect(current_path).to eq dashboard_business_path(business.id)
 end

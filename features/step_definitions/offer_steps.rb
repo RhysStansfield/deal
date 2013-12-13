@@ -8,8 +8,8 @@ Given(/^I am on the create offer page$/) do
   visit '/offers/new'
 end
 
-Given(/^I am on the offers page$/) do
-  visit '/offers'
+Given(/^I am on my dashboard$/) do
+  visit dashboard_business_path(Business.last.id)
 end
 
 When(/^I follow "(.*?)"$/) do |link|
@@ -20,4 +20,6 @@ Then(/^I should see purchase button$/) do
   page.has_css? '.stripe-button'
 end
 
-
+When(/^I am on the offers page$/) do
+  visit '/offers'
+end
