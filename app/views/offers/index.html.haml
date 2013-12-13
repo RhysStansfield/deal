@@ -3,23 +3,22 @@
   %h2
     Please select from the categories below
 
-  = form_for current_customer, :remote => true do |f|
+  = form_for current_customer do |f|
     - Category.all.each do |category|
       = f.label :category_id, category.name, for: "category_#{category.id}"
       = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
                                                                
-
-
-  - @businesses.each do |business|
-    - if current_customer.category_ids.include? business.category_id
-      = business.company_name
-      - unless business.customers.include?(current_user)
-        = button_to 'Follow', follow_business_path(business)
-      - else
-        = button_to 'Unfollow', follow_business_path(business)
-      = business.customers.length
-
-
+  .businesses
+    - @businesses.each do |business|
+      .business
+        - if current_customer.category_ids.include? business.category_id
+          = business.customers.length
+          = business.company_name
+          %button.follow
+            - if current_customer.businesses.include?(business)
+              Unfollow
+            - else
+              Follow
 
 %h1 
   Available Offers

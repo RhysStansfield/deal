@@ -14,5 +14,35 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular
-//= require turbolinks
 //= require_tree .
+
+$(".submittable").click(function() { 
+    var form = $('form.edit_customer');
+    var url = form.attr("action");
+
+    $.post(url, form.serialize(), function(data) {
+
+      $('.businesses').html('')
+
+      data.forEach(function(business) {
+        var businessElem = $('<div class="business" />')
+        businessElem.html(business.followers + ' ' + business.name);
+        businessElem.append(
+          $('<button class="follow">' + business.follow_button_text + '</button>')
+        )
+
+        $('.businesses').append(businessElem);
+      })
+
+    }, 'json');
+
+});
+
+// $(document.createElement('div') {
+//   // $.get
+// });
+
+// $('selector').on('click', function() {
+
+// })
+
