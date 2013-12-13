@@ -7,11 +7,6 @@ When(/^I create an offer$/) do
 end
 
 Then(/^I should see the brand's post on the offers page$/) do
-  click_link 'Sign out'
-  visit '/users/sign_in'
-  customer = FactoryGirl.create(:customer)
-  fill_in 'Email', with: customer.email
-  fill_in 'Password', with: customer.password
   visit '/offers'
   expect(page).to have_content "Nike"
 end
