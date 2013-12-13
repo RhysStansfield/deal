@@ -38,8 +38,11 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter' 
 
-gem 'stripe', github: 'stripe/stripe-ruby'
+#Image Uploading
 gem 'paperclip'
+gem 'aws-sdk'
+
+gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'dotenv-rails'
 gem 'facebox-rails'
 
@@ -54,7 +57,7 @@ group :test, :development do
   gem 'capybara-email'
   gem 'brakeman', require: false
   gem 'launchy'
-  gem 'simplecov', :require => false, :group => :test
+  gem 'simplecov', require: false
 end
 
 group :doc do
