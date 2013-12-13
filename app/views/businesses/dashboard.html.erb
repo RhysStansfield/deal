@@ -1,17 +1,17 @@
 <h1>Welcome to your Dashboard :: <%= @business.company_name %></h1>
 
 <h5><%= link_to "Create New Deal", new_offer_path %></h5>
-<div style="height:200px; padding:20px; background-color: #ddd;">
+<div style="height:210px; padding-left:20px; background-color: #ddd; line-height:16pt;">
 Impressions: <%= @impressions.flatten.size %><br />
 Clicks: <%= @clicks.flatten.size %><br />
 Conversions: <%= @conversions.flatten.size %><br/>
 Conv./Click: <%= (Conversion.conv_per_click(@clicks.flatten.size, @conversions.flatten.size)).round(2) %><br/>
 Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2) %><br />
 Ave. Time: <br />
-Total Revenue: <br />
-Revenue/ Deal: <br />
+Total Revenue: <%= (@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size %><br />
+Ave. Revenue/ Deal: <%= ((@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size) / @offers.count %><br />
 Total Deals: <%= @offers.count %><br/ >
-Followers: <br />
+Followers: <%= @business.customers.length %><br />
 </div>
 
 
@@ -39,8 +39,8 @@ Followers: <br />
         <td><%= @conversions[i].size %></td>
         <td><%= (@conversions[i].conv_per_click @conversions[i].size, @clicks[i].size).round(2) %></td>
         <td><%= (@clicks[i].size.to_f / @impressions[i].size).round(2) %></td>
-        <td></td>
-        <td></td>
+        <td>James</td>
+        <td><%= (@revenue[i]) * @conversions[i].size %></td>
     <% i += 1 %>
   </tr>
   </div>
