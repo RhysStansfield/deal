@@ -49,6 +49,11 @@ class BusinessesController < ApplicationController
     @offers.each do |offer|
       @conversions << offer.conversions
     end
+    @revenue = []
+    @offers.each do |offer|
+      @revenue << offer.price
+    end
+    # @total_revenue = @conversions.length * @offers.length
   end
 
 
