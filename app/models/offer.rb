@@ -8,4 +8,8 @@ class Offer < ActiveRecord::Base
 
   validates :users_time_availablity, presence: true
 
+  has_attached_file :avatar, styles: {
+    large: "500x500>", medium: "300x300>", thumb: "100x100>"
+  }
+
 end

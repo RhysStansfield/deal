@@ -3,7 +3,9 @@
 .offer_details
   = @time_window.offer.inspect
   %br
-  = @time_window.offer.business.avatar_file_name
+  = image_tag @time_window.offer.business.avatar.url(:thumb)
+  %br
+  = image_tag @time_window.offer.avatar.url(:medium)
   %br
   = @time_window.offer.product
   %br
