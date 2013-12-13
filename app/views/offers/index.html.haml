@@ -3,10 +3,10 @@
   %h2
     Please select from the categories below
 
-  = form_for current_customer do |f|
+  = form_for current_customer, :remote => true do |f|
     - Category.all.each do |category|
       = f.label :category_id, category.name, for: "category_#{category.id}"
-      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", onclick: "this.form.submit();", type: "checkbox" }
+      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
                                                                
 
 

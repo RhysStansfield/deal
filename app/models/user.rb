@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :time_windows
   has_many :impressions        
   has_many :clicks    
+  has_many :conversions, foreign_key: "customer_id"
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
