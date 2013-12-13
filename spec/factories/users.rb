@@ -13,7 +13,7 @@ FactoryGirl.define do
 
     factory :google_user do
       uid '1234'
-      provider 'google'
+      provider 'google_oauth2'
     end
 
 
