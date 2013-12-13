@@ -6,7 +6,12 @@ Impressions: <%= @impressions.flatten.size %><br />
 Clicks: <%= @clicks.flatten.size %><br />
 Conversions: <%= @conversions.flatten.size %><br/>
 Conv./Click: <%= (Conversion.conv_per_click(@clicks.flatten.size, @conversions.flatten.size)).round(2) %><br/>
-Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2) %>
+Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2) %><br />
+Ave. Time: <br />
+Total Revenue: <br />
+Revenue/ Deal: <br />
+Total Deals: <%= @offers.count %><br/ >
+Followers: <br />
 </div>
 
 
@@ -19,6 +24,9 @@ Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2)
         <td>Conversions</td>
         <td>Conv./Click</td>
         <td>Click Thru</td>
+        <td>Ave. Time</td>
+        <td>Total Revenue</td>
+
 
     </tr>
 <% i = 0 %>
@@ -31,6 +39,8 @@ Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2)
         <td><%= @conversions[i].size %></td>
         <td><%= (@conversions[i].conv_per_click @conversions[i].size, @clicks[i].size).round(2) %></td>
         <td><%= (@clicks[i].size.to_f / @impressions[i].size).round(2) %></td>
+        <td></td>
+        <td></td>
     <% i += 1 %>
   </tr>
   </div>
