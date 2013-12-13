@@ -29,6 +29,10 @@ Devise.setup do |config|
   require "omniauth-google-oauth2"
   config.omniauth :google_oauth2, "766561719280.apps.googleusercontent.com", "n2Be-EsLUJXUkm8deVGPz25C", { access_type: "offline", approval_prompt: "" }
 
+  # config.warden do |manager|
+  #   manager.failure_app = CustomFailure
+  # end
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
