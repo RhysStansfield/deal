@@ -23,7 +23,14 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
-    redirect_to businesses_path
+
+    if request.xhr?
+      render json: { new_follow_count: @business.customers.size,
+        follow_button_text: (@business.customers.include?(current_user) ? 'Unfollow' : 'Follow')
+      }
+    else
+      redirect_to businesses_path
+    end
   end
 
   def dashboard
