@@ -3,7 +3,6 @@ And(/^"(.*?)" has added an offer$/) do |business|
 	visit '/offers'
 end
 
-
 Given(/^I am on the create offer page$/) do
   visit '/offers/new'
 end
@@ -21,5 +20,5 @@ Then(/^I should see purchase button$/) do
 end
 
 When(/^I am on the offers page$/) do
-  visit '/offers'
+  visit '/offers' 
 end

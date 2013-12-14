@@ -18,12 +18,13 @@ end
 
 When(/^A user visits the Offers page$/) do 
   visit '/offers'
-  check 'category_7'
-  click_button "Follow"
+  check 'category_10'
   page.evaluate_script "$('.example-basic:first').trigger('inview')"
   sleep 0.5
-
-  expect(page).to have_content "Nike"
+  first(".follow").click
+  page.evaluate_script "$('.example-basic:first').trigger('inview')"
+  sleep 0.5
+  expect(page).to have_content Business.last.company_name
   click_link 'Sign Out'
 end
 
