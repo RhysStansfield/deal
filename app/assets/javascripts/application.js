@@ -47,6 +47,10 @@ $('.businesses').on('click', '.follow', function() {
     $followerCount.text(data.new_follow_count);
     $button.text(data.follow_button_text);
   });
+  
+
+
+
   // var customer = this.data("customer")
 
   // if($(this).val() === "Follow") {

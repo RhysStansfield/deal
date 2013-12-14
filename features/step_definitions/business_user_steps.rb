@@ -20,10 +20,6 @@ When(/^I fill in the form with non matching passwords$/) do
   click_button 'Sign up'
 end
 
-Then(/^I should see "(.*?)"$/) do |content|
-  expect(page).to have_content content
-end
-
 Then(/^I should not see a follow button$/) do 
   expect(page).not_to have_button 'Follow'
 end
