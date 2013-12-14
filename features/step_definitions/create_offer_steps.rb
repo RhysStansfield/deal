@@ -34,3 +34,4 @@ end
 Given(/^I have added an offer$/) do
   FactoryGirl.create(:offer)
 end
+
