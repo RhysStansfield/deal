@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     if current_user.type == "Business"
       dashboard_business_path(resource)
     else
-      root_path
+      offers_path
     end
   end
 
