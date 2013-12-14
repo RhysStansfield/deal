@@ -15,8 +15,12 @@ class OffersController < ApplicationController
 		@offer = Offer.new(offer_params)
 		@offer.business = current_user
 		@offer.business_id = current_user.id
-		@offer.save
-		redirect_to @offer
+		if @offer.save
+			redirect_to @offer
+		else
+			flash[:notice] = 'Sorry, there were some errors with the form, please try again!'
+			render 'offers/new'
+		end
 	end
 
 	def show
