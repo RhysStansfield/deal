@@ -16,8 +16,12 @@ When(/^I follow "(.*?)"$/) do |link|
   click_link link
 end
 
-Then(/^I should see purchase button$/) do
+Then(/^I should see the purchase button$/) do
   page.has_css? '.stripe-button'
+end
+
+Then(/^I should not see the purchase button$/) do
+  page.has_no_css? '.stripe-button'
 end
 
 When(/^I am on the offers page$/) do

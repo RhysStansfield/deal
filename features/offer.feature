@@ -9,6 +9,14 @@ Feature: Viewing offers
 		Then I should see "Available Offers"
 
 	@business_sign_in
+		Scenario: Business cannot purchase an offer
+			Given "Nike" has added an offer
+			And I follow "See offer"
+			Then I should not see the purchase button
+			And I should see "Return to offer list"
+			And I should see "Return to dashboard"
+
+	@business_sign_in
 	Scenario: Seeing the Create New Deal page
 		Given I am on my dashboard
 		When I follow "Create New Deal"
@@ -20,4 +28,4 @@ Feature: Viewing offers
 		And "Nike" has added an offer
 		And I follow "See offer"
 		Then I should see "Nike"
-		And I should see purchase button
+		And I should see the purchase button
