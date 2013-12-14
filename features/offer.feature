@@ -6,7 +6,7 @@ Feature: Viewing offers
 	@business_sign_in
 	Scenario: Viewing all offers
 		Given I am on the offers page
-		Then I should see "Available Offers"
+		Then I should see "Your Offers:"
 
 	@business_sign_in
 		Scenario: Business cannot purchase an offer
@@ -22,10 +22,11 @@ Feature: Viewing offers
 		When I follow "Create New Deal"
 		Then I should see "Create New Deal"
 
-	@sign_in
+	@sign_in @javascript
 	Scenario: Viewing a single offer
 		Given I am on the offers page
 		And "Nike" has added an offer
+		When I personalize my available offers
 		And I follow "See offer"
 		Then I should see "Nike"
 		And I should see the purchase button

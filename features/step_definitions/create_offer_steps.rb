@@ -22,6 +22,10 @@ end
 
 When(/^I follow the see offer link on the offers page$/) do
   expect(current_path).to eq '/offers'
+  check 'category_10'
+  sleep 0.5
+  first(".follow").click
+  visit '/offers'
   click_link 'See offer'
 end
 
@@ -35,3 +39,9 @@ Given(/^I have added an offer$/) do
   FactoryGirl.create(:offer)
 end
 
+When(/^I personalize my available offers$/) do
+  check 'category_10'
+  sleep 0.5
+  first(".follow").click
+  visit '/offers'
+end
