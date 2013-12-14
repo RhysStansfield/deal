@@ -18,6 +18,8 @@ end
 
 When(/^A user visits the Offers page$/) do 
   visit '/offers'
+  check 'category_7'
+  click_button "Follow"
   page.evaluate_script "$('.example-basic:first').trigger('inview')"
   sleep 0.5
 
