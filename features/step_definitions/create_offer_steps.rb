@@ -22,9 +22,8 @@ When(/^I follow the see offer link on the offers page$/) do
 end
 
 Then(/^I should see the product details$/) do
-  expect(page).to have_content "Nike"
-  expect(page).to have_content "Nike"
-  expect(page).to have_content "N"
+  expect(page).to have_content "fuelband"
+  expect(page).to have_content "Fitness tracker"
   expect(page).to have_content "£90.00"
 end
 
