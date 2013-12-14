@@ -9,6 +9,9 @@ class Offer < ActiveRecord::Base
   validates :users_time_availablity, presence: true
   validates :available_from, presence: true
   validates :available_to, presence: true
+  validates :price, presence: true
+  validates :product, presence: true
+  validates :product_description, presence: true
 
   has_attached_file :avatar, styles: {
     large: "500x500>", medium: "300x300>", thumb: "100x100>"

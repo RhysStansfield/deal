@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :business do
-    company_name
+    company_name 
     email
     password '12345678'
     password_confirmation '12345678'
