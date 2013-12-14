@@ -8,8 +8,8 @@ Conversions: <%= @conversions.flatten.size %><br/>
 Conv./Click: <%= (Conversion.conv_per_click(@clicks.flatten.size, @conversions.flatten.size)).round(2) %><br/>
 Click Thru: <%= (@clicks.flatten.size.to_f / @impressions.flatten.size).round(2) %><br />
 Ave. Time: <br />
-Total Revenue: <%= (@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size %><br />
-Ave. Revenue/ Deal: <%= ((@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size) / @offers.count %><br />
+Total Revenue: <%= (@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size if @offer.present? %><br />
+Ave. Revenue/ Deal: <%= ((@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size) / @offers.count if @offer.present? %><br />
 Total Deals: <%= @offers.count %><br/ >
 Followers: <%= @business.customers.length %><br />
 </div>
