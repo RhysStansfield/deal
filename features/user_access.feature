@@ -4,7 +4,7 @@ Feature: Signing up, signing in and signing out
   I need to sign in
 
   Scenario: Signing Up 
-    Given that I click the sign up button 
+    Given that I visit the homepage
     When I enter my details and submit
     Then I should be signed up
 
