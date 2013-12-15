@@ -1,36 +1,41 @@
-- if current_customer
+%button.show-preferences
+  Show/Change Preferences
 
-  %h2
-    Please select from the categories below
+.preferences{:style=>"display:none;"}
 
-  = form_for current_customer do |f|
-    - Category.all.each do |category|
-      = f.label :category_id, category.name, for: "category_#{category.id}"
-      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
-                                                               
-  .businesses
-    - @businesses.each do |business|
-      .business
-        - if current_customer.category_ids.include? business.category_id
-          %span.follower_count= business.customers.length
-          = business.company_name
-          %button.follow{ data: { id: business.id, customer: current_customer.id } }
-            - if current_customer.businesses.include?(business)
-              Unfollow
-            - else
-              Follow
+  - if current_customer
 
-  %h1 
-    Available Offers
-  - @offers.each do |offer|
-    - if current_customer.businesses.include? offer.business
-      = render partial: "offer", locals: { offer: offer }
+    %h2
+      Please select from the categories below
 
-- else 
+    = form_for current_customer do |f|
+      - Category.all.each do |category|
+        = f.label :category_id, category.name, for: "category_#{category.id}"
+        = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
+                                                                 
+    .businesses
+      - @businesses.each do |business|
+        .business
+          - if current_customer.category_ids.include? business.category_id
+            %span.follower_count= business.customers.length
+            = business.company_name
+            %button.follow{ data: { id: business.id, customer: current_customer.id } }
+              - if current_customer.businesses.include?(business)
+                Unfollow
+              - else
+                Follow
 
-  %h1
-    Your Offers:
-  - @offers.each do |offer|
-    - if current_business.id == offer.business_id
-      = render partial: "offer", locals: { offer: offer }
+    %h1 
+      Available Offers
+    - @offers.each do |offer|
+      - if current_customer.businesses.include? offer.business
+        = render partial: "offer", locals: { offer: offer }
+
+  - else 
+
+    %h1
+      Your Offers:
+    - @offers.each do |offer|
+      - if current_business.id == offer.business_id
+        = render partial: "offer", locals: { offer: offer }
 
