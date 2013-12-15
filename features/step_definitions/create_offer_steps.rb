@@ -22,6 +22,8 @@ end
 
 When(/^I follow the see offer link on the offers page$/) do
   expect(current_path).to eq '/offers'
+  click_button "Show/Change Preferences"
+  sleep 0.5
   check 'category_10'
   sleep 0.5
   first(".follow").click
@@ -40,6 +42,8 @@ Given(/^I have added an offer$/) do
 end
 
 When(/^I personalize my available offers$/) do
+  click_button "Show/Change Preferences"
+  sleep 0.5
   check 'category_10'
   sleep 0.5
   first(".follow").click
