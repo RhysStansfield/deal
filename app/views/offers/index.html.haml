@@ -1,9 +1,9 @@
-%button.show-preferences
-  Show/Change Preferences
+- if current_customer
 
-.preferences{:style=>"display:none;"}
+  %button.show-preferences
+    Show/Change Preferences
 
-  - if current_customer
+  .preferences{:style=>"display:none;"}
 
     %h2
       Please select from the categories below
@@ -25,17 +25,17 @@
               - else
                 Follow
 
-    %h1 
-      Available Offers
-    - @offers.each do |offer|
-      - if current_customer.businesses.include? offer.business
-        = render partial: "offer", locals: { offer: offer }
+  %h1 
+    Available Offers
+  - @offers.each do |offer|
+    - if current_customer.businesses.include? offer.business
+      = render partial: "offer", locals: { offer: offer }
 
-  - else 
+- else 
 
-    %h1
-      Your Offers:
-    - @offers.each do |offer|
-      - if current_business.id == offer.business_id
-        = render partial: "offer", locals: { offer: offer }
+  %h1
+    Your Offers:
+  - @offers.each do |offer|
+    - if current_business.id == offer.business_id
+      = render partial: "offer", locals: { offer: offer }
 
