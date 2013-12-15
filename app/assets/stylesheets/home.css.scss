@@ -17,6 +17,10 @@ body {
 	font-size: 20px;
 }
 
+.full_page1 {
+
+}
+
 .container {
 	width: 838px;
 	margin: 0 auto;
@@ -37,6 +41,12 @@ body {
 	color: #4D4D4D;
 }
 
+.signin_title {
+	margin-bottom: 20px;	
+	color: #4D4D4D;
+	text-align: center;
+}
+
 #signup {
 	width: 300px;
 	padding-left: 30px;
@@ -48,6 +58,11 @@ body {
 	display: inline;
 }
 
+#signin {
+	width: 300px;
+	margin: 0 auto;
+}
+
 #social_login {
 	width: 300px;
 	margin: 0px auto;
@@ -55,7 +70,22 @@ body {
 	margin-top: 20px;
 }
 
+#social_login2 {
+	width: 300px;
+	margin: 0px auto;
+	height: 140px;
+	margin-top: -80px;
+	border-bottom: #e5e5e5;
+	border-bottom-style:solid;
+	border-bottom-width:2px;
+}
+
 #socialbuttons {
+	margin-left: 75px;	
+	margin-top: 15px;
+}
+
+#socialbuttons2 {
 	margin-left: 75px;	
 	margin-top: 15px;
 }
@@ -77,6 +107,48 @@ body {
 	text-transform: uppercase;
 	font-weight: 700;
 	width: 280px;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+.general_signup_link a {
+	position: fixed;
+	bottom: 0px;
+	padding: 14px;
+	text-align: center;
+	background-color: #0f9d58;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 45px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 280px;
+	margin: 0 auto;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+.forgot_password a {
+	position: fixed;
+	bottom: 55px;
+	padding: 14px;
+	text-align: center;
+	background-color: #0f9d58;
+	border-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 45px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 280px;
+	margin: 0 auto;
+	margin-left: 14px;
  	-webkit-appearance:none;
  	outline: none;
 }
@@ -140,6 +212,7 @@ form fieldset a {
 }
 
 form fieldset a:hover { text-decoration: underline; }
+
 
 .btn-round {
 	background: #5a5656;

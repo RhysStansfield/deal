@@ -18,6 +18,8 @@
 
     <% if current_page?('/') %>
       <%= render 'layouts/home_login' %>
+    <% elsif current_page?('/users/sign_in') %>
+      <%= render 'layouts/home_login' %>
     <% else %>
       <%= render 'layouts/login' %>
     <% end %>
