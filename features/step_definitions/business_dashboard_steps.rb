@@ -16,7 +16,7 @@ Then(/^I should see my dashboard$/) do
   expect(current_path).to eq dashboard_business_path(business.id)
 end
 
-When(/^A user visits the Offers page$/) do 
+When(/^A user visits the page for that offer$/) do 
   visit '/offers'
   check 'category_10'
   page.evaluate_script "$('.example-basic:first').trigger('inview')"
