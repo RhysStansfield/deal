@@ -17,4 +17,8 @@ class Offer < ActiveRecord::Base
     large: "500x500>", medium: "300x300>", thumb: "100x100>"
   }
 
+  def active?
+    Time.now < self.available_to and Time.now > self.available_from
+  end
+
 end
