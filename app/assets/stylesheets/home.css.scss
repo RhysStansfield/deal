@@ -12,6 +12,11 @@ body {
 	margin: 0 auto;	
 }
 
+.name a {
+	font-family: Open Sans;
+	font-size: 20px;
+}
+
 .container {
 	width: 838px;
 	margin: 0 auto;
@@ -60,9 +65,8 @@ body {
 	padding: 16px;
 	text-align: center;
 	bottom: 0px;
-	background-color: #008dde;
+	background-color: #0f9d58;
 	/*border:thin double #008dde;*/
-	
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 	color: #ffffff;
@@ -101,9 +105,9 @@ fieldset {
 
 form fieldset input[type="submit"] {
 	background-color: #F2F2F2;
-	border:thin double #008dde;
+	border:thin double #4285f4;
 	border-radius: 3px;
-	color: #008dde;
+	color: #4285f4;
 	cursor: pointer;
 	font-family: Open Sans;
 	height: 50px;
@@ -114,8 +118,8 @@ form fieldset input[type="submit"] {
 }
 
 form fieldset input[type="submit"]:hover {
-	background-color: #008dde;
-	border:thin double #008dde;
+	background-color: #4285f4;
+	border:thin double #4285f4;
 	border-radius: 3px;
 	color: #f2f2f2;
 	cursor: pointer;
