@@ -23,6 +23,23 @@ $('.see-offer-link').click(function() {
   $.post( "/clicks", { "offer_id": offerId } );
 });
 
+$(document).ready(function() {
+          $('.show-preferences').click(function(){                   
+            //make the collapse content to be shown or hide
+            var toggle_switch = $(this);
+            $('.preferences').toggle(function(){
+              if($(this).css('display')=='none'){
+                                //change the button label to be 'Show/Change Preferences'
+                toggle_switch.html('Show/Change Preferences');
+              }else{
+                                //change the button label to be 'Hide Preferences'
+                toggle_switch.html('Hide Preferences');
+              }
+            });
+          });
+ 
+        });
+
 
 
 

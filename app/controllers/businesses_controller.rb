@@ -56,13 +56,8 @@ class BusinessesController < ApplicationController
     # @total_revenue = @conversions.length * @offers.length
   end
 
-
   def sign_up_params
     params[:business].permit(:email, :password, :password_confirmation, :company_name, :category_id)
   end
-
-  
-
-
 
 end

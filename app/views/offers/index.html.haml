@@ -1,24 +1,29 @@
 - if current_customer
 
-  %h2
-    Please select from the categories below
+  %button.show-preferences
+    Show/Change Preferences
 
-  = form_for current_customer do |f|
-    - Category.all.each do |category|
-      = f.label :category_id, category.name, for: "category_#{category.id}"
-      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
-                                                               
-  .businesses
-    - @businesses.each do |business|
-      .business
-        - if current_customer.category_ids.include? business.category_id
-          %span.follower_count= business.customers.length
-          = business.company_name
-          %button.follow{ data: { id: business.id, customer: current_customer.id } }
-            - if current_customer.businesses.include?(business)
-              Unfollow
-            - else
-              Follow
+  .preferences{:style=>"display:none;"}
+
+    %h2
+      Please select from the categories below
+
+    = form_for current_customer do |f|
+      - Category.all.each do |category|
+        = f.label :category_id, category.name, for: "category_#{category.id}"
+        = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
+                                                                 
+    .businesses
+      - @businesses.each do |business|
+        .business
+          - if current_customer.category_ids.include? business.category_id
+            %span.follower_count= business.customers.length
+            = business.company_name
+            %button.follow{ data: { id: business.id, customer: current_customer.id } }
+              - if current_customer.businesses.include?(business)
+                Unfollow
+              - else
+                Follow
 
   %h1 
     Available Offers

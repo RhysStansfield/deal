@@ -1,0 +1,29 @@
+<div class="container">
+<div id="splash_left">
+	<img src="assets/left1.png" width="470" height="430" />
+</div>
+
+<div id="signup">
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+  
+  <fieldset>
+  	<h6 class="bus_signup_link"><%= link_to 'Business? Sign up here', new_business_path %></h6>
+  	<h1 class="signup_title">Sign Up</h1>
+    <%= f.input :email, :required => true, :autofocus => true, placeholder: 'Email', label: false %>
+    <%= f.input :password, :required => true, placeholder: 'Password', label: false %>
+    <%= f.input :password_confirmation, :required => true, placeholder: 'Confirm Password', label: false %>
+    <%= f.button :submit, "Sign up" %>
+  </fieldset>
+<% end %>
+
+<div id="social_login">
+	<h5 class="or_using">or login using:</h5>
+	<div id="socialbuttons">
+		<a class="facebook" href="/users/auth/facebook"><i class="fa fa-facebook"></i></a>
+		<a class="twitter" href="/users/auth/twitter"><span class="fa fa-twitter"></span></a>
+		<a class="google" href="/users/auth/google_oauth2"><span class="fa fa-google-plus"></span></a>
+	</div>
+</div>
+</div>
+</div>

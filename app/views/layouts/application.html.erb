@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
+    <title><%= content_for?(:title) ? yield(:title) : "PINCH" %></title>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'>
+    <%= stylesheet_link_tag "font-awesome" %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
 
@@ -14,26 +15,16 @@
   </head>
 
   <body cz-shortcut-listen="true">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Snapper</a></h1>
-        </li>
-      </ul>
 
-      <section class="top-bar-section">
-        <ul class="right">
+    <% if current_page?('/') %>
+      <%= render 'layouts/home_login' %>
+    <% elsif current_page?('/users/sign_in') %>
+      <%= render 'layouts/home_login' %>
+    <% else %>
+      <%= render 'layouts/login' %>
+    <% end %>
 
-          <%= render 'layouts/login' %>
-
-        </ul>
-
-        <ul class="left">
-          <li><a href="#">Left Nav Button</a></li>
-        </ul>
-      </section>
-    </nav>
-    <p class="notice"><%= notice %></p>
+    <p class="notice" ><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>

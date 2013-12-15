@@ -16,9 +16,9 @@ class OffersController < ApplicationController
 		@offer.business = current_user
 		@offer.business_id = current_user.id
 		if @offer.save
-			redirect_to @offer
+			redirect_to dashboard_business_path(@offer.business)
 		else
-			flash[:notice] = 'Sorry, there were some errors with the form, please try again!'
+			flash[:notice] = 'Sorry, there were the following errors: @offer.errors.full_messages'
 			render 'offers/new'
 		end
 	end
