@@ -22,14 +22,17 @@ Deal::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   
-  devise_scope :user do
-    get '/business/sign_up' => "devise/registrations#new"
-  end
+  # devise_scope :user do
+  #   get '/business/sign_up' => "devise/registrations#new"
+  # end
+
+  get '/business/sign_up' => "businesses#new"
 
   resources :users, only: 'show'
 
 
   patch '/users/edit'
+
 
   # post 'users/follow/:business_id' => 'users#follow', as: 'follow'
   # The priority is based upon order of creation: first created -> highest priority.

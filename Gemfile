@@ -32,7 +32,7 @@ gem 'simple_form'
 gem 'foundation-rails'
 
 # User Log in Gems
-gem 'devise'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
@@ -45,6 +45,8 @@ gem 'aws-sdk'
 gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'dotenv-rails'
 gem 'facebox-rails'
+
+gem 'rails_12factor'
 
 group :test, :development do
   gem 'capybara'

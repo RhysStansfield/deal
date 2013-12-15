@@ -8,5 +8,4 @@ class RegistrationsController < Devise::RegistrationsController
     edit_user_registration_path(resource)
   end
 
-
 end

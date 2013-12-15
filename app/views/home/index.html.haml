@@ -1,19 +1,2 @@
-- if current_customer
-
-  %h2
-    Please select from the categories below
-
-  = form_for current_customer do |f|
-    - Category.all.each do |category|
-      = f.label :category_id, category.name, for: "category_#{category.id}"
-      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}" }
-                                                               
-    .form-actions
-      = f.button :submit
-
-
-  = render 'offers/offers'
-
-
 
 

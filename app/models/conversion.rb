@@ -23,4 +23,11 @@ class Conversion < ActiveRecord::Base
   	end
   end
 
+  def self.total_revenue conversions, price
+    return 0 if conversions == 0 || price == 0
+    conversions.to_f * price.to_f
+  end
+
+
+
 end

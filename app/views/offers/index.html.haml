@@ -6,23 +6,31 @@
   = form_for current_customer do |f|
     - Category.all.each do |category|
       = f.label :category_id, category.name, for: "category_#{category.id}"
-      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", onclick: "this.form.submit();", type: "checkbox" }
+      = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
                                                                
+  .businesses
+    - @businesses.each do |business|
+      .business
+        - if current_customer.category_ids.include? business.category_id
+          %span.follower_count= business.customers.length
+          = business.company_name
+          %button.follow{ data: { id: business.id, customer: current_customer.id } }
+            - if current_customer.businesses.include?(business)
+              Unfollow
+            - else
+              Follow
 
+  %h1 
+    Available Offers
+  - @offers.each do |offer|
+    - if current_customer.businesses.include? offer.business
+      = render partial: "offer", locals: { offer: offer }
 
-  - @businesses.each do |business|
-    - if current_customer.category_ids.include? business.category_id
-      = business.company_name
-      - unless business.customers.include?(current_user)
-        = button_to 'Follow', follow_business_path(business)
-      - else
-        = button_to 'Unfollow', follow_business_path(business)
-      = business.customers.length
+- else 
 
-
-
-%h1 
-  Available Offers
-- @offers.each do |offer|
-  = render partial: "offer", locals: { offer: offer }
+  %h1
+    Your Offers:
+  - @offers.each do |offer|
+    - if current_business.id == offer.business_id
+      = render partial: "offer", locals: { offer: offer }
 

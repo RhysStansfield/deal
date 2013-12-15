@@ -6,7 +6,7 @@ FactoryGirl.define do
     users_time_availablity 30
     conversions { Array.new(3) { FactoryGirl.build(:conversion) } }
     available_from "13/12/2013"
-    available_to "14/12/2013"
-    business
+    available_to "29/12/2013"
+    business 
   end
 end

@@ -14,7 +14,74 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular
-//= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(".submittable").click(function() { 
+    var form = $('form.edit_customer');
+    var url = form.attr("action");
+
+    $.post(url, form.serialize(), function(data) {
+
+      $('.businesses').html('')
+
+      data.forEach(function(business) {
+        var businessElem = $('<div class="business"/>')
+        businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
+        businessElem.append(
+          $('<button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>')
+        )
+
+        $('.businesses').append(businessElem);
+      })
+
+    }, 'json');
+
+});
+
+$('.businesses').on('click', '.follow', function() {
+  var url = "/businesses/" + $(this).data("id") + "/follow"
+  var $button = $(this)
+  var $followerCount = $(this).parent().find('.follower_count');
+
+  $.post(url, function(data) {
+    $followerCount.text(data.new_follow_count);
+    $button.text(data.follow_button_text);
+  });
+  
+
+
+
+  // var customer = this.data("customer")
+
+  // if($(this).val() === "Follow") {
+  //   $.post(url, customer.serialize(), function(data) {
+  //     data.forEach(function())
+  //   });
+  // }
+});
+
+// function follow() {
+//   $.get(url, function(data) {
+//     $('.follow').html('Follow');
+//   })
+// }
+
+// all customers in business array so we can count the size (business.customers.size)
+// business 
+
+// def follow(business)
+//     unless business.customers.include? self
+//       business.customers << self
+//     else
+//       business.customers.delete(self)
+//     end 
+//   end
+
+// $(document.createElement('div') {
+//   // $.get
+// });
+
+// $('selector').on('click', function() {
+
+// })
+

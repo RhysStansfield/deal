@@ -15,11 +15,18 @@ class OffersController < ApplicationController
 		@offer = Offer.new(offer_params)
 		@offer.business = current_user
 		@offer.business_id = current_user.id
-		@offer.save
-		redirect_to dashboard_business_path(@offer.business)
+		if @offer.save
+			redirect_to dashboard_business_path(@offer.business)
+		else
+			flash[:notice] = 'Sorry, there were the following errors: @offer.errors.full_messages'
+			render 'offers/new'
+		end
 	end
 
 	def show
+		# if current_customer
+		# 	redirect_to offer_time_windows_path(Offer.last.id), method: :post
+		# end
 		@offer = Offer.find(params[:id])
 	end
 
