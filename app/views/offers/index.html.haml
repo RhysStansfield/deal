@@ -20,8 +20,17 @@
             - else
               Follow
 
-%h1 
-  Available Offers
-- @offers.each do |offer|
-  = render partial: "offer", locals: { offer: offer }
+  %h1 
+    Available Offers
+  - @offers.each do |offer|
+    - if current_customer.businesses.include? offer.business
+      = render partial: "offer", locals: { offer: offer }
+
+- else 
+
+  %h1
+    Your Offers:
+  - @offers.each do |offer|
+    - if current_business.id == offer.business_id
+      = render partial: "offer", locals: { offer: offer }
 

@@ -46,6 +46,8 @@ gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'dotenv-rails'
 gem 'facebox-rails'
 
+gem 'rails_12factor'
+
 group :test, :development do
   gem 'capybara'
   gem 'rspec-rails'

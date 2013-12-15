@@ -1,16 +1,17 @@
 .time_remaining
   = (@time_window.end_time - Time.now).to_i
 .offer_details
-  %br
-  = image_tag @time_window.offer.business.avatar.url(:thumb)
-  %br
-  = image_tag @time_window.offer.avatar.url(:medium)
+  - if @time_window.offer.avatar.exists?
+    %br
+    = image_tag @time_window.offer.business.avatar.url(:thumb)
+    %br
+    = image_tag @time_window.offer.avatar.url(:medium)
   %br
   = @time_window.offer.product
   %br
   = @time_window.offer.product_description
   %br
   = number_to_currency(@time_window.offer.price, unit: '£')
-
+  
   = form_tag offer_charges_path(@time_window.offer) do
     %script.stripe-button{"data-amount" => (@time_window.offer.price * 100).to_i, "data-currency" => "GBP", "data-description" => "Purchase offer", "data-key" => Rails.configuration.stripe[:publishable_key], "data-label" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}

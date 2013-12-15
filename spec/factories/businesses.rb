@@ -21,5 +21,9 @@ FactoryGirl.define do
   factory :with_conversions, parent: :business do
     offers { Array.new(2) { FactoryGirl.create(:offer) } }
   end
+
+  factory :with_offer, parent: :business do
+    offers { Array.new(1) { FactoryGirl.create(:offer) } }
+  end
   
 end

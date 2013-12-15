@@ -8,7 +8,7 @@ Before ('@sign_in') do
 end
 
 Before ('@business_sign_in') do
-  business = FactoryGirl.create(:business)
+  business = FactoryGirl.create(:with_offer)
   visit '/users/sign_in'
   fill_in 'Email', with: business.email
   fill_in 'Password', with: business.password
