@@ -122,6 +122,8 @@ GEM
       sass (>= 3.2.0)
     gherkin (2.12.2)
       multi_json (~> 1.3)
+    gruff (0.5.1)
+      rmagick
     haml (4.0.4)
       tilt
     hashie (2.0.5)
@@ -214,6 +216,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rmagick (2.13.2)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -300,6 +303,7 @@ DEPENDENCIES
   facebox-rails
   factory_girl_rails
   foundation-rails
+  gruff
   haml
   jbuilder (~> 1.2)
   jquery-rails
