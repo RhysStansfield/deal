@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  helper_method :already_checked?
+	
 
   def index
   	redirect_to(offers_path) if current_customer
