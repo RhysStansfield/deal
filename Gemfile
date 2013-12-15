@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'simple_form'
 gem 'foundation-rails'
+gem 'gruff'
 
 # User Log in Gems
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
