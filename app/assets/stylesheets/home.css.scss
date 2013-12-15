@@ -187,6 +187,7 @@ form fieldset input[type="submit"] {
 	text-transform: uppercase;
 	width: 280px;
  	-webkit-appearance:none;
+ 	outline: none;
 }
 
 form fieldset input[type="submit"]:hover {
@@ -247,6 +248,7 @@ form fieldset a:hover { text-decoration: underline; }
 	text-align: center;
 	width: 50px;
 	margin-right: 5px;
+	outline: none;
 }
 
 .facebook {
@@ -262,6 +264,7 @@ form fieldset a:hover { text-decoration: underline; }
 	text-align: center;
 	width: 50px;
 	margin-right: 5px;
+	outline: none;
 }
 
 .twitter:hover {
@@ -275,6 +278,7 @@ form fieldset a:hover { text-decoration: underline; }
 	text-align: center;
 	width: 50px;
 	margin-right: 5px;	
+	outline: none;
 }
 .twitter {
 	background: #f2f2f2;
@@ -289,6 +293,7 @@ form fieldset a:hover { text-decoration: underline; }
 	text-align: center;
 	width: 50px;
 	margin-right: 5px;
+	outline: none;
 }
 
 .google:hover {
@@ -301,6 +306,7 @@ form fieldset a:hover { text-decoration: underline; }
 	line-height: 50px;
 	text-align: center;
 	width: 50px;
+	outline: none;
 }
 .google {
 	background: #f2f2f2;
@@ -315,4 +321,5 @@ form fieldset a:hover { text-decoration: underline; }
 	text-align: center;
 	width: 50px;
 	margin-right: 5px;
+	outline: none;
 }
