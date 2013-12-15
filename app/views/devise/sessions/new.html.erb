@@ -1,15 +1,26 @@
-<h2>Sign in</h2>
+<div class="container">
+
+<div id="signin">
+<h1 class="signin_title">Login</h1>
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, :required => false, :autofocus => true %>
-    <%= f.input :password, :required => false %>
+  <fieldset>
+    <%= f.input :email, :required => false, :autofocus => true, placeholder: 'Email', label: false %>
+    <%= f.input :password, :required => false, placeholder: 'Password', label: false %>
     <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
+    <%= f.button :submit, "Login" %>
+<h6 class="general_signup_link"><%= link_to 'Don\'t have an account? Sign up now!', root_path %></h6>
+  </fieldset>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div id="social_login2">
+	<h5 class="or_using">or login using:</h5>
+	<div id="socialbuttons2">
+		<a class="facebook" href="/users/auth/facebook"><i class="fa fa-facebook"></i></a>
+		<a class="twitter" href="/users/auth/twitter"><span class="fa fa-twitter"></span></a>
+		<a class="google" href="/users/auth/google_oauth2"><span class="fa fa-google-plus"></span></a>
+	</div>
+</div>
+<h5 class="forgot_password"><%= render "devise/shared/links" %></h5>
+</div>
+</div>

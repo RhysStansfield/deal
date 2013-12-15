@@ -4,5 +4,330 @@
 
 body {
 	background-color: #F2F2F2;
+	font-family: Open Sans;
+}
 
+.home_top_width {
+	width: 838px;
+	margin: 0 auto;	
+}
+
+.name a {
+	font-family: Open Sans;
+	font-size: 20px;
+}
+
+/*.alert {
+
+}*/
+
+.alert-box {
+	text-align: center;
+}
+
+.full_page1 {
+
+}
+
+.container {
+	width: 838px;
+	margin: 0 auto;
+	margin-top: 90px;
+}
+
+#splash_left {
+	background-color: #222222;
+	background-image: url('/assets/left1.png');
+	background-size: cover;
+	width: 470px;
+	height: 430px;
+	display: inline;
+}
+
+.signup_title {
+	margin-bottom: 20px;	
+	color: #4D4D4D;
+}
+
+.signin_title {
+	margin-bottom: 20px;	
+	color: #4D4D4D;
+	text-align: center;
+}
+
+#signup {
+	width: 300px;
+	padding-left: 30px;
+	border-left: #e5e5e5;
+	border-left-style:solid;
+	border-left-width:2px;
+	float: right;
+	margin-right: 30px;
+	display: inline;
+}
+
+#signin {
+	width: 300px;
+	margin: 0 auto;
+}
+
+#social_login {
+	width: 300px;
+	margin: 0px auto;
+	height: 140px;
+	margin-top: 20px;
+}
+
+#social_login2 {
+	width: 300px;
+	margin: 0px auto;
+	height: 140px;
+	margin-top: -80px;
+	border-bottom: #e5e5e5;
+	border-bottom-style:solid;
+	border-bottom-width:2px;
+}
+
+#socialbuttons {
+	margin-left: 75px;	
+	margin-top: 15px;
+}
+
+#socialbuttons2 {
+	margin-left: 75px;	
+	margin-top: 15px;
+}
+
+.bus_signup_link a {
+	position: fixed;
+	padding: 16px;
+	text-align: center;
+	bottom: 0px;
+	background-color: #0f9d58;
+	/*border:thin double #008dde;*/
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 45px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 280px;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+.general_signup_link a {
+	position: fixed;
+	bottom: 0px;
+	padding: 14px;
+	text-align: center;
+	background-color: #0f9d58;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 45px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 280px;
+	margin: 0 auto;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+.forgot_password a {
+	position: fixed;
+	bottom: 55px;
+	padding: 14px;
+	text-align: center;
+	background-color: #0f9d58;
+	border-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 45px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 280px;
+	margin: 0 auto;
+	margin-left: 14px;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+
+
+form fieldset input[type="text"], input[type="email"], input[type="password"] {
+	background: #e6e6e6;
+	border: none;
+	border-radius: 3px;
+	color: #808080;
+	font-family: Open Sans;
+	font-size: 14px;
+	height: 40px;
+	outline: none;
+	padding: 0px 10px;
+	width: 280px;
+	margin-bottom: 10px;
+  	-webkit-appearance:none;
+}
+
+fieldset {
+	width: 300px;
+	height: 270px;
+}
+
+form fieldset input[type="submit"] {
+	background-color: #F2F2F2;
+	border:thin double #4285f4;
+	border-radius: 3px;
+	color: #4285f4;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 50px;
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 280px;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+form fieldset input[type="submit"]:hover {
+	background-color: #4285f4;
+	border:thin double #4285f4;
+	border-radius: 3px;
+	color: #f2f2f2;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 50px;
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 280px;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+
+
+form fieldset a {
+	color: #5a5656;
+	font-size: 10px;
+}
+
+form fieldset a:hover { text-decoration: underline; }
+
+
+.btn-round {
+	background: #5a5656;
+	border-radius: 50%;
+	color: #f4f4f4;
+	display: block;
+	font-size: 12px;
+	height: 50px;
+	line-height: 50px;
+	margin: 30px 125px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 50px;
+}
+
+.or_using {
+	padding-top: 30px;
+	padding-left: 15px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.facebook:hover {
+	background: #0064ab;
+	/*border-radius: 50%;*/
+	border-radius: 3px;
+	color: #f4f4f4;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	margin-right: 5px;
+	outline: none;
+}
+
+.facebook {
+	background: #f2f2f2;
+	/*border-radius: 50%;*/
+	border-radius: 3px;
+	border:thin double #0064ab;
+	color: #0064ab;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	margin-right: 5px;
+	outline: none;
+}
+
+.twitter:hover {
+	background: #189bcb;
+	border-radius: 3px;
+	color: #f2f2f2;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	margin-right: 5px;	
+	outline: none;
+}
+.twitter {
+	background: #f2f2f2;
+	/*border-radius: 50%;*/
+	border-radius: 3px;
+	border:thin double #189bcb;
+	color: #189bcb;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	margin-right: 5px;
+	outline: none;
+}
+
+.google:hover {
+	background: #dd4b39;
+	border-radius: 3px;
+	color: #f2f2f2;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	outline: none;
+}
+.google {
+	background: #f2f2f2;
+	/*border-radius: 50%;*/
+	border-radius: 3px;
+	border:thin double #dd4b39;
+	color: #dd4b39;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	margin-right: 5px;
+	outline: none;
 }

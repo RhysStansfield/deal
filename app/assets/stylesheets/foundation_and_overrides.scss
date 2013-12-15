@@ -50,9 +50,9 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+ $primary-color: #4285f4;
 // $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
+ $alert-color: #D84437;
 // $success-color: #43AC6A;
 
 // We use these to make sure border radius matches unless we want it different.
@@ -130,6 +130,8 @@
 
 // We use these to control text style.
 // $alert-font-weight: normal;
+ $alert-font-family: Open Sans;
+ $alert-text-align: middle;
 // $alert-font-size: rem-calc(13);
 // $alert-font-color: #fff;
 // $alert-font-color-alt: darken($secondary-color, 60%);
@@ -333,21 +335,21 @@
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
 // $input-bg-color: #fff;
-// $input-focus-bg-color: darken(#fff, 2%);
+$input-focus-bg-color: #f2f2f2;
 // $input-border-color: darken(#fff, 20%);
-// $input-focus-border-color: darken(#fff, 40%);
+$input-focus-border-color: #008dde;
 // $input-border-style: solid;
 // $input-border-width: 1px;
 // $input-disabled-bg: #ddd;
 // $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-// $input-include-glowing-effect: true;
+$input-include-glowing-effect: false;
 
 // We use these to style the fieldset border and spacing.
-// $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
-// $fieldset-border-color: #ddd;
-// $fieldset-padding: rem-calc(20);
-// $fieldset-margin: rem-calc(18 0);
+$fieldset-border-style: none;
+$fieldset-border-width: 0px;
+$fieldset-border-color: #ddd;
+$fieldset-padding: rem-calc(0);
+$fieldset-margin: rem-calc(0);
 
 // We use these to style the legends when you use them
 // $legend-bg: #fff;
@@ -644,7 +646,7 @@
 // $price-title-align: center;
 // $price-title-color: #eee;
 // $price-title-weight: normal;
-// $price-title-size: rem-calc(16);
+// $price-title-size: rem-calc(18);
 // $price-title-font-family: $body-font-family;
 
 // We use these to control the price styles
@@ -927,7 +929,7 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+// $topbar-bg-color: #4D4D4D;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -955,9 +957,9 @@
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
+// $topbar-link-bg-hover: #272727;
+ $topbar-link-bg-active: #4285f4;
+ $topbar-link-bg-active-hover: #4285f4;
 // $topbar-link-font-family: $body-font-family;
 
 // $topbar-button-font-size: 0.75rem;
