@@ -2,7 +2,8 @@
   Edit #{resource_name.to_s.humanize}
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f|
   = f.error_notification
-  = image_tag @user.avatar.url(:thumb), class: 'uploaded-avatar'
+  - if @user.avatar.exists?
+    = image_tag @user.avatar.url(:thumb), class: 'uploaded-avatar'
   .form-inputs
     %div= f.file_field :avatar
     = f.input :email, :required => true, :autofocus => true
