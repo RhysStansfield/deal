@@ -24,6 +24,9 @@ class OffersController < ApplicationController
 	end
 
 	def show
+		# if current_customer
+		# 	redirect_to offer_time_windows_path(Offer.last.id), method: :post
+		# end
 		@offer = Offer.find(params[:id])
 	end
 
