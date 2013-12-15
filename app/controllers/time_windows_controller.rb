@@ -2,6 +2,15 @@ class TimeWindowsController < ApplicationController
 
   def show
     @time_window = TimeWindow.find params[:id]
+
+    if @time_window.end_time < Time.now
+      redirect_to offers_path
+    end
+  end
+
+  def time_remaining
+    time_window = TimeWindow.find params[:id]
+    {seconds: (time_window.end_time.to_i - Time.now.to_i)}.to_json
   end
 
   def create

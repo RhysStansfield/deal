@@ -4,7 +4,7 @@ Deal::Application.routes.draw do
 
   resources :offers do
     resources :charges
-    resources :time_windows, only: [:show, :create]
+    resources :time_windows, only: [:show, :create, :time_remaining]
   end
 
   resources :impressions

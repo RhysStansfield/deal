@@ -16,7 +16,7 @@ class OffersController < ApplicationController
 		@offer.business = current_user
 		@offer.business_id = current_user.id
 		@offer.save
-		redirect_to @offer
+		redirect_to dashboard_business_path(@offer.business)
 	end
 
 	def show
