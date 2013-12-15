@@ -9,3 +9,12 @@ end
 Given(/^I should see the page$/) do
   save_and_open_page
 end
+
+When(/^I follow "(.*?)"$/) do |link|
+  click_link link
+end
+
+When(/^I click sign out$/) do
+  click_link "Sign Out"
+  expect(page).to have_content "Signed out successfully"
+end
