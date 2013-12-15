@@ -15,25 +15,13 @@
   </head>
 
   <body cz-shortcut-listen="true">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Pinch</a></h1>
-        </li>
-      </ul>
 
-      <section class="top-bar-section">
-        <ul class="right">
+    <% if current_page?('/') %>
+      <%= render 'layouts/home_login' %>
+    <% else %>
+      <%= render 'layouts/login' %>
+    <% end %>
 
-          <%= render 'layouts/login' %>
-
-        </ul>
-
-        <ul class="left">
-          <li><a href="#"></a></li>
-        </ul>
-      </section>
-    </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

@@ -1,0 +1,32 @@
+<nav class="top-bar" data-topbar>
+	<div class="home_top_width">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">Pinch</a></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+        <ul class="right">
+					<% if user_signed_in?  %>
+					  <li>
+					    <%= link_to 'Participating Businesses', businesses_path %>
+					  </li>
+					  <li>
+					    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+					  </li>
+					  <li>
+					    <% if current_user.avatar.exists? %>
+					      <%= image_tag current_user.avatar.url(:tiny) %>
+					    <% end %>
+					  </li>
+					<% else %>
+					  <ul>
+					    <li class="active">
+					      <%= link_to 'Login', new_user_session_path %>
+					    </li>
+					  </ul>
+					<% end %>
+        </ul>
+    </section>
+	</div>
+</nav>

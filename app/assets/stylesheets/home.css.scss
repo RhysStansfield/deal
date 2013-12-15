@@ -7,6 +7,11 @@ body {
 	font-family: Open Sans;
 }
 
+.home_top_width {
+	width: 838px;
+	margin: 0 auto;	
+}
+
 .container {
 	width: 838px;
 	margin: 0 auto;
@@ -34,7 +39,7 @@ body {
 	border-left-style:solid;
 	border-left-width:2px;
 	float: right;
-	margin-right: 60px;
+	margin-right: 30px;
 	display: inline;
 }
 
@@ -49,6 +54,30 @@ body {
 	margin-left: 75px;	
 	margin-top: 15px;
 }
+
+.bus_signup_link a {
+	position: fixed;
+	padding: 16px;
+	text-align: center;
+	bottom: 0px;
+	background-color: #008dde;
+	/*border:thin double #008dde;*/
+	
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 45px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 280px;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+
 
 form fieldset input[type="text"], input[type="email"], input[type="password"] {
 	background: #e6e6e6;

@@ -955,9 +955,9 @@ $fieldset-margin: rem-calc(0);
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
+// $topbar-link-bg-hover: #272727;
+ $topbar-link-bg-active: #008dde;
+ $topbar-link-bg-active-hover: #008dde;
 // $topbar-link-font-family: $body-font-family;
 
 // $topbar-button-font-size: 0.75rem;
