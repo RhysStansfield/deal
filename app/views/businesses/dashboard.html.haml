@@ -35,12 +35,13 @@
     %td Ave. Time
     %td Total Revenue
     %td Active?
+    %td Archive
   - i = 0
   - @offers.each do |offer|
     %tr
       %td
         %a{:href => offer_path(offer)}= offer.product
-      %td= number_to_currency(offer.price)
+      %td= number_to_currency(offer.price, unit: "&pound;")
       %td= offer.users_time_availablity
       %td= @impressions[i].size
       %td= @impressions[i].map(&:user_id).uniq.size
@@ -55,4 +56,5 @@
           Yes
         - else 
           No
+      %td  
       - i += 1
