@@ -27,9 +27,8 @@
 
   %h1 
     Available Offers
-  - @offers.each do |offer|
-    - if current_customer.businesses.include? offer.business
-      = render partial: "offer", locals: { offer: offer }
+  - current_customer.eligible_offers.each do |offer|
+    = render partial: "offer", locals: { offer: offer }
 
 - else 
 

@@ -33,4 +33,20 @@ class Offer < ActiveRecord::Base
     conversions.size
   end
 
+  def active?
+    Time.now < self.available_to and Time.now > self.available_from
+  end
+
+  def eligible_for?(user)
+    window = self.time_windows.find_by(user: user)
+
+    if active?
+      return true if window.nil?
+      (window.end_time > Time.now)
+    else
+      return false
+    end
+
+  end
+
 end

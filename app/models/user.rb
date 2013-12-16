@@ -82,4 +82,12 @@ class User < ActiveRecord::Base
     end 
   end
 
+  def eligible_offers
+    offers_from_followed_businesses = businesses.map(&:offers).flatten
+
+    eligible = offers_from_followed_businesses.select do |offer|
+      offer.eligible_for?(self)
+    end
+  end
+
 end
