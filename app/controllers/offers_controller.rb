@@ -9,6 +9,7 @@ class OffersController < ApplicationController
 
 	def new
 		@offer = Offer.new
+		@offer.business = current_user
 	end
 
 	def create

@@ -47,7 +47,7 @@
 						<%= image_tag current_user.avatar.url(:tiny), :class => 'business_avatar_preview' %>
 					<% end %>
 				</div>
-				<div id="company_name_preview"><h4>Nike</h4></div>
+				<div id="company_name_preview"><h4><%= @offer.business.company_name %></h4></div>
 				<div id="price_review_buy"><h4><strong>£{{ price }}</strong></h4></div>
 			</div>
 			<div id="product_profile">
