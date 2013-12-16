@@ -37,23 +37,6 @@ class BusinessesController < ApplicationController
   def dashboard
   	@business = Business.find params[:id]
   	@offers = @business.offers
-  	@impressions = []
-  	@offers.each do |offer|
-  	  @impressions << offer.impressions
-  	end
-  	@clicks = []
-  	@offers.each do |offer|
-  	  @clicks << Click.find(:all, conditions: { offer_id: offer.id })
-  	end
-    @conversions = []
-    @offers.each do |offer|
-      @conversions << offer.conversions
-    end
-    @revenue = []
-    @offers.each do |offer|
-      @revenue << offer.price
-    end
-    # @total_revenue = @conversions.length * @offers.length
   end
 
   def sign_up_params
