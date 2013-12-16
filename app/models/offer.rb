@@ -21,15 +21,6 @@ class Offer < ActiveRecord::Base
     Time.now < self.available_to and Time.now > self.available_from
   end
 
-  def el
-
-    timewindow = TimeWindow.where(user_id: current_customer.id).where(offer_id: self.id)
-  end
-
-  def current_offer
-    self.time_windows.any? { |t| (t.end_time < Time.now) ? true : false }
-  end
-
   def eligible_for?(user)
     window = self.time_windows.find_by(user: user)
 
