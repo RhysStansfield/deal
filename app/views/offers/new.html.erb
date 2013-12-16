@@ -1,0 +1,72 @@
+<h1>Create New Deal</h1>
+<div id ="new_page">
+<div id="new_deal">
+	<%= form_for @offer do |f| %>
+	  <% if @offer.avatar.exists? %>
+	    <%= image_tag @offer.avatar.url(:large), class: 'uploaded-offer-photo' %>
+	  <% end %>
+	  <p>
+	    <%= f.file_field :avatar %>
+	    <br/>
+	  </p>
+	  <p>
+	    <%= f.text_field :product, { ng_model: 'product', placeholder: 'Product (Required)' } %>
+	  </p>
+	  <p>
+	    <%= f.text_area :product_description, { ng_model: 'product_description', placeholder: 'Description (Required)' } %>
+	  </p>
+	  <p>
+	    <%= f.number_field :price, { ng_model: 'price', placeholder: 'Price (Required)' } %>
+	  </p>
+	  <p>
+	    <%= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, max: 120, step: 1, placeholder: 'Customer Time Window (seconds)' }) %>
+	  </p>
+	  <p>
+	    <%= f.label :available_from, "When should the offer be available from?" %>
+	    <%= f.date_field(:available_from) %>
+	  </p>
+	  <p>
+	    <%= f.label :available_to, "When should the offer stop being available?" %>
+	    <%= f.date_field(:available_to) %>
+	  </p>
+	  <p>
+	    <%= f.submit "Activate Offer" %>
+	<% end %>
+</div>
+
+<div id="card_preview">
+	<div id="actual_card_div">
+		<div id="card_background">
+			<div id="time_bar">
+				<div id="actual_time_bar"></div>
+			</div>
+			<div id="offer_image_placeholder"></div>
+			<div id="offer_logo_name_price">
+				<div id="logo_preview"></div>
+				<div id="company_name_preview"><h4>Nike</h4></div>
+				<div id="price_review_buy"><h4><strong>£{{ price }}</strong></h4></div>
+			</div>
+			<div id="product_profile">
+				<div id="product_name_and_time">
+					<div id="product_name">{{ product }}</div>
+					<div id="product_time">{{ time }}s</div>
+				</div>
+				<div id="product_description">{{ product_description }}</div>
+				<div id="buy_now_button"><a href="#">Buy Now!</a></div>
+			</div>
+  		</div>
+  </div>
+</div>    
+
+<div id="new_card_footer">
+<%= link_to 'Back', :back %>
+</div>
+</div>
+
+
+
+
+<!-- These limited Space trainers were first seen in the 1968 movie 'I love you Space, but why you so dark?'.
+
+We at Nike have revisited the design this Christmas.
+They make the perfect gift! Buy them now! -->
