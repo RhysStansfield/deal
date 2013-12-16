@@ -1,5 +1,5 @@
-<h1>Create New Deal</h1>
 <div id ="new_page">
+	<h1>Create New Deal</h1>
 <div id="new_deal">
 	<%= form_for @offer do |f| %>
 	  <% if @offer.avatar.exists? %>
@@ -42,8 +42,12 @@
 			</div>
 			<div id="offer_image_placeholder"></div>
 			<div id="offer_logo_name_price">
-				<div id="logo_preview"></div>
-				<div id="company_name_preview"><h4>Nike</h4></div>
+				<div id="logo_preview">
+					<% if current_user.avatar.exists? %>
+						<%= image_tag current_user.avatar.url(:tiny), :class => 'business_avatar_preview' %>
+					<% end %>
+				</div>
+				<div id="company_name_preview"><h4><%= @offer.business.company_name %></h4></div>
 				<div id="price_review_buy"><h4><strong>£{{ price }}</strong></h4></div>
 			</div>
 			<div id="product_profile">

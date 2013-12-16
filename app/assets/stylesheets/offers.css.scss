@@ -75,13 +75,13 @@
 	box-shadow: inset 0px 0px 5px 0px #888888;*/
 }
 
-#logo_preview {
+/*#logo_preview {
 	width: 40px;
 	height: 40px;
-	background-color: #00ff00;
+	background-color: #f2f2f2;
 	float: left;
 	margin-left: 10px;
-	z-index: 2;
+	z-index: 4;
 	background-image: url('/assets/offer_test/nike_logo.png');
 	background-size: cover;
 	border-radius: 3px;
@@ -89,6 +89,35 @@
 	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
 	box-shadow: inset 0px 0px 5px 0px #888888;	
 }
+*/
+
+#logo_preview {
+	width: 40px;
+	height: 40px;
+	background-color: #f2f2f2;
+	float: left;
+	margin-left: 10px;
+	z-index: 4;
+	border-radius: 3px;
+	-moz-box-shadow: inset 0px 0px 5px 0px #888888;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
+	box-shadow: inset 0px 0px 5px 0px #888888;	
+}
+
+.business_avatar_preview {
+	width: 36px;
+	height: 36px;
+	background-color: #f2f2f2;
+	float: left;
+	margin-left: 2px;
+	margin-top: 2px;
+	z-index: 4;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 5px 0px #888888;
+	-moz-box-shadow: inset 0px 0px 5px 0px #888888;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
+}
+
 
 #company_name_preview {
 	width: 150px;
