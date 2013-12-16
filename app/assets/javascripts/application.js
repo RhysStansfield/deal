@@ -21,7 +21,7 @@
 function addOffersForBusiness(business) {
   business.offers.forEach(function(offer){
     var availableOffers = $('<div class="available" /div>')
-    availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<form action=" + offer.offer_path + " method='post'> <input type='submit' value='See offer'></form>")
+    availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
   $('.available_offers').prepend(availableOffers);
   });
 }

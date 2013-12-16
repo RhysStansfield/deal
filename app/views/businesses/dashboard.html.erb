@@ -17,7 +17,7 @@ Followers: <%= @business.total_followers %><br />
 
 
 <%= line_chart @all_statistics.map{|statistic|
-    {:name => statistic.name, :data => statistic.group_by_hour_of_day(:created_at).count }
+    {:name => statistic.name, :data => statistic.group_by_minute(:created_at).count }
 } %>
 
 
