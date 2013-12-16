@@ -19,8 +19,7 @@
 	    <%= f.number_field :price, { ng_model: 'price', placeholder: 'Price (Required)' } %>
 	  </p>
 	  <p>
-	    <%= f.label :users_time_availablity, "How long should customers get to buy the item? (in seconds)" %>
-	    <%= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, max: 120, step: 1 }) %>
+	    <%= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, max: 120, step: 1, placeholder: 'Customer Time Window (seconds)' }) %>
 	  </p>
 	  <p>
 	    <%= f.label :available_from, "When should the offer be available from?" %>
@@ -53,6 +52,7 @@
 					<div id="product_time">{{ time }}s</div>
 				</div>
 				<div id="product_description">{{ product_description }}</div>
+				<div id="buy_now_button"><a href="#">Buy Now!</a></div>
 			</div>
   		</div>
   </div>
@@ -62,3 +62,11 @@
 <%= link_to 'Back', :back %>
 </div>
 </div>
+
+
+
+
+<!-- These limited Space trainers were first seen in the 1968 movie 'I love you Space, but why you so dark?'.
+
+We at Nike have revisited the design this Christmas.
+They make the perfect gift! Buy them now! -->
