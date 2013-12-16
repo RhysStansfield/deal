@@ -13,6 +13,12 @@ Ave. Revenue/ Deal: <%= @business.average_revenue_per_deal %><br />
 Total Deals: <%= @business.total_offers %><br/ >
 Followers: <%= @business.total_followers %><br />
 </div>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+
+<%= line_chart @all_statistics.map{|statistic|
+    {:name => statistic.name, :data => statistic.group_by_hour_of_day(:created_at).count }
+} %>
 
 
 <table>
