@@ -46,6 +46,9 @@ gem 'stripe', github: 'stripe/stripe-ruby'
 gem 'dotenv-rails'
 gem 'facebox-rails'
 
+gem "chartkick"
+gem 'groupdate'
+
 group :production do
   gem 'rails_12factor'
 end

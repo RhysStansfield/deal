@@ -1,7 +1,11 @@
 class BusinessesController < ApplicationController
 
   def index
-    @businesses = Business.all
+    if request.xhr?
+      @businesses = current_user.businesses
+    else
+      @businesses = Business.all
+    end
   end
 
   def new
@@ -24,18 +28,14 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
-
-    if request.xhr?
-      render json: { new_follow_count: @business.customers.size,
-        follow_button_text: (@business.customers.include?(current_user) ? 'Unfollow' : 'Follow')
-      }
-    else
+    unless request.xhr?
       redirect_to businesses_path
     end
   end
 
   def dashboard
   	@business = Business.find params[:id]
+    @all_statistics = [Impression, Conversion, Click]
   	@offers = @business.offers
   	@impressions = []
   	@offers.each do |offer|

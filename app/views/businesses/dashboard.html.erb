@@ -13,6 +13,12 @@ Ave. Revenue/ Deal: <%= ((@revenue.inject{|sum,x| sum + x }) * @conversions.flat
 Total Deals: <%= @offers.count %><br/ >
 Followers: <%= @business.customers.length %><br />
 </div>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+
+<%= line_chart @all_statistics.map{|statistic|
+    {:name => statistic.name, :data => statistic.group_by_hour_of_day(:created_at).count }
+} %>
 
 
 <table>
@@ -44,4 +50,5 @@ Followers: <%= @business.customers.length %><br />
     <% i += 1 %>
   </tr>
   </div>
+
 <% end %>

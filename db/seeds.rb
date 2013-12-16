@@ -23,4 +23,3 @@ Business.create company_name: 'Virgin', email: 'ceo@virgin.com', password: '1234
 Business.create company_name: 'Apple', email: 'ceo@apple.com', password: '123456789', password_confirmation: '123456789', category_id: 3
 Business.create company_name: 'Wilson', email: 'ceo@wilson.com', password: '123456789', password_confirmation: '123456789', category_id: 7
 Business.create company_name: 'Adidas', email: 'ceo@adidas.com', password: '123456789', password_confirmation: '123456789', category_id: 7
-
