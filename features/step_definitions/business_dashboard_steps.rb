@@ -8,7 +8,7 @@ When(/^I log in$/) do
   business = Business.last
   fill_in 'Email', with: business.email
   fill_in 'Password', with: '12345678'
-  click_button 'Sign in'
+  click_button 'Login'
 end
 
 Then(/^I should see my dashboard$/) do
@@ -16,8 +16,10 @@ Then(/^I should see my dashboard$/) do
   expect(current_path).to eq dashboard_business_path(business.id)
 end
 
-When(/^A user visits the Offers page$/) do 
+When(/^A user visits the page for that offer$/) do 
   visit '/offers'
+  click_button 'Show/Change Preferences'
+  sleep 0.5
   check 'category_10'
   page.evaluate_script "$('.example-basic:first').trigger('inview')"
   sleep 0.5
@@ -33,7 +35,7 @@ Then(/^I should see the offer impressions increase by one$/) do
   business = Business.last
   fill_in 'Email', with: business.email
   fill_in 'Password', with: '12345678'
-  click_button 'Sign in'
+  click_button 'Login'
 
   expect(current_path).to eq dashboard_business_path(business.id)
   expect(page).to have_content 1

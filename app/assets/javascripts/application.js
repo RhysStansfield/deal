@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular
-//= require_tree .
+//= require_directory .
 
 $(".submittable").click(function() { 
     var form = $('form.edit_customer');
