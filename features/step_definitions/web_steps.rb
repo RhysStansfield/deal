@@ -11,6 +11,7 @@ Given(/^I should see the page$/) do
 end
 
 When(/^I follow "(.*?)"$/) do |link|
+  sleep 0.5
   click_link link
 end
 

@@ -17,15 +17,41 @@ $('.available').bind('inview', function(event, isInView, visiblePartX, visiblePa
 });
 
 
-$('.see-offer-link').click(function() {
-  console.log("clicked")
-  var offerId = $(this).data('id');
-  $.post( "/clicks", { "offer_id": offerId } );
-});
+
 
 
 
 $(document).ready(function() {
+    $('body').on('click', '.available_offers a', function(e) {
+      e.preventDefault();
+
+      if(!$(this).hasClass('click-logged')) {
+        e.stopPropagation();
+
+        var link = this;
+        var offerId = $(this).data('offer-id');
+
+        $.post( "/clicks", { "offer_id": offerId }, function(){
+          $(link).addClass('click-logged').trigger('click');
+        });
+      }
+
+    });
+          // $('.show-preferences').click(function(){                   
+          //   //make the collapse content to be shown or hide
+          //   var toggle_switch = $(this);
+          //   $('.preferences').toggle(function(){
+          //     if($(this).css('display')=='none'){
+          //                       //change the button label to be 'Show/Change Preferences'
+          //       toggle_switch.html('Show/Change Preferences');
+          //     }else{
+          //                       //change the button label to be 'Hide Preferences'
+          //       toggle_switch.html('Hide Preferences');
+          //     }
+          //   });
+          // });
+ 
+        // });
 
   if($('.available_offers').length) {
     $.get('/businesses.json', function(businesses) {
