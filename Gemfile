@@ -64,6 +64,7 @@ group :test, :development do
   gem 'capybara-email'
   gem 'brakeman', require: false
   gem 'launchy'
+  gem 'timecop'
   gem 'simplecov', require: false
 end
 

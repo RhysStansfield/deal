@@ -25,5 +25,10 @@ FactoryGirl.define do
   factory :with_offer, parent: :business do
     offers { Array.new(1) { FactoryGirl.create(:offer) } }
   end
+
+  factory :with_stats, parent: :business do
+    offers { Array.new(2) { FactoryGirl.create(:with_dashboard_stats) } }
+    customers { Array.new(1) { FactoryGirl.create(:customer) } }
+  end
   
 end
