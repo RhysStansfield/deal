@@ -1,0 +1,200 @@
+#business_container {
+	width: 838px;
+	margin: 0 auto;
+	margin-top: 0px;
+	padding-top: 10px;
+}
+
+#dashboard_top_bar {
+	height: 40px;
+	width: 100%;
+	margin-top: -3px;
+	background-color: #E6E6E6;
+	padding-top: 5px;
+}
+
+#dashboard_top_bar_content {
+	width: 838px;
+	margin: 0 auto;
+	line-height: 20px;
+}
+
+#dashboard_top_bar_content_left {
+	width: 400px;
+	padding-top: 2px;
+	float: left;
+	display: block;
+}
+
+#dashboard_top_bar_content_right {
+	float: right;
+	width: 438px;
+	text-align: right;
+}
+
+#business_tiles {
+	width: 100%;
+	height: 234px;
+}
+
+#business_tiles_rows1 {
+	margin-top: 16px;
+	height: 117px;
+	border-radius: 3px;
+}
+
+#business_tiles_rows2 {
+	margin-top: 6px;
+	height: 117px;
+	border-radius: 3px;
+}
+
+.tile_column {
+	float: left; 
+	margin-right: 26px;
+	border-radius: 3px;
+
+}
+
+.tile_width {
+	width: 190px;
+	height: 91px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 10px 0px #cccccc;
+	-webkit-box-shadow: 0px 0px 10px 0px #cccccc;
+	box-shadow: 0px 0px 10px 0px #cccccc;
+	/*background-color: #e6e6e6;*/
+}
+
+.last {
+	margin-right: 0px;
+	border-radius: 3px;
+}
+
+#business_tile_impressions {
+	border: #4285f4;
+	border-style:solid;
+	border-width:1px;	
+}
+
+#business_tile_clicks {
+	border: #db4437;
+	border-style:solid;
+	border-width:1px;		
+}
+
+#business_tile_ctr {
+	border: #f4b400;
+	border-style:solid;
+	border-width:1px;		
+}
+
+#business_tile_conversions {
+	border: #0f9d58;
+	border-style:solid;
+	border-width:1px;		
+}
+
+#business_tile_conv_click {
+	border: #4285f4;
+	border-style:solid;
+	border-width:1px;	
+}
+
+#business_tile_time {
+	border: #db4437;
+	border-style:solid;
+	border-width:1px;		
+}
+
+#business_tile_revenue {
+	border: #f4b400;
+	border-style:solid;
+	border-width:1px;		
+}
+
+#business_tile_revenue_deal {
+	border: #0f9d58;
+	border-style:solid;
+	border-width:1px;		
+}
+
+#tile_attribute_left {
+	float: left;
+	width: 120px;
+	height: 91px;
+	padding-left: 5px;
+}
+
+#tile_attribute_right {
+	float: right;
+	width: 65px;
+	height: 91px;
+}
+
+#tile_attribute_value {
+	width: 110px;
+	height: 51px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 42px;
+	font-weight: 100;
+	padding-top: 5px;
+	color: #4d4d4d;
+}
+
+#tile_attribute_metric {
+	width: 110px;
+	height: 15px;
+	margin-left: 10px;	
+	font-size: 12px;
+	color: #4d4d4d;	
+}
+
+#tile_attribute_picture_blue {
+	width: 60px;
+	height: 60px;
+	padding-top: 5px;
+	margin-right: 10px;
+	margin-top: 15px;
+	color: #4285f4;
+}
+
+#tile_attribute_picture_red {
+	width: 60px;
+	height: 60px;
+	padding-top: 5px;
+	margin-right: 10px;
+	margin-top: 15px;
+	color: #db4437;
+}
+
+#tile_attribute_picture_yellow {
+	width: 60px;
+	height: 60px;
+	padding-top: 5px;
+	margin-right: 10px;
+	margin-top: 15px;
+	color: #f4b400;
+}
+
+#tile_attribute_picture_green {
+	width: 60px;
+	height: 60px;
+	padding-top: 5px;
+	margin-right: 10px;
+	margin-top: 15px;
+	color: #0f9d58;
+}
+
+#js_chart {
+	width: 838px;
+}
+
+
+#individual_offer_stats {
+	width: 838px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 26px;
+}

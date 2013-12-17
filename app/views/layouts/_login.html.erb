@@ -1,0 +1,46 @@
+<nav class="top-bar">
+  <div class="home_top_width">
+    <ul class="title-area">
+      <li class="name">
+        <a href="/" class="pinch_logo"></a>
+        <!-- <h1><a href="/">PINCH</a></h1> -->
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <div>
+        <ul class="right">
+          <% if user_signed_in? %>
+            <% if current_customer %>
+              <li>
+                <%= link_to 'Explore', businesses_path %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to 'Dashboard', root_path %>
+              </li>
+              <% end %>
+            <li>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            </li>
+            <li>
+              <% if current_user.avatar.exists? %>
+                <%= image_tag current_user.avatar.url(:tiny) %>
+              <% end %>
+              <% if current_user.provider == "facebook" %>
+                <div class="fbpic">
+                  <img src="https://graph.facebook.com/<%= current_customer.uid %>/picture?width=40&height=40"/>
+                </div>
+              <% end %>
+            </li>
+          <% else %>
+            <ul>
+              <li class="active">
+                <%= link_to 'Login', new_user_session_path %>
+              </li>
+            </ul>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+  </div>
+</nav>
