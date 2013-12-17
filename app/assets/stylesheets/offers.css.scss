@@ -229,3 +229,32 @@
 #new_card_footer {
 	clear: both;
 }
+
+.offer_list {
+  width: 400px;
+  margin: -350px auto;
+ }
+
+ .offer_container {
+  width: 100%;
+ }
+
+ label {
+  display: inline;
+ }
+
+ h6 {
+  width: 300px;
+ }
+
+ .preferences {
+  width: 325px;
+  background: #ccc;
+  padding: 20px 30px;
+  margin-left: -325px;
+  transition: 1s margin-left ease;
+}
+
+.preferences.revealed {
+  margin-left: 0;
+}
