@@ -1,4 +1,5 @@
 json.new_follow_count @business.customers.size
+json.(@business, :id)
 
 if @business.customers.include?(current_user)
   json.follow_button_text 'Unfollow'

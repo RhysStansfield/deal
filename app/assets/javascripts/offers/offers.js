@@ -34,16 +34,9 @@ $(document).ready(function () {
   })
 });
 
-// http://patik.com/blog/within-viewport-javascript-and-jquery-plugin/
-// https://github.com/patik/within-viewport
-// http://www.appelsiini.net/projects/viewport
+$.get('/businesses.json', function(businesses) {
+  businesses.forEach(function(business) {
+    addOffersForBusiness(business);
+  })
+});
 
-
-// google search: jquery check if something is in the view
-// http://imakewebthings.com/jquery-waypoints/#get-started
-
-
-// THEN: page visibility api
-// https://github.com/protonet/jquery.inview
-// http://www.w3.org/TR/page-visibility/
-// http://www.samdutton.com/pageVisibility/

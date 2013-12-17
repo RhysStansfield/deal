@@ -37,7 +37,7 @@ Then(/^I should see the offer impressions increase by one$/) do
   fill_in 'Password', with: '12345678'
   click_button 'Login'
   expect(page).to have_content "Impressions: 1"
-end
+
 
 When(/^I visit the offer page and see that offer$/) do
   visit '/offers'
