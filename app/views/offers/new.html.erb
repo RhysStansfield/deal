@@ -18,6 +18,9 @@
 	  <p>
 	    <%= f.number_field :price, { ng_model: 'price', placeholder: 'Price (Required)' } %>
 	  </p>
+		<p>
+	    <%= f.number_field :RRP, { ng_model: 'RRP', placeholder: 'RRP (Required)' } %>
+	  </p>
 	  <p>
 	    <%= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, max: 120, step: 1, placeholder: 'Customer Time Window (seconds)' }) %>
 	  </p>

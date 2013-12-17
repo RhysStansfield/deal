@@ -12,8 +12,6 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
-
-
  .notice {
  	text-align: center;
  	background-color: #0F9D58;

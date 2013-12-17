@@ -3,7 +3,7 @@ Feature: Creating & Viewing an Offer
 	As a user who wants to see these offers
 	I want to view the offers all businesses have posted
 
-	@business_sign_in
+	@business_sign_in @javascript
 	Scenario: Creating a deal
 		Given I am on the create offer page
 		When I create an offer

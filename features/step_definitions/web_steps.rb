@@ -11,10 +11,15 @@ Given(/^I should see the page$/) do
 end
 
 When(/^I follow "(.*?)"$/) do |link|
+  sleep 0.5
   click_link link
 end
 
 When(/^I click sign out$/) do
   click_link "Sign Out"
   expect(page).to have_content "Signed out successfully"
+end
+
+Given(/^show me the page$/) do
+  save_and_open_page
 end

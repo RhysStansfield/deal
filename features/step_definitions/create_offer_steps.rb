@@ -1,8 +1,8 @@
 When(/^I create an offer$/) do
-  fill_in 'Product', with: "Fuelband"
-  fill_in 'Description', with: "Fitness tracker"
-  fill_in 'Price', with: 90
-  fill_in 'How long should customers get', with: 50
+  fill_in 'offer_product', with: "Fuelband"
+  fill_in 'offer_product_description', with: "Fitness tracker"
+  fill_in 'offer_price', with: 90
+  fill_in 'offer_users_time_availablity', with: 50
   date_now = DateTime.now.strftime('%d/%m/%Y')
   date_then = DateTime.new(2050,12,12).strftime('%d/%m/%Y')
   fill_in 'When should the offer be available from?', with: date_now
@@ -28,6 +28,7 @@ When(/^I follow the see offer link on the offers page$/) do
   sleep 0.5
   first(".follow").click
   visit '/offers'
+  sleep 0.5
   click_link 'See offer'
 end
 
@@ -48,4 +49,5 @@ When(/^I personalize my available offers$/) do
   sleep 0.5
   first(".follow").click
   visit '/offers'
+  sleep 0.5
 end
