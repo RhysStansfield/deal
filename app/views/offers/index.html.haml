@@ -3,15 +3,16 @@
   %button.show-preferences
     Show/Change Preferences
 
-  .preferences{:style=>"display:none;"}
+  .preferences
 
-    %h2
+    %h6
       Please select from the categories below
 
     = form_for current_customer do |f|
       - Category.all.each do |category|
-        = f.label :category_id, category.name, for: "category_#{category.id}"
         = check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' }
+        = f.label :category_id, category.name, for: "category_#{category.id}"
+        %br
                                                                  
     .businesses
       - @businesses.each do |business|
@@ -26,11 +27,14 @@
               - else
                 Follow
 
-  %h1 
-    Available Offers
-  / - current_customer.eligible_offers.each do |offer|
-  /   = render partial: "offer", locals: { offer: offer }
-  .available_offers
+
+  %div.offer_container              
+    %section.offer_list
+      %h1 
+        Available Offers
+      / - current_customer.eligible_offers.each do |offer|
+      /   = render partial: "offer", locals: { offer: offer }
+      .available_offers
 
 - else 
 

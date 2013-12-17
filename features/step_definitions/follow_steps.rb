@@ -8,12 +8,10 @@ When(/^I go to the participating businesses page$/) do
 end
 
 When(/^I follow Nike$/) do
-  find("form:first-of-type input[type='submit']").click
+  find("form:last-of-type input[type='submit']").click
+  sleep 0.5
 end
 
-Then(/^Nike should have "(.*?)" follower$/) do |arg1|
-  expect(page).to have_content 1 
-end
 
 Given(/^I have pressed follow Nike$/) do
   FactoryGirl.create(:business)
@@ -27,8 +25,11 @@ When(/^I press "(.*?)"$/) do |button|
   click_button button
 end
 
-Then(/^Nike should have "(.*?)" followers$/) do |arg1|
-  expect(page).not_to have_content 1
-  expect(page).to have_content 0
+Then(/^Nike should have 1 follower$/) do 
+  expect(page).to have_content(/Nike\d* 1/)
+end
+
+Then(/^Nike should have 0 followers$/) do 
+  expect(page).to have_content(/Nike\d* 0/)
 end
 
