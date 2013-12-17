@@ -12,3 +12,26 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+
+ .notice {
+ 	text-align: center;
+ 	background-color: #0F9D58;
+ 	line-height: 40px;
+ 	float: left;
+ 	width: 100%;
+ 	opacity: 0.8;
+ 	color: #fff;
+ 	margin: 0 auto;
+ }
+
+ .alert {
+ 	text-align: center;
+ 	background-color: #DB4437;
+ 	line-height: 40px;
+ 	float: left;
+ 	width: 100%;
+ 	opacity: 0.8;
+ 	color: #fff;
+ 	margin: 0 auto;
+ }

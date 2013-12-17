@@ -101,4 +101,61 @@ function removeOffers(business) {
 }
 
 
+// make flash notice disappear after 1.5 seconds
+
+setTimeout(function() {
+  $(".notice").slideUp().empty();
+}, 1500);
+
+setTimeout(function() {
+  $(".alert").slideUp().empty();
+}, 1500);
+
+// function preferences() {
+//   $('.available_offers').html('')
+
+//     data.offers.forEach(function(offer){
+//       var availableOffers = $('<div class="available" /div>')
+//       availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + offer.created_at);
+//     $('.available_offers').prepend(availableOffers);
+//     });
+//   };
+
+// var $offers = Offer.all
+
+// $('.available_offers').html('')
+
+//       offers.forEach(function(offer){
+//         var availableOffers = $('<div class="available" />')
+//         if (current_customer.businesses.include? offer.business){
+//           availableOffers.html(<%= render partial: "offer", locals: { offer: offer});
+//         }
+//           $('.available').append(availableOffers);
+
+
+
+
+// function follow() {
+//   $.get(url, function(data) {
+//     $('.follow').html('Follow');
+//   })
+// }
+
+// all customers in business array so we can count the size (business.customers.size)
+// business 
+
+// def follow(business)
+//     unless business.customers.include? self
+//       business.customers << self
+//     else
+//       business.customers.delete(self)
+//     end 
+//   end
+
+// $(document.createElement('div') {
+//   // $.get
+// });
+>>>>>>> 4b3a10fc23183f3697f90f73da0a9fd6516774cc
+
+
 
