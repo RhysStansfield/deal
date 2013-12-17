@@ -28,8 +28,8 @@
 
   %h1 
     Available Offers
-  - current_customer.eligible_offers.each do |offer|
-    = render partial: "offer", locals: { offer: offer }
+  / - current_customer.eligible_offers.each do |offer|
+  /   = render partial: "offer", locals: { offer: offer }
   .available_offers
 
 - else 

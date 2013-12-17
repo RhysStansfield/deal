@@ -20,9 +20,9 @@
 
 function addOffersForBusiness(business) {
   business.offers.forEach(function(offer){
-    var availableOffers = $('<div class="available" /div>')
-    availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
-  $('.available_offers').prepend(availableOffers);
+    var availableOffers = $('<div data-company-id=' + business.id + " " +' class="available" />')
+    availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+    $('.available_offers').prepend(availableOffers);
   });
 }
 
@@ -57,67 +57,18 @@ $('.businesses').on('click', '.follow', function() {
     $followerCount.text(data.new_follow_count);
     $button.text(data.follow_button_text);
 
-    // console.log(data.offers[0].company_name)
-    $('.available_offers').html('')
-    addOffersForBusiness(data)
-    
-
+    if(data.offers) {
+      console.log('adding offers')
+      addOffersForBusiness(data)
+    } else {
+      removeOffers(data)
+    }
   }); 
 });
 
-$.get('/businesses.json', function(businesses) {
-  businesses.forEach(function(business) {
-    addOffersForBusiness(business);
-  })
-});
+function removeOffers(business) {
+  $('[data-company-id=' + business.id +']').remove();
+}
 
 
-// function preferences() {
-//   $('.available_offers').html('')
-
-//     data.offers.forEach(function(offer){
-//       var availableOffers = $('<div class="available" /div>')
-//       availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + offer.created_at);
-//     $('.available_offers').prepend(availableOffers);
-//     });
-//   };
-
-// var $offers = Offer.all
-
-// $('.available_offers').html('')
-
-//       offers.forEach(function(offer){
-//         var availableOffers = $('<div class="available" />')
-//         if (current_customer.businesses.include? offer.business){
-//           availableOffers.html(<%= render partial: "offer", locals: { offer: offer});
-//         }
-//           $('.available').append(availableOffers);
-
-
-
-
-// function follow() {
-//   $.get(url, function(data) {
-//     $('.follow').html('Follow');
-//   })
-// }
-
-// all customers in business array so we can count the size (business.customers.size)
-// business 
-
-// def follow(business)
-//     unless business.customers.include? self
-//       business.customers << self
-//     else
-//       business.customers.delete(self)
-//     end 
-//   end
-
-// $(document.createElement('div') {
-//   // $.get
-// });
-
-// $('selector').on('click', function() {
-
-// })
 

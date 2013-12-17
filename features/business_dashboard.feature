@@ -16,7 +16,7 @@ Feature: Having a business dashboard to monitor
     Then I should see the offer impressions increase by one
 
 
-  @wip
+  @wip 
   Scenario: Not seeing impressions for business users
     Given I have added an offer
     When I visit the page for that offer
