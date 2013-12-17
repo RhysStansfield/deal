@@ -3,6 +3,9 @@ Feature: Having a business dashboard to monitor
   In order to see how my deals are doing
   I need a dashboard
 
+  Background: An offer already exists
+        Given I have added an offer
+
   @business_sign_in
   Scenario: Viewing the dashboard
     Given I have signed up as a business
@@ -11,13 +14,11 @@ Feature: Having a business dashboard to monitor
 
   @sign_in @javascript
   Scenario: Seeing impressions
-    Given I have added an offer
-    When A user visits the page for that offer
+    When a user visits the offers page and sees that offer
     Then I should see the offer impressions increase by one
 
 
-  @wip 
+  @business_sign_in @javascript 
   Scenario: Not seeing impressions for business users
-    Given I have added an offer
-    When I visit the page for that offer
+    When I visit the offer page and see that offer
     Then I should not see the offer impressions increase by one
