@@ -72,6 +72,16 @@ $.get('/businesses.json', function(businesses) {
 });
 
 
+// make flash notice disappear after 1.5 seconds
+
+setTimeout(function() {
+  $(".notice").slideUp().empty();
+}, 1500);
+
+setTimeout(function() {
+  $(".alert").slideUp().empty();
+}, 1500);
+
 // function preferences() {
 //   $('.available_offers').html('')
 
