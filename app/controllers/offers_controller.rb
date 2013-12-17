@@ -7,6 +7,11 @@ class OffersController < ApplicationController
 		@businesses = Business.all
 	end
 
+	def index2
+		@offers = Offer.all
+		@businesses = Business.all
+	end
+
 	def new
 		@offer = Offer.new
 		@offer.business = current_user
