@@ -4,11 +4,16 @@ Deal::Application.routes.draw do
 
   resources :offers do
     resources :charges
-    resources :time_windows, only: [:show, :create, :time_remaining]
+    resources :time_windows, only: [:show, :create] do
+      member do
+        get :time_remaining
+      end
+    end
   end
 
   resources :impressions
   resources :clicks
+  resources :conversions
   
   resources :businesses do
     member do
@@ -20,7 +25,7 @@ Deal::Application.routes.draw do
 
   resources :customers 
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks", registrations: "registrations" }
 
   
   # devise_scope :user do

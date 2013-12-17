@@ -12,7 +12,7 @@ class TimeWindow < ActiveRecord::Base
     if offer_length > 120
       self.end_time = 120.seconds.from_now
     else
-      self.end_time = offer_length.seconds.from_now
+      self.end_time = (offer_length+200.seconds).from_now
     end
     save
   end
