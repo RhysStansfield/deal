@@ -1,4 +1,4 @@
-$('.example-basic').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
+$('.available').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
   if (isInView) {
     // element is now visible in the viewport
     if (visiblePartY == 'top') {
@@ -28,6 +28,12 @@ $.get('/businesses.json', function(businesses) {
   businesses.forEach(function(business) {
     addOffersForBusiness(business);
   })
+});
+
+$(document).ready(function() {
+  $.get('/offers.json', function(businesses) {
+      addOffersForBusiness(businesses);
+  });
 });
 
 $(document).ready(function() {

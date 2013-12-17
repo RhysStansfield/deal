@@ -18,13 +18,43 @@
 //= require chartkick
 //= require_directory .
 
+// function filterByTime(business) {
+//   business.offers.forEach(function(offer){
+//     var beginningTime = offer.start_at;
+//     var endTime = offer.end_at;
+//     var timeNow = new Date().getTime();
+//     console.log(timeNow/1000);
+//     console.log(beginningTime);
+
+//     if(timeNow >= beginningTime && timeNow <= endTime) {
+//       availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+//       $('.available_offers').prepend(availableOffers);
+//     }
+//   });
+// };
+
+// function timeFiltering(offer) {
+
+// }
+
+
 function addOffersForBusiness(business) {
-  business.offers.forEach(function(offer){
+  $('.available_offers').html('');
+  business.offers.forEach(function(offer) {
     var availableOffers = $('<div data-company-id=' + business.id + " " +' class="available" />')
-    availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
-    $('.available_offers').prepend(availableOffers);
+    var beginningTime = offer.start_at;
+    var endTime = offer.end_at;
+    var timeNow = new Date().getTime() / 1000;
+    console.log(timeNow);
+    console.log(beginningTime);
+
+    if((timeNow >= beginningTime) && (timeNow <= endTime)) {
+      availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+      $('.available_offers').prepend(availableOffers);
+    }
   });
 }
+
 
 $(".submittable").click(function() { 
   var form = $('form.edit_customer');
@@ -56,12 +86,12 @@ $('.businesses').on('click', '.follow', function() {
   $.post(url, function(data) {
     $followerCount.text(data.new_follow_count);
     $button.text(data.follow_button_text);
-
     if(data.offers) {
       console.log('adding offers')
+      console.log(data.offers)
       addOffersForBusiness(data)
     } else {
-      removeOffers(data)
+      $('.available_offers').html('');
     }
   }); 
 });

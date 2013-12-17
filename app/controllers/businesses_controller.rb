@@ -28,9 +28,17 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
+    @offers = customer.businesses.map(&:offers).flatten
+    
+
     unless request.xhr?
       redirect_to businesses_path
     end
+  end
+
+  def follow_data
+    @business = Business.find params[:id]
+    render template: 'businesses/follow.jbuilder'
   end
 
   def dashboard

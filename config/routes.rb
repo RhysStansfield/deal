@@ -13,6 +13,7 @@ Deal::Application.routes.draw do
   resources :businesses do
     member do
       post :follow
+      get :follow_data
       get :dashboard
     end
   end
