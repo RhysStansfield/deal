@@ -11,10 +11,11 @@ class Offer < ActiveRecord::Base
   validates :available_to, presence: true
   validates :price, presence: true
   validates :product, presence: true
-  validates :product_description, presence: true
+  validates :RRP, presence: true
+  validates :product_description, presence: true, length: {minimum: 5, maximum: 320}
 
   has_attached_file :avatar, styles: {
-    large: "500x500>", medium: "300x300>", thumb: "100x100>"
+    large: "430x230>"
   }
 
   def num_of_impressions
@@ -31,6 +32,10 @@ class Offer < ActiveRecord::Base
 
   def num_of_conversions
     conversions.size
+  end
+
+  def average_time_to_conversion
+    conversions.average(:time_taken_to_buy)
   end
 
   def active?

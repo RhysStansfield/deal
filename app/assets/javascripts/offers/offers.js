@@ -17,13 +17,24 @@ $('.example-basic').bind('inview', function(event, isInView, visiblePartX, visib
 });
 
 
-$('.see-offer-link').click(function() {
-  console.log("clicked")
-  var offerId = $(this).data('id');
-  $.post( "/clicks", { "offer_id": offerId } );
-});
+
 
 $(document).ready(function() {
+    $('body').on('click', '.available_offers a', function(e) {
+      e.preventDefault();
+
+      if(!$(this).hasClass('click-logged')) {
+        e.stopPropagation();
+
+        var link = this;
+        var offerId = $(this).data('offer-id');
+
+        $.post( "/clicks", { "offer_id": offerId }, function(){
+          $(link).addClass('click-logged').trigger('click');
+        });
+      }
+
+    });
           $('.show-preferences').click(function(){                   
             //make the collapse content to be shown or hide
             var toggle_switch = $(this);

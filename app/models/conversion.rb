@@ -5,7 +5,7 @@ class Conversion < ActiveRecord::Base
   
   def self.conv_per_click conversions, clicks
   	return 0 if conversions == 0 || clicks == 0
-  	conversions.to_f / clicks.to_f
+  	clicks.to_f / conversions.to_f
   end
 
   def self.total_conversions business
@@ -27,7 +27,4 @@ class Conversion < ActiveRecord::Base
     return 0 if conversions == 0 || price == 0
     conversions.to_f * price.to_f
   end
-
-
-
 end

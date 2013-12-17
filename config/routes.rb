@@ -13,6 +13,7 @@ Deal::Application.routes.draw do
 
   resources :impressions
   resources :clicks
+  resources :conversions
   
   resources :businesses do
     member do

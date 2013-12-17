@@ -5,6 +5,7 @@ json.array! @businesses do |business|
     json.(business, :id, :company_name)
     json.follow_button_text 'Unfollow'
     json.offers business.offers do |offer|
+      json.(offer, :id)
       json.created_at time_ago_in_words(offer.created_at) + ' ago'
       json.company_name business.company_name
       json.offer_path offer_time_windows_path(offer)

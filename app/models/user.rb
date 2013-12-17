@@ -90,4 +90,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def time_taken_to_buy_last_offer
+    Time.now - clicks.last.created_at
+  end
+
 end

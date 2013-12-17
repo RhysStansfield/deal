@@ -18,7 +18,7 @@
 
     / el" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}
     %script{:src => "https://checkout.stripe.com/checkout.js"}
-    %button#customButton Purchase
+    %button#stripeButton{:"data-id" => @offer.id } Purchase
     :javascript
       var handler = StripeCheckout.configure({
         key: "#{ ENV['STRIPE_PUBLISHABLE_KEY'] }",
@@ -27,7 +27,7 @@
         }
       });
 
-      document.getElementById('customButton').addEventListener('click', function(e) {
+      document.getElementById('stripeButton').addEventListener('click', function(e) {
         // Open Checkout with further options
         handler.open({
           name: 'Pinch',
@@ -35,6 +35,5 @@
           amount: #{(@time_window.offer.price * 100).to_i},
           currency: 'GBP'
         });
-        console.log('Checkout started')
         e.preventDefault();
       });

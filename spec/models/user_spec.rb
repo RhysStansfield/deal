@@ -8,4 +8,8 @@ describe User do
     expect(customer.type).to eq "Customer"
   end
 
+  it "blah" do
+    raise User.methods.inspect
+  end
+
 end

@@ -3,6 +3,7 @@ class TimeWindowsController < ApplicationController
   def show
     redirect_if_business
     @time_window = TimeWindow.find params[:id]
+    @offer = @time_window.offer
 
     if @time_window.end_time < Time.now
       redirect_to offers_path
