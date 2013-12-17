@@ -1,0 +1,56 @@
+<h1>Welcome to your Dashboard :: <%= @business.company_name %></h1>
+
+<h5><%= link_to "Create New Deal", new_offer_path %></h5>
+<div style="height:210px; padding-left:20px; background-color: #ddd; line-height:16pt;">
+Impressions: <%= @business.total_impressions %><br />
+Clicks: <%= @business.total_clicks %><br />
+Conversions: <%= @business.total_conversions %><br/>
+Conv./Click: <%= @business.total_conversions_per_click %><br/>
+Click Thru: <%= @business.total_click_thrus %><br />
+Ave. Time: <br />
+Total Revenue: <%= @business.total_revenue %><br />
+Ave. Revenue/ Deal: <%= @business.average_revenue_per_deal %><br />
+Total Deals: <%= @business.total_offers %><br/ >
+Followers: <%= @business.total_followers %><br />
+</div>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+
+<%= line_chart @all_statistics.map{|statistic|
+    {:name => statistic.name, :data => statistic.group_by_minute(:created_at).count }
+} %>
+
+
+<table>
+  <tr>
+  	<td>Offer</td>
+    <td>Price</td>
+    <td>View Seconds</td>
+  	<td>Impressions</td>
+  	<td>Unique Impressions</td>
+  	<td>Clicks</td>
+    <td>Conversions</td>
+    <td>Conv./Click</td>
+    <td>Click Thru</td>
+    <td>Ave. Time</td>
+    <td>Total Revenue</td>
+    <td>Active?</td>
+
+
+  </tr>
+<% @offers.each do |offer| %>
+  <tr>
+  	<td><a href="<%= offer_path(offer) %>"><%= offer.product %></a></td>
+    <td><%= number_to_currency(offer.price, unit: "&pound;") %></td>
+    <td><%= offer.users_time_availablity %></td>
+    <td><%= @business.impressions_for(offer) %></td>
+    <td><%= @business.unique_impressions_for(offer) %></td>
+		<td><%= @business.clicks_for(offer) %></td>
+    <td><%= @business.conversions_for(offer) %></td>
+    <td><%= @business.conversions_per_click_for(offer) %></td>
+    <td><%= @business.click_thrus_for(offer) %></td>
+    <td>James</td>
+    <td><%= @business.total_revenue_for(offer) %></td>
+    <td><%= offer.active? ? "Yes" : "No" %></td>
+  </tr>
+<% end %>

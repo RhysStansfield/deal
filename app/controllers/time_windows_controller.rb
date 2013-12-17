@@ -1,5 +1,5 @@
 class TimeWindowsController < ApplicationController
-
+ skip_before_filter :verify_authenticity_token 
   def show
     redirect_if_business
     @time_window = TimeWindow.find params[:id]

@@ -14,27 +14,37 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular
-//= require_tree .
+//= require jsapi 
+//= require chartkick
+//= require_directory .
+
+function addOffersForBusiness(business) {
+  business.offers.forEach(function(offer){
+    var availableOffers = $('<div class="available" /div>')
+    availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+  $('.available_offers').prepend(availableOffers);
+  });
+}
 
 $(".submittable").click(function() { 
-    var form = $('form.edit_customer');
-    var url = form.attr("action");
+  var form = $('form.edit_customer');
+  var url = form.attr("action");
 
-    $.post(url, form.serialize(), function(data) {
+  $.post(url, form.serialize(), function(data) {
 
-      $('.businesses').html('')
+    $('.businesses').html('')
 
-      data.forEach(function(business) {
-        var businessElem = $('<div class="business"/>')
-        businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
-        businessElem.append(
-          $('<button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>')
-        )
+    data.forEach(function(business) {
+      var businessElem = $('<div class="business"/>')
+      businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
+      businessElem.append(
+        $('<button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>')
+      )
 
-        $('.businesses').append(businessElem);
-      })
+      $('.businesses').append(businessElem);
+    })
 
-    }, 'json');
+  }, 'json');
 
 });
 
@@ -46,19 +56,45 @@ $('.businesses').on('click', '.follow', function() {
   $.post(url, function(data) {
     $followerCount.text(data.new_follow_count);
     $button.text(data.follow_button_text);
-  });
-  
 
+    // console.log(data.offers[0].company_name)
+    $('.available_offers').html('')
+    addOffersForBusiness(data)
+    
 
-
-  // var customer = this.data("customer")
-
-  // if($(this).val() === "Follow") {
-  //   $.post(url, customer.serialize(), function(data) {
-  //     data.forEach(function())
-  //   });
-  // }
+  }); 
 });
+
+$.get('/businesses.json', function(businesses) {
+  businesses.forEach(function(business) {
+    addOffersForBusiness(business);
+  })
+});
+
+
+// function preferences() {
+//   $('.available_offers').html('')
+
+//     data.offers.forEach(function(offer){
+//       var availableOffers = $('<div class="available" /div>')
+//       availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + offer.created_at);
+//     $('.available_offers').prepend(availableOffers);
+//     });
+//   };
+
+// var $offers = Offer.all
+
+// $('.available_offers').html('')
+
+//       offers.forEach(function(offer){
+//         var availableOffers = $('<div class="available" />')
+//         if (current_customer.businesses.include? offer.business){
+//           availableOffers.html(<%= render partial: "offer", locals: { offer: offer});
+//         }
+//           $('.available').append(availableOffers);
+
+
+
 
 // function follow() {
 //   $.get(url, function(data) {

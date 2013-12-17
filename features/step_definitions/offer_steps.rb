@@ -37,7 +37,7 @@ Then(/^sign in as a business and visit the time window url$/) do
   visit '/users/sign_in'
   fill_in 'Email', with: business.email
   fill_in 'Password', with: business.password
-  click_button 'Sign in'
+  click_button 'Login'
   expect(current_path).to eq dashboard_business_path(business.id)
   expect(page).to have_content 'Signed in successfully'
   visit offer_time_window_path(Offer.last.id, TimeWindow.last.id)
