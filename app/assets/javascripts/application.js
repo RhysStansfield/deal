@@ -39,17 +39,20 @@
 
 
 function addOffersForBusiness(business) {
-  $('.available_offers').html('');
+  // $('.available_offers').html('');
   business.offers.forEach(function(offer) {
+    console.log(offer)
     var availableOffers = $('<div data-company-id=' + business.id + " " +' class="available" />')
     var beginningTime = offer.start_at;
     var endTime = offer.end_at;
-    var timeNow = new Date().getTime() / 1000;
+    var timeNow = new Date().getTime();
     console.log(timeNow);
-    console.log(beginningTime);
+    // console.log(Date.parse(beginningTime));
+    // console.log(Date.parse(endTime);
 
-    if((timeNow >= beginningTime) && (timeNow <= endTime)) {
-      availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+    if(timeNow >= Date.parse(beginningTime) && timeNow <= Date.parse(endTime)) {
+      console.log("Hello")
+      availableOffers.append('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
       $('.available_offers').prepend(availableOffers);
     }
   });
@@ -91,7 +94,7 @@ $('.businesses').on('click', '.follow', function() {
       console.log(data.offers)
       addOffersForBusiness(data)
     } else {
-      $('.available_offers').html('');
+      removeOffers(data);
     }
   }); 
 });

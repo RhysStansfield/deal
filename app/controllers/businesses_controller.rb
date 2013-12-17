@@ -28,7 +28,7 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
-    @offers = customer.businesses.map(&:offers).flatten
+    @offers = @business.offers
     
 
     unless request.xhr?

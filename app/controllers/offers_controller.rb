@@ -6,8 +6,6 @@ class OffersController < ApplicationController
 		@offers = Offer.all
 		@businesses = Business.all
 		# if request.xhr?
-		@customer_offers = current_customer.businesses.map(&:offers).flatten
-
 	end
 
 	def new

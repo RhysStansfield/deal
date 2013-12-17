@@ -24,16 +24,21 @@ $('.see-offer-link').click(function() {
 });
 
 
-$.get('/businesses.json', function(businesses) {
-  businesses.forEach(function(business) {
-    addOffersForBusiness(business);
-  })
-});
 
 $(document).ready(function() {
-  $.get('/offers.json', function(businesses) {
-      addOffersForBusiness(businesses);
-  });
+
+  if($('.available_offers').length) {
+    $.get('/businesses.json', function(businesses) {
+      businesses.forEach(function(business) {
+        console.log(business.company_name)
+        addOffersForBusiness(business);
+      })
+    });
+  }
+
+  // $.get('/offers.json', function(businesses) {
+  //     addOffersForBusiness(businesses);
+  // });
 });
 
 // $(document).ready(function() {
