@@ -28,6 +28,7 @@ When(/^I follow the see offer link on the offers page$/) do
   sleep 0.5
   first(".follow").click
   visit '/offers'
+  sleep 0.5
   click_link 'See offer'
 end
 
@@ -48,4 +49,5 @@ When(/^I personalize my available offers$/) do
   sleep 0.5
   first(".follow").click
   visit '/offers'
+  sleep 0.5
 end
