@@ -24,8 +24,6 @@ When(/^A user visits the page for that offer$/) do
   page.evaluate_script "$('.example-basic:first').trigger('inview')"
   sleep 0.5
   first(".follow").click
-  page.evaluate_script "$('.example-basic:first').trigger('inview')"
-  sleep 0.5
   expect(page).to have_content Business.last.company_name
   click_link 'Sign Out'
 end
@@ -36,7 +34,6 @@ Then(/^I should see the offer impressions increase by one$/) do
   fill_in 'Email', with: business.email
   fill_in 'Password', with: '12345678'
   click_button 'Login'
-
   expect(current_path).to eq dashboard_business_path(business.id)
   expect(page).to have_content 1
 end
