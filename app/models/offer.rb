@@ -17,4 +17,36 @@ class Offer < ActiveRecord::Base
     large: "500x500>", medium: "300x300>", thumb: "100x100>"
   }
 
+  def num_of_impressions
+    impressions.size
+  end
+
+  def unique_impressions
+    impressions.map(&:user_id).uniq.size
+  end
+
+  def num_of_clicks
+    clicks.size
+  end
+
+  def num_of_conversions
+    conversions.size
+  end
+
+  def active?
+    Time.now < self.available_to and Time.now > self.available_from
+  end
+
+  def eligible_for?(user)
+    window = self.time_windows.find_by(user: user)
+
+    if active?
+      return true if window.nil?
+      (window.end_time > Time.now)
+    else
+      return false
+    end
+
+  end
+
 end

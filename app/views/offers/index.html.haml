@@ -17,7 +17,8 @@
       - @businesses.each do |business|
         .business
           - if current_customer.category_ids.include? business.category_id
-            %span.follower_count= business.customers.length
+            %span.follower_count
+              = business.customers.length
             = business.company_name
             %button.follow{ data: { id: business.id, customer: current_customer.id } }
               - if current_customer.businesses.include?(business)
@@ -27,9 +28,9 @@
 
   %h1 
     Available Offers
-  - @offers.each do |offer|
-    - if current_customer.businesses.include? offer.business
-      = render partial: "offer", locals: { offer: offer }
+  - current_customer.eligible_offers.each do |offer|
+    = render partial: "offer", locals: { offer: offer }
+  .available_offers
 
 - else 
 

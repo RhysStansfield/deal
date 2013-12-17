@@ -3,12 +3,13 @@ class OffersController < ApplicationController
 	helper_method :already_checked?
 
 	def index
-		@offers = Offer.all #.order("offers.created_at desc")
+		@offers = Offer.all
 		@businesses = Business.all
 	end
 
 	def new
 		@offer = Offer.new
+		@offer.business = current_user
 	end
 
 	def create
