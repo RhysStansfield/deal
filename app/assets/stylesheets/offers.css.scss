@@ -317,9 +317,30 @@ input[type="radio"] + label {
 	visibility: hidden;
 }
 
+.follower_count_discover {
+
+}
+
+#search_discover {
+	margin-top: 30px;
+}
+
 .business {
 	width: 172px;
 	background-color: #e6e6e6;
+}
+
+.businesses_discover {
+	width: 205px;
+	margin: 0 auto;
+	background-color: #f2f2f2;
+	margin-top: -10px;
+}
+
+.business_discover {
+	width: 202px;
+	background-color: #f2f2f2;
+	height: 50px;
 }
 
 #name_and_follow {
@@ -337,6 +358,16 @@ input[type="radio"] + label {
 	float: left;
 	padding-top: 20px;
 	padding-left: 5px;
+}
+
+#name_for_follow_discover {
+	width: 100px;
+	height: 40px;
+	background-color: #fff;
+	float: left;
+	padding-top: 15px;
+	padding-left: 5px;
+	font-size: 12px;
 }
 
 #follow_for_follow {
@@ -367,6 +398,11 @@ input[type="radio"] + label {
 	border-color: #4285f4;
 	color: #4285f4;
 
+}
+
+.follow:hover {
+	background-color: #4285f4;
+	color: #fff;
 }
 
 /*.awesome_follow {
