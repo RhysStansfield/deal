@@ -41,7 +41,7 @@ class BusinessesController < ApplicationController
     
 
     unless request.xhr?
-      redirect_to businesses_path
+      redirect_to discover_path
     end
   end
 
