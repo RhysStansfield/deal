@@ -12,12 +12,23 @@ object,
 embed {
 	width: 40px;
 	height: 40px;
-	margin-top: 2px;
+	margin-top: -2px;
 	margin-right: 2px;
 	border-radius: 3px;
 		-moz-box-shadow: 0px 0px 1px 0px #222222;
 	-webkit-box-shadow: 0px 0px 1px 0px #222222;
 	box-shadow: 0px 0px 1px 0px #222222;
+}
+
+.top-bar {
+	height: 46px;
+}
+
+
+.top-bar-section li a:not(.button) {
+padding: 0 15px;
+line-height: 46px;
+background: #333333;
 }
 
 .splash_image {
