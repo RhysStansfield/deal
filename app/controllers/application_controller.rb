@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     if current_user.type == "Business"
       dashboard_path
     else
-      offers_path
+      deals_path
     end
   end
 

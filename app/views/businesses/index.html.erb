@@ -1,0 +1,36 @@
+<div id="container">
+<div id="search_discover">
+	<%= form_for("/discover", method: "get") do |f| %>
+  	<%= f.text_field :search, { placeholder: 'Search Brands', autofocus: true}  %>
+<% end %>
+</div>
+
+<div class="businesses_discover">
+	<% @businesses.each do |business| %>
+		<div class="business_discover">
+				<span class="follower_count">
+					<%= business.customers.length %>
+				</span>
+				<div id="name_and_follow">
+					<div id="avatar_for_follow">
+						<img src="<%= business.avatar.url(:thumb) %>" class="follow_avatar">
+					</div>
+					<div id="name_for_follow_discover">
+						<%= business.company_name %>
+					</div>
+					<div id="follow_for_follow">
+					<button class="follow" data-id="<%= business.id %>" data-customer="<%=current_customer.id %>">
+						<% if current_customer.businesses.include?(business) %>
+							Unfollow
+							<!-- <div id="follow_button_for_follow"><i class="fa fa-minus-square fa-3x awesome_unfollow"></i></div> -->
+						<% else %>
+							Follow
+							<!-- <div id="follow_button_for_follow"><i class="fa fa-plus-square-o fa-3x awesome_follow"></i></div> -->
+						<% end %>
+					</button>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</div>
+</div>

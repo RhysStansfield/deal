@@ -40,7 +40,7 @@
 
 
 function addOffersForBusiness(business) {
-// <<<<<<< HEAD
+
   business.offers.forEach(function(offer) {
     var mustache = $('#stream-offer').html();
 
@@ -64,6 +64,7 @@ function addOffersForBusiness(business) {
   //   availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post' data-offer-id=" + offer.id + "> See offer</a>")
   // $('.available_offers').prepend(availableOffers);
   // });
+
 // =======
 //   business.offers.forEach(function(offer){
 //     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
@@ -86,11 +87,9 @@ $(".submittable").click(function() {
 
     data.forEach(function(business) {
       var businessElem = $('<div class="business"/>')
-      businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
+      // businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
       businessElem.append(
-        $('<button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>')
-      )
-
+        $('<div id="name_and_follow"><div id="avatar_for_follow"><img src="/assets/offer_test/nike_logo.png" class="follow_avatar"></div><div id="name_for_follow">' + business.name + '</div><div id="follow_for_follow"><button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>'))
       $('.businesses').append(businessElem);
     })
 

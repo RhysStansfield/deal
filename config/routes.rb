@@ -27,6 +27,10 @@ Deal::Application.routes.draw do
 
   get '/dashboard' => "businesses#dashboard"
 
+  get '/discover' => "businesses#index"
+
+  get '/deals' => "offers#index"
+
   resources :customers 
   
   devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks", registrations: "registrations" }
