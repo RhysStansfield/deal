@@ -21,6 +21,7 @@
  	opacity: 0.8;
  	color: #fff;
  	margin: 0 auto;
+ 	position: absolute;
  }
 
  .alert {
@@ -32,4 +33,5 @@
  	opacity: 0.8;
  	color: #fff;
  	margin: 0 auto;
+ 	 position: absolute;
  }

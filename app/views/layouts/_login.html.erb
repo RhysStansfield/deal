@@ -1,4 +1,5 @@
-<nav class="top-bar">
+
+<nav class="top-bar" data-topbar>
   <div class="home_top_width">
     <ul class="title-area">
       <li class="name">
@@ -6,23 +7,20 @@
         <!-- <h1><a href="/">PINCH</a></h1> -->
       </li>
     </ul>
-    <section class="top-bar-section">
-      <div>
-        <ul class="right">
-          <% if user_signed_in? %>
-            <% if current_customer %>
-              <li>
-                <%= link_to 'Explore', businesses_path %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to 'Dashboard', root_path %>
-              </li>
-              <% end %>
+    <section class="top-bar-section right-dropdown">
+      <ul class="right">
+        <% if user_signed_in? %>
+          <% if current_customer %>
             <li>
-              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+              <%= link_to 'Explore', businesses_path %>
             </li>
+          <% else %>
             <li>
+              <%= link_to 'Dashboard', root_path %>
+            </li>
+            <% end %>
+          <li class="has-dropdown">
+            <a href="#">
               <% if current_user.avatar.exists? %>
                 <%= image_tag current_user.avatar.url(:tiny) %>
               <% end %>
@@ -31,16 +29,19 @@
                   <img src="https://graph.facebook.com/<%= current_customer.uid %>/picture?width=40&height=40"/>
                 </div>
               <% end %>
-            </li>
-          <% else %>
-            <ul>
-              <li class="active">
-                <%= link_to 'Login', new_user_session_path %>
-              </li>
+            </a>
+            <ul class="dropdown">
+              <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             </ul>
-          <% end %>
-        </ul>
-      </div>
+          </li>
+        <% else %>
+          <ul>
+            <li class="active">
+              <%= link_to 'Login', new_user_session_path %>
+            </li>
+          </ul>
+        <% end %>
+      </ul>
     </section>
   </div>
 </nav>

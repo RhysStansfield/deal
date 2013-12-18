@@ -128,6 +128,14 @@ setTimeout(function() {
   $(".alert").slideUp().empty();
 }, 1500);
 
+$(document).foundation();
+var dropdown = $('.right-dropdown').remove()
+dropdown.appendTo('.home_top_width');
+// $(".top-bar").css("width","838");
+// $(".top-bar").css("margin","0 auto");
+
+
+
 // function preferences() {
 //   $('.available_offers').html('')
 
