@@ -16,6 +16,7 @@
 //= require angular
 //= require jsapi 
 //= require chartkick
+//= require mustache
 //= require_directory .
 
 // function filterByTime(business) {
@@ -41,6 +42,8 @@
 function addOffersForBusiness(business) {
 
   business.offers.forEach(function(offer) {
+    var mustache = $('#stream-offer').html();
+
     console.log(offer)
     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
     var beginningTime = offer.start_at;
@@ -50,7 +53,7 @@ function addOffersForBusiness(business) {
 
     if(timeNow >= Date.parse(beginningTime) && timeNow <= Date.parse(endTime)) {
       console.log("Hello")
-      availableOffers.append('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+      availableOffers.append(Mustache.render(mustache, offer))
       $('.available_offers').prepend(availableOffers);
     }
     // console.log(Date.parse(beginningTime));
@@ -62,6 +65,12 @@ function addOffersForBusiness(business) {
   // $('.available_offers').prepend(availableOffers);
   // });
 
+// =======
+//   business.offers.forEach(function(offer){
+//     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
+//     availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
+//     $('.available_offers').prepend(availableOffers);
+// >>>>>>> 8b987326d75b6d33801ad5c86eb584a65ce1ca86
   });
 };
 
@@ -123,6 +132,14 @@ setTimeout(function() {
   $(".alert").slideUp().empty();
 }, 1500);
 
+$(document).foundation();
+var dropdown = $('.right-dropdown').remove()
+dropdown.appendTo('.home_top_width');
+// $(".top-bar").css("width","838");
+// $(".top-bar").css("margin","0 auto");
+
+
+
 // function preferences() {
 //   $('.available_offers').html('')
 
@@ -167,6 +184,22 @@ setTimeout(function() {
 // $(document.createElement('div') {
 //   // $.get
 // });
+
+// var longAss = '<div id="offer_card">' +
+    // '<div id="avatar_name_time">' + 
+    // '<div id="offer_owner_name_time">' +
+    // offer.company_name + 
+    // '<br />' + 
+    // '<small>' + offer.created_at + '</small>' +
+    // '</div>' +
+    // '<div id="offer_owner_avatar">' + '<img src="/assets/offer_test/nike_logo.png" class="feed_avatar">' + 
+    // '</div>' +
+    // '<div id="small_offer_card_background">' +
+    // '<div id="small_offer_image">' + '</div>' +
+    // '<div id="small_offer_info">' + 
+    // '<div id="small_offer_name_time">' + '<h4>' + '</h4>' + '</div>' + 
+    // '<div id="small_offer_see_offer">' + '<h4>' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>" + "&raquo;" + '</h4>' + '</div>' + 
+    // '</div>' + '</div>' + '</div>';
 
 
 

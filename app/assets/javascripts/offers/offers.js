@@ -1,4 +1,3 @@
-
 $('.available').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
   if (isInView) {
     // element is now visible in the viewport
@@ -23,35 +22,36 @@ $('.available').bind('inview', function(event, isInView, visiblePartX, visiblePa
 
 
 $(document).ready(function() {
-    $('body').on('click', '.available_offers a', function(e) {
-      e.preventDefault();
+  $('body').on('click', '.available_offers a', function(e) {
+    e.preventDefault();
 
-      if(!$(this).hasClass('click-logged')) {
-        e.stopPropagation();
+    if(!$(this).hasClass('click-logged')) {
+      e.stopPropagation();
+      console.log("Something happened")
 
-        var link = this;
-        var offerId = $(this).data('offer-id');
+      var link = this;
+      var offerId = $(this).data('offer-id');
 
-        $.post( "/clicks", { "offer_id": offerId }, function(){
-          $(link).addClass('click-logged').trigger('click');
-        });
-      }
+      $.post( "/clicks", { "offer_id": offerId }, function(){
+        $(link).addClass('click-logged').trigger('click');
+      });
+    }
+  });
+});
 
-    });
-          // $('.show-preferences').click(function(){                   
-          //   //make the collapse content to be shown or hide
-          //   var toggle_switch = $(this);
-          //   $('.preferences').toggle(function(){
-          //     if($(this).css('display')=='none'){
-          //                       //change the button label to be 'Show/Change Preferences'
-          //       toggle_switch.html('Show/Change Preferences');
-          //     }else{
-          //                       //change the button label to be 'Hide Preferences'
-          //       toggle_switch.html('Hide Preferences');
-          //     }
-          //   });
-          // });
-         });
+        // $('.show-preferences').click(function(){                   
+        //   //make the collapse content to be shown or hide
+        //   var toggle_switch = $(this);
+        //   $('.preferences').toggle(function(){
+        //     if($(this).css('display')=='none'){
+        //                       //change the button label to be 'Show/Change Preferences'
+        //       toggle_switch.html('Show/Change Preferences');
+        //     }else{
+        //                       //change the button label to be 'Hide Preferences'
+        //       toggle_switch.html('Hide Preferences');
+        //     }
+        //   });
+        // });
         // });
 
   // if($('.available_offers').length) {
@@ -61,11 +61,11 @@ $(document).ready(function() {
   //     })
   //   });
   // }
-
+// });
   // $.get('/offers.json', function(businesses) {
   //     addOffersForBusiness(businesses);
   // });
-// });
+
 
 // $(document).ready(function() {
 //   $('.show-preferences').click(function(){                   
@@ -83,6 +83,8 @@ $(document).ready(function() {
 //   });
 
 // });
+
+
 
 
 $(document).ready(function () {
@@ -114,17 +116,23 @@ $(document).ready(function () {
         $(this).unbind('inview');
       }
     } else {
-      // console.log("element has left viewport");
+      console.log("whole element is visible");
+      var offerId = $(this).data('offer-id');
+      $.post( "/impressions", { "offer_id": offerId } );
+      $(this).unbind('inview');
     }
-  });
-  
-  $('.see-offer-link').click(function() {
-    console.log("clicked")
-    var offerId = $(this).data('offer-id');
-    $.post( "/clicks", { "offer_id": offerId } );
-  });
-
+  } else {
+    // console.log("element has left viewport");
+  }
 });
+  
+$('.see-offer-link').click(function() {
+  console.log("clicked")
+  var offerId = $(this).data('offer-id');
+  $.post( "/clicks", { "offer_id": offerId } );
+});
+
+// });
 
 $.get('/businesses.json', function(businesses) {
   businesses.forEach(function(business) {

@@ -34,6 +34,11 @@
       / - current_customer.eligible_offers.each do |offer|
       /   = render partial: "offer", locals: { offer: offer }
       .available_offers
+      %h2 
+        You are currently following:
+      - current_customer.businesses.each do |business|
+        = business.company_name
+
 
 - else 
 
