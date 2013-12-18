@@ -19,12 +19,16 @@ class OffersController < ApplicationController
 		@offer.business = current_user
 	end
 
+	def edit
+    @offer = Offer.find params[:id]
+	end
+
 	def create
 		@offer = Offer.new(offer_params)
 		@offer.business = current_user
 		@offer.business_id = current_user.id
 		if @offer.save
-			redirect_to dashboard_business_path(@offer.business)
+			redirect_to dashboard_path
 		else
 			flash[:notice] = 'Sorry, there were the following errors: @offer.errors.full_messages'
 			render 'offers/new'

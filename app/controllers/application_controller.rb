@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_user.type == "Business"
-      dashboard_business_path(resource)
+      dashboard_path
     else
       offers_path
     end

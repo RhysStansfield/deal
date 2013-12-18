@@ -19,9 +19,13 @@ Deal::Application.routes.draw do
     member do
       post :follow
       get :follow_data
+    end
+    collection do
       get :dashboard
     end
   end
+
+  get '/dashboard' => "businesses#dashboard"
 
   resources :customers 
   

@@ -1,8 +1,8 @@
--if current_user.is_a?(Business)
+- if current_user.is_a?(Business)
   %p
     = link_to 'Return to offer list', offers_path
   %p
-    = link_to 'Return to dashboard', dashboard_business_path(current_user)
--else
+    = link_to 'Return to dashboard', dashboard_path
+- else
   = form_tag offer_charges_path(@offer) do
     %script.stripe-button{"data-amount" => (@offer.price * 100).to_i, "data-currency" => "GBP", "data-description" => "Purchase offer", "data-key" => Rails.configuration.stripe[:publishable_key], "data-label" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}
