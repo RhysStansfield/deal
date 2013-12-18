@@ -5,6 +5,7 @@ class OffersController < ApplicationController
 	def index
 		@offers = Offer.all
 		@businesses = Business.all
+		# render template: 'offers/indexHAML'
 		# if request.xhr?
 	end
 

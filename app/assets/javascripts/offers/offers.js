@@ -50,7 +50,7 @@ $(document).ready(function() {
           //     }
           //   });
           // });
-         });
+  });
         // });
 
   if($('.available_offers').length) {
@@ -60,11 +60,11 @@ $(document).ready(function() {
       })
     });
   }
-
+// });
   // $.get('/offers.json', function(businesses) {
   //     addOffersForBusiness(businesses);
   // });
-});
+
 
 // $(document).ready(function() {
 //   $('.show-preferences').click(function(){                   
