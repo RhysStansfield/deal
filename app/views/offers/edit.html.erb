@@ -1,5 +1,5 @@
 <div id ="new_page">
-  <h1>Create New Deal</h1>
+  <h1>Edit Deal</h1>
 <div id="new_deal">
   <%= form_for @offer do |f| %>
     <% if @offer.avatar.exists? %>
@@ -10,30 +10,30 @@
       <br/>
     </p>
     <p>
-      <%= f.text_field :product, { ng_model: 'product', placeholder: 'Product (Required)' } %>
+      <%= f.text_field :product, { ng_model: 'product', placeholder: 'Product (Required)', ng_init: "product='#{ @offer.product }'" } %>
     </p>
     <p>
-      <%= f.text_area :product_description, { ng_model: 'product_description', placeholder: 'Description (Required)' } %>
+      <%= f.text_area :product_description, { ng_model: 'product_description', placeholder: 'Description (Required)', ng_init: "product_description='#{ @offer.product_description }'" } %>
     </p>
     <p>
-      <%= f.number_field :price, { ng_model: 'price', placeholder: 'Price (Required)' } %>
+      <%= f.number_field :price, { ng_model: 'price', placeholder: 'Price (Required)', ng_init: "price=#{ @offer.price }" } %>
     </p>
     <p>
-      <%= f.number_field :RRP, { ng_model: 'RRP', placeholder: 'RRP (Required)' } %>
+      <%= f.number_field :RRP, { ng_model: 'RRP', placeholder: 'RRP (Required)', ng_init: "RRP=#{ @offer.RRP }" } %>
     </p>
     <p>
-      <%= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, max: 120, step: 1, placeholder: 'Customer Time Window (seconds)' }) %>
+      <%= f.number_field(:users_time_availablity, { ng_model: 'time', min: 30, max: 120, step: 1, placeholder: 'Customer Time Window (seconds)', ng_init: "time=#{ @offer.users_time_availablity }" }) %>
     </p>
     <p>
-      <%= f.label :available_from, "When should the offer be available from?" %>
+      <%= f.label :available_from, "When should the offer be available from?", ng_init: "available_from=#{ @offer.available_from }" %>
       <%= f.date_field(:available_from) %>
     </p>
     <p>
-      <%= f.label :available_to, "When should the offer stop being available?" %>
+      <%= f.label :available_to, "When should the offer stop being available?", ng_init: "available_to=#{ @offer.available_to }" %>
       <%= f.date_field(:available_to) %>
     </p>
     <p>
-      <%= f.submit "Activate Offer" %>
+      <%= f.submit "Edit Offer" %>
   <% end %>
 </div>
 
