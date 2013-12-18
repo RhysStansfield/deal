@@ -16,8 +16,7 @@ Feature: Having a business dashboard to monitor
   Scenario: Seeing impressions
     When a user visits the offers page and sees that offer
     Then I should see the offer impressions increase by one
-
-
+    
   @business_sign_in @javascript 
   Scenario: Not seeing impressions for business users
     When I visit the offer page and see that offer

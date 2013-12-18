@@ -10,9 +10,8 @@ class Conversion < ActiveRecord::Base
 
   def self.total_conversions business
   	return 0 if business.offers.empty? || Conversion.iterate_offers(business)
-  	total_conversions = []
-  	business.offers.each do |offer|
-  		total_conversions << offer.conversions.size
+  	total_conversions = business.offers.map do |offer|
+  		offer.conversions.size
   	end
   	return total_conversions.inject(:+)
   end
@@ -27,7 +26,4 @@ class Conversion < ActiveRecord::Base
     return 0 if conversions == 0 || price == 0
     conversions.to_f * price.to_f
   end
-
-
-
 end

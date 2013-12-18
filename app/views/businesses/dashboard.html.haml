@@ -1,0 +1,60 @@
+%h1
+  Welcome to your Dashboard :: #{@business.company_name}
+%h5= link_to "Create New Deal", new_offer_path
+%div{:style => "height:210px; padding-left:20px; background-color: #ddd; line-height:16pt;"}
+  Impressions: #{@impressions.flatten.size}
+  %br/
+  Clicks: #{@clicks.flatten.size}
+  %br/
+  Conversions: #{@conversions.flatten.size}
+  %br/
+  Conv./Click: #{(Conversion.conv_per_click(@clicks.flatten.size, @conversions.flatten.size)).round(2)}
+  %br/
+  Click Thru: #{(@clicks.flatten.size.to_f / @impressions.flatten.size).round(2)}
+  %br/
+  Ave. Time:
+  %br/
+  Total Revenue: #{(@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size if @offer.present?}
+  %br/
+  Ave. Revenue/ Deal: #{((@revenue.inject{|sum,x| sum + x }) * @conversions.flatten.size) / @offers.count if @offer.present?}
+  %br/
+  Total Deals: #{@offers.count}<br/ >
+  Followers: #{@business.customers.length}
+  %br/
+%table
+  %tr
+    %td Offer
+    %td Price
+    %td View Seconds
+    %td Impressions
+    %td Unique Impressions
+    %td Clicks
+    %td Conversions
+    %td Conv./Click
+    %td Click Thru
+    %td Ave. Time
+    %td Total Revenue
+    %td Active?
+    %td Archive
+  - i = 0
+  - @offers.each do |offer|
+    %tr
+      %td
+        %a{:href => offer_path(offer)}= offer.product
+      %td= number_to_currency(offer.price, unit: "&pound;")
+      %td= offer.users_time_availablity
+      %td= @impressions[i].size
+      %td= @impressions[i].map(&:user_id).uniq.size
+      %td= @clicks[i].size
+      %td= @conversions[i].size
+      %td= (@conversions[i].conv_per_click @conversions[i].size, @clicks[i].size).round(2)
+      %td= (@clicks[i].size.to_f / @impressions[i].size).round(2)
+      %td 
+      %td= (@revenue[i]) * @conversions[i].size
+      %td
+        - if offer.active?
+          Yes
+        - else 
+          No
+      %td  
+      - i += 1

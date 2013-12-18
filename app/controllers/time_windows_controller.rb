@@ -3,6 +3,7 @@ class TimeWindowsController < ApplicationController
   def show
     redirect_if_business
     @time_window = TimeWindow.find params[:id]
+    @offer = @time_window.offer
 
     if @time_window.end_time < Time.now
       redirect_to offers_path
@@ -11,7 +12,7 @@ class TimeWindowsController < ApplicationController
 
   def time_remaining
     time_window = TimeWindow.find params[:id]
-    {seconds: (time_window.end_time.to_i - Time.now.to_i)}.to_json
+    render json: {seconds: (time_window.end_time.to_i - Time.now.to_i)}
   end
 
   def create

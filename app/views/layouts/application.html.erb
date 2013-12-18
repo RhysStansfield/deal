@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <title><%= content_for?(:title) ? yield(:title) : "PINCH" %></title>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'>
     <%= stylesheet_link_tag "font-awesome" %>
@@ -17,9 +17,9 @@
   <body cz-shortcut-listen="true">
 
     <%= render 'layouts/login' %>
-
-    <p class="notice" ><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

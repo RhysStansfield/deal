@@ -1,37 +1,126 @@
-<h1>Welcome to your Dashboard :: <%= @business.company_name %></h1>
-
-<h5><%= link_to "Create New Deal", new_offer_path %></h5>
-<div style="height:210px; padding-left:20px; background-color: #ddd; line-height:16pt;">
-Impressions: <%= @business.total_impressions %><br />
-Clicks: <%= @business.total_clicks %><br />
-Conversions: <%= @business.total_conversions %><br/>
-Conv./Click: <%= @business.total_conversions_per_click %><br/>
-Click Thru: <%= @business.total_click_thrus %><br />
-Ave. Time: <br />
-Total Revenue: <%= @business.total_revenue %><br />
-Ave. Revenue/ Deal: <%= @business.average_revenue_per_deal %><br />
-Total Deals: <%= @business.total_offers %><br/ >
-Followers: <%= @business.total_followers %><br />
+<div id="dashboard_top_bar">
+  <div id="dashboard_top_bar_content">
+    <div id="dashboard_top_bar_content_left">
+      <h5><%= link_to "Create New Deal", new_offer_path %></h5>
+    </div>
+    <div id="dashboard_top_bar_content_right">
+      <h5>Total Deals: <%= @business.total_offers %> &nbsp;|&nbsp; Followers: <%= @business.total_followers %></h5>
+    </div>
+  </div>
 </div>
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<div id="business_container">
+  <div id="business_tiles">
+    <div id="business_tiles_rows1">
 
+      <div class='tile_column tile_width' id="business_tile_impressions">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.total_impressions %></div>
+          <div id="tile_attribute_metric">Impressions</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_blue"><i class="fa fa-laptop fa-3x"></i></div>
+        </div>
+      </div>
+
+      <div class='tile_column tile_width' id="business_tile_clicks">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.total_clicks %></div>
+          <div id="tile_attribute_metric">Clicks</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_red"><i class="fa fa-hand-o-up fa-3x"></i></div>
+        </div>        
+      </div>
+
+      <div class='tile_column tile_width' id="business_tile_ctr">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.total_click_thrus %></div>
+          <div id="tile_attribute_metric">CTR</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_yellow"><i class="fa fa-external-link fa-3x", style="padding-top:5px;"></i></div>
+        </div>   
+      </div>
+
+      <div class='tile_column tile_width last' id="business_tile_conversions">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.total_conversions %></div>
+          <div id="tile_attribute_metric">Conversions</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_green"><i class="fa fa-shopping-cart fa-3x"></i></div>
+        </div>   
+      </div>
+    </div>
+
+
+    <div id="business_tiles_rows2">
+      <div class='tile_column tile_width' id="business_tile_conv_click">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.total_conversions_per_click %></div>
+          <div id="tile_attribute_metric">Conv./Click</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_blue"><i class="fa fa-filter fa-3x"></i></div>
+        </div>  
+      </div>
+
+      <div class='tile_column tile_width' id="business_tile_time">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value">3</div>
+          <div id="tile_attribute_metric">Ave. Time</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_red"><i class="fa fa-clock-o fa-3x"></i></div>
+        </div>  
+      </div>
+      
+
+      <div class='tile_column tile_width' id="business_tile_revenue">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.total_revenue %></div>
+          <div id="tile_attribute_metric">Total Revenue</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_yellow"><i class="fa fa-usd fa-3x", style="padding-left:7px;"></i></div>
+        </div>  
+      </div>
+      
+
+      <div class='tile_column tile_width last' id="business_tile_revenue_deal">
+        <div id="tile_attribute_left">
+          <div id="tile_attribute_value"><%= @business.average_revenue_per_deal %></div>
+          <div id="tile_attribute_metric">Revenue/Deal</div>
+        </div>
+        <div id="tile_attribute_right">
+          <div id="tile_attribute_picture_green"><i class="fa fa-tags fa-3x"></i></div>
+        </div>  
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="js_chart">
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+</div>
 
 <%= line_chart @all_statistics.map{|statistic|
     {:name => statistic.name, :data => statistic.group_by_minute(:created_at).count }
 } %>
 
 
-<table>
+<table id="individual_offer_stats">
   <tr>
   	<td>Offer</td>
     <td>Price</td>
-    <td>View Seconds</td>
-  	<td>Impressions</td>
-  	<td>Unique Impressions</td>
+    <td>Time</td>
+  	<td>Impr.</td>
+  	<td>Unique Impr.</td>
   	<td>Clicks</td>
-    <td>Conversions</td>
+    <td>Conv.</td>
     <td>Conv./Click</td>
-    <td>Click Thru</td>
+    <td>CTR</td>
     <td>Ave. Time</td>
     <td>Total Revenue</td>
     <td>Active?</td>
@@ -49,8 +138,10 @@ Followers: <%= @business.total_followers %><br />
     <td><%= @business.conversions_for(offer) %></td>
     <td><%= @business.conversions_per_click_for(offer) %></td>
     <td><%= @business.click_thrus_for(offer) %></td>
-    <td>James</td>
+    <td><%= offer.average_time_to_conversion %></td>
     <td><%= @business.total_revenue_for(offer) %></td>
     <td><%= offer.active? ? "Yes" : "No" %></td>
   </tr>
+
 <% end %>
+

@@ -14,4 +14,27 @@
   = number_to_currency(@time_window.offer.price, unit: '£')
   
   = form_tag offer_charges_path(@time_window.offer) do
-    %script.stripe-button{"data-amount" => (@time_window.offer.price * 100).to_i, "data-currency" => "GBP", "data-description" => "Purchase offer", "data-key" => Rails.configuration.stripe[:publishable_key], "data-label" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}
+    / %script.stripe-button{"data-amount" => (@time_window.offer.price * 100).to_i, "data-currency" => "GBP", "data-description" => "Purchase offer", "data-key" => Rails.configuration.stripe[:publishable_key], "data-lab
+
+    / el" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}
+    %script{:src => "https://checkout.stripe.com/checkout.js"}
+    %button#stripeButton{:"data-id" => @offer.id } Purchase
+    :javascript
+      var handler = StripeCheckout.configure({
+        key: "#{ ENV['STRIPE_PUBLISHABLE_KEY'] }",
+        token: function(token, args) {
+          // Use the token to create the charge with a server-side script.
+        }
+      });
+
+      document.getElementById('stripeButton').addEventListener('click', function(e) {
+        // Open Checkout with further options
+        handler.open({
+          name: 'Pinch',
+          description: 'Purchase offer',
+          amount: #{(@time_window.offer.price * 100).to_i},
+          currency: 'GBP',
+          email: "#{current_user.email}""
+        });
+        e.preventDefault();
+      });
