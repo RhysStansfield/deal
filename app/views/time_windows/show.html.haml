@@ -34,7 +34,7 @@
           description: 'Purchase offer',
           amount: #{(@time_window.offer.price * 100).to_i},
           currency: 'GBP',
-          email: "#{current_user.email}""
+          email: "#{current_user.email}"
         });
         e.preventDefault();
       });
