@@ -23,12 +23,13 @@
             <a href="#">
               <% if current_user.avatar.exists? %>
                 <%= image_tag current_user.avatar.url(:tiny) %>
-              <% end %>
-              <% if current_user.provider == "facebook" %>
+              <% elsif current_user.provider == "facebook" %>
                 <div class="fbpic">
                   <img src="https://graph.facebook.com/<%= current_customer.uid %>/picture?width=40&height=40"/>
                 </div>
-              <% end %>
+              <% else %>
+                <img src="/assets/avatar.png">
+              <% end %>              
             </a>
             <ul class="dropdown">
               <li><%= link_to 'Profile Settings', edit_user_registration_path %></li>              
