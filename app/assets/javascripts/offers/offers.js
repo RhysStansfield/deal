@@ -1,4 +1,4 @@
-$('.example-basic').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
+$('.available').bind('inview', function(event, isInView, visiblePartX, visiblePartY) {
   if (isInView) {
     // element is now visible in the viewport
     if (visiblePartY == 'top') {
@@ -20,14 +20,8 @@ $('.example-basic').bind('inview', function(event, isInView, visiblePartX, visib
 
 
 
-$.get('/businesses.json', function(businesses) {
-  businesses.forEach(function(business) {
-    addOffersForBusiness(business);
-  })
-});
 
 $(document).ready(function() {
-<<<<<<< HEAD
     $('body').on('click', '.available_offers a', function(e) {
       e.preventDefault();
 
@@ -43,22 +37,64 @@ $(document).ready(function() {
       }
 
     });
-          $('.show-preferences').click(function(){                   
-            //make the collapse content to be shown or hide
-            var toggle_switch = $(this);
-            $('.preferences').toggle(function(){
-              if($(this).css('display')=='none'){
-                                //change the button label to be 'Show/Change Preferences'
-                toggle_switch.html('Show/Change Preferences');
-              }else{
-                                //change the button label to be 'Hide Preferences'
-                toggle_switch.html('Hide Preferences');
-              }
-            });
-          });
- 
-        });
+          // $('.show-preferences').click(function(){                   
+          //   //make the collapse content to be shown or hide
+          //   var toggle_switch = $(this);
+          //   $('.preferences').toggle(function(){
+          //     if($(this).css('display')=='none'){
+          //                       //change the button label to be 'Show/Change Preferences'
+          //       toggle_switch.html('Show/Change Preferences');
+          //     }else{
+          //                       //change the button label to be 'Hide Preferences'
+          //       toggle_switch.html('Hide Preferences');
+          //     }
+          //   });
+          // });
+         });
+        // });
 
+  if($('.available_offers').length) {
+    $.get('/businesses.json', function(businesses) {
+      businesses.forEach(function(business) {
+        addOffersForBusiness(business);
+      })
+    });
+  }
+
+  // $.get('/offers.json', function(businesses) {
+  //     addOffersForBusiness(businesses);
+  // });
+});
+
+// $(document).ready(function() {
+//   $('.show-preferences').click(function(){                   
+//     //make the collapse content to be shown or hide
+//     var toggle_switch = $(this);
+//     $('.preferences').toggle(function(){
+//       if($(this).css('display')=='none'){
+//                         //change the button label to be 'Show/Change Preferences'
+//         toggle_switch.html('Show/Change Preferences');
+//       }else{
+//                         //change the button label to be 'Hide Preferences'
+//         toggle_switch.html('Hide Preferences');
+//       }
+//     });
+//   });
+
+// });
+
+
+
+$(document).ready(function () {
+  $('.show-preferences').on('click', function(){
+    $('.preferences').toggleClass('revealed');
+    if($('.preferences').hasClass('revealed')) {
+      $(this).text('Hide Preferences')
+    } else {
+      $(this).text('Show/Change Preferences')
+    }
+  })
+});
 
 // http://patik.com/blog/within-viewport-javascript-and-jquery-plugin/
 // https://github.com/patik/within-viewport

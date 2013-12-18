@@ -7,6 +7,7 @@ FactoryGirl.define do
     conversions { Array.new(3) { FactoryGirl.build(:conversion) } }
     available_from "13/12/2013"
     available_to "14/12/2013"
+    RRP 120
     business 
   end
 

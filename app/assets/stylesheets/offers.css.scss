@@ -229,3 +229,167 @@
 #new_card_footer {
 	clear: both;
 }
+
+.offer_list {
+  width: 400px;
+  margin: -350px auto;
+ }
+
+ .offer_container {
+  width: 100%;
+ }
+
+ label {
+  display: inline;
+ }
+
+ h6 {
+  width: 300px;
+ }
+
+ .preferences {
+  width: 325px;
+  background: #ccc;
+  padding: 20px 30px;
+  margin-left: -325px;
+  transition: 1s margin-left ease;
+}
+
+.preferences.revealed {
+  margin-left: 0;
+}
+
+/* VIEWING ALL OFFERS */
+
+#container {
+	width: 838px;
+	margin: 0 auto;
+	margin-top: -20px;
+}
+
+#stream {
+	width: 500px;
+	margin: 0 auto;
+	padding-top: 50px;
+	background-color: #e6e6e6;
+	border-left: #CCCCCC;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-right: #CCCCCC;
+	border-right-style:solid;
+	border-right-width:1px;
+}
+
+
+#offer_card {
+	width: 430px;
+	padding-bottom: 30px;
+	margin: 0 auto;
+}
+
+#avatar_name_time {
+	/*width: 135px;*/
+	width: 170px;
+	height: 290px;
+	background-color: #f2f2f2;
+	float: left;
+	margin-left: -210px;
+}
+
+#offer_owner_name_time {
+	float: left;
+	width: 120px;
+	height: 40px;
+	padding-top: 3px;
+	margin-right: 5px;
+	background-color: #f2f2f2;
+	text-align: right;
+
+}
+
+#feed_avatar {
+	
+}
+
+#offer_owner_avatar {
+	float: right;
+	margin-right: 5px;
+	margin-top: -3px;
+	width: 40px;
+	height: 40px;
+}
+
+
+#small_offer_card_background {
+	height: 290px;
+	width: 430px;
+	/*border: 1px #000000 solid;*/
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 10px 0px #222222;
+	-webkit-box-shadow: 0px 0px 10px 0px #222222;
+	box-shadow: 0px 0px 10px 0px #222222;
+}
+
+#small_offer_image {
+	width: 430px;
+	height: 230px;
+	background-color: #ffffff;
+	background-image: url('/assets/offer_test/nike_index2.png');
+	background-size: cover;
+	border-top-left-radius: 3px;
+}
+
+#small_offer_image2 {
+	width: 430px;
+	height: 230px;
+	background-color: #ffffff;
+	background-image: url('/assets/offer_test/superdry_index2.png');
+	background-size: cover;
+	border-top-left-radius: 3px;
+}
+
+#small_offer_image3 {
+	width: 430px;
+	height: 230px;
+	background-color: #ffffff;
+	background-image: url('/assets/offer_test/adidas_index2.png');
+	background-size: cover;
+	border-top-left-radius: 3px;
+}
+
+#small_offer_info {
+	width: 430px;
+	height: 60px;
+	background-color: #fff;
+	padding-top: 10px;
+	border-top: #ccc;
+	border-top-style:solid;
+	border-top-width:1px;
+	/*-moz-box-shadow: inset 0px 0px 5px 0px #888888;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
+	box-shadow: inset 0px 0px 5px 0px #888888;*/
+	border-radius: 3px;
+}
+
+#small_offer_name_time {
+	width: 150px;
+	height: 40px;
+	margin-left: 10px;
+	float: left;
+	color: #4d4d4d;
+}
+
+#small_offer_see_offer {
+	width: 150px;
+	height: 40px;
+	margin-right: 10px;
+	float: right;
+	background-color: #fff;
+	color: #4d4d4d;
+	text-align: right;
+}
+
+
+
+
+

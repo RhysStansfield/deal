@@ -5,14 +5,13 @@ class Conversion < ActiveRecord::Base
   
   def self.conv_per_click conversions, clicks
   	return 0 if conversions == 0 || clicks == 0
-  	clicks.to_f / conversions.to_f
+  	conversions.to_f / clicks.to_f
   end
 
   def self.total_conversions business
   	return 0 if business.offers.empty? || Conversion.iterate_offers(business)
-  	total_conversions = []
-  	business.offers.each do |offer|
-  		total_conversions << offer.conversions.size
+  	total_conversions = business.offers.map do |offer|
+  		offer.conversions.size
   	end
   	return total_conversions.inject(:+)
   end

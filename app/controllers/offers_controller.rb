@@ -5,6 +5,12 @@ class OffersController < ApplicationController
 	def index
 		@offers = Offer.all
 		@businesses = Business.all
+		# if request.xhr?
+	end
+
+	def index2
+		@offers = Offer.all
+		@businesses = Business.all
 	end
 
 	def new
