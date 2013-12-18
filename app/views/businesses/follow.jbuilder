@@ -10,6 +10,8 @@ if @business.customers.include?(current_user)
     json.start_at offer.available_from
     json.end_at offer.available_to
     json.offer_path offer_time_windows_path(offer)
+    json.teaser offer.teaser.url(:large)
+    json.logo business.avatar.url(:thumb)
   end
 else
   json.follow_button_text 'Follow'

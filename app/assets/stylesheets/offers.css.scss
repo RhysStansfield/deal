@@ -453,7 +453,7 @@ input[type="radio"] + label {
 	box-shadow: 0px 0px 10px 0px #222222;
 }
 
-#small_offer_image {
+#small_offer_image img {
 	width: 430px;
 	height: 230px;
 	background-color: #ffffff;
@@ -478,6 +478,9 @@ input[type="radio"] + label {
 	background-color: #ffffff;
 	background-image: url('/assets/offer_test/adidas_index2.png');
 	background-size: cover;
+	// background-color: #ffffff;
+	// background-image: url('/assets/offer_test/nike_index2.png');
+	// background-size: cover;
 	border-top-left-radius: 3px;
 }
 

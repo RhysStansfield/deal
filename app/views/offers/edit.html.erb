@@ -9,6 +9,13 @@
       <%= f.file_field :avatar %>
       <br/>
     </p>
+    <% if @offer.teaser.exists? %>
+      <%= image_tag @offer.teaser.url(:large) %>
+    <% end %>
+    <p>
+      <%= f.file_field :teaser %>
+      <br/>
+    </p>
     <p>
       <%= f.text_field :product, { ng_model: 'product', placeholder: 'Product (Required)', ng_init: "product='#{ @offer.product }'" } %>
     </p>
