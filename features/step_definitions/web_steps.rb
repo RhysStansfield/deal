@@ -18,3 +18,7 @@ When(/^I click sign out$/) do
   click_link "Sign Out"
   expect(page).to have_content "Signed out successfully"
 end
+
+Given(/^show me the page$/) do
+  save_and_open_page
+end

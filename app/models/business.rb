@@ -41,11 +41,11 @@ class Business < User
   end
 
   def total_conversions_per_click
-    Conversion.conv_per_click(total_clicks, total_conversions).round(2)
+    Conversion.conv_per_click(total_conversions, total_clicks).round(2)
   end
 
   def conversions_per_click_for offer
-    Conversion.conv_per_click(clicks_for(offer), conversions_for(offer)).round(2)
+    Conversion.conv_per_click(conversions_for(offer), clicks_for(offer)).round(2)
   end
 
   def total_click_thrus

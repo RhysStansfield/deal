@@ -19,7 +19,15 @@ $('.example-basic').bind('inview', function(event, isInView, visiblePartX, visib
 
 
 
+
+$.get('/businesses.json', function(businesses) {
+  businesses.forEach(function(business) {
+    addOffersForBusiness(business);
+  })
+});
+
 $(document).ready(function() {
+<<<<<<< HEAD
     $('body').on('click', '.available_offers a', function(e) {
       e.preventDefault();
 
@@ -50,8 +58,6 @@ $(document).ready(function() {
           });
  
         });
-
-
 
 
 // http://patik.com/blog/within-viewport-javascript-and-jquery-plugin/
