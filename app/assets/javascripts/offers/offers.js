@@ -33,7 +33,7 @@ $(document).ready(function() {
       var offerId = $(this).data('offer-id');
 
       $.post( "/clicks", { "offer_id": offerId }, function(){
-        $(link).addClass('click-logged').trigger('click');
+        $(link).addClass('click-logged')ReDe.trigger('click');
       });
     }
   });

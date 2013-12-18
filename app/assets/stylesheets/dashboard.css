@@ -188,13 +188,19 @@
 }
 
 #js_chart {
-	width: 838px;
+	width: 845px;
 }
 
 
 #individual_offer_stats {
-	width: 838px;
+	width: 845px;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 26px;
+}
+
+#chart_container {
+	width: 838px;
+	margin: 0 auto 0 auto;
+  vertical-align: middle;
 }
