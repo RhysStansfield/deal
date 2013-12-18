@@ -76,6 +76,7 @@ class Business < User
   end
 
   def average_conversion_time
+    return if offers.empty?
     average_times = offers.map do |offer|
       offer.average_time_to_conversion unless offer.average_time_to_conversion == nil
     end.compact

@@ -22,10 +22,9 @@
               <div class="time_remaining" id="product_time"><%= (@time_window.end_time - Time.now).to_i %>s</div>
             </div>
             <div id="product_description"><%= @time_window.offer.product_description %></div>
-            <div id="buy_now_button"><a href="#">Buy Now!</a></div>
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" id="buy_now_button"></script>
+            <%= render 'stripe_button' %>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
