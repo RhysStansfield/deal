@@ -15,8 +15,14 @@ class Offer < ActiveRecord::Base
   validates :product_description, presence: true, length: {minimum: 5, maximum: 320}
 
   has_attached_file :avatar, styles: {
-    large: "430x230>"
+    large: "860x460>"
   }
+
+  has_attached_file :teaser, styles: {
+    large: "860x460>"
+  }
+
+
 
   def num_of_impressions
     impressions.size
