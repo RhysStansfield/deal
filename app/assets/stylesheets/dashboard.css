@@ -197,4 +197,18 @@
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 26px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 10px 0px #cccccc;
+	-webkit-box-shadow: 0px 0px 10px 0px #cccccc;
+	box-shadow: 0px 0px 10px 0px #cccccc; 
+}
+
+#chart_container {
+	width: 838px;
+	margin: 0 auto;
+  	vertical-align: middle;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 10px 0px #cccccc;
+	-webkit-box-shadow: 0px 0px 10px 0px #cccccc;
+	box-shadow: 0px 0px 10px 0px #cccccc;  	
 }

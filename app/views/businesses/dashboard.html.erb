@@ -67,7 +67,7 @@
 
       <div class='tile_column tile_width' id="business_tile_time">
         <div id="tile_attribute_left">
-          <div id="tile_attribute_value">3</div>
+          <div id="tile_attribute_value"><%= @business.average_conversion_time %></div>
           <div id="tile_attribute_metric">Ave. Time</div>
         </div>
         <div id="tile_attribute_right">
@@ -89,7 +89,7 @@
 
       <div class='tile_column tile_width last' id="business_tile_revenue_deal">
         <div id="tile_attribute_left">
-          <div id="tile_attribute_value"><%= @business.average_revenue_per_deal %></div>
+          <div id="tile_attribute_value"><%= @business.average_revenue_per_deal.round(2) %></div>
           <div id="tile_attribute_metric">Revenue/Deal</div>
         </div>
         <div id="tile_attribute_right">
@@ -101,13 +101,15 @@
   </div>
 </div>
 
-<div id="js_chart">
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-</div>
+<div id='chart_container'>
+  <div id="js_chart">
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-<%= line_chart @all_statistics.map{|statistic|
-    {:name => statistic.name, :data => statistic.group_by_minute(:created_at).count }
-} %>
+    <%= column_chart @all_statistics.map{|statistic|
+        {:name => statistic.name, :data => statistic.group_by_day(:created_at).count }
+    } %>
+  </div>
+</div>
 
 
 <table id="individual_offer_stats">

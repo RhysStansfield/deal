@@ -75,6 +75,13 @@ class Business < User
     revenue / offers.size
   end
 
+  def average_conversion_time
+    average_times = offers.map do |offer|
+      offer.average_time_to_conversion unless offer.average_time_to_conversion == nil
+    end.compact
+    (average_times.inject(:+) / average_times.size).round
+  end
+
   def total_followers
     customers.length
   end
