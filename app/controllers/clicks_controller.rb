@@ -1,7 +1,7 @@
 class ClicksController < ApplicationController
 
 	def new
-		@click = Click.ne
+		@click = Click.new
 	end
 
 	def create
