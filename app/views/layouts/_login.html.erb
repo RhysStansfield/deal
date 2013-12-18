@@ -31,6 +31,7 @@
               <% end %>
             </a>
             <ul class="dropdown">
+              <li><%= link_to 'Profile Settings', edit_user_registration_path %></li>              
               <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
