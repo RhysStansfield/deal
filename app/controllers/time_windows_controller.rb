@@ -6,7 +6,7 @@ class TimeWindowsController < ApplicationController
     @offer = @time_window.offer
 
     if @time_window.end_time < Time.now
-      redirect_to offers_path
+      redirect_to deals_path
     end
   end
 
@@ -23,7 +23,7 @@ class TimeWindowsController < ApplicationController
     if @time_window.end_time > Time.now
       redirect_to [@offer, @time_window]
     else
-      redirect_to offers_path
+      redirect_to deals_path
     end
   end
 

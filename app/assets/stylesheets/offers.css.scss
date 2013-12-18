@@ -244,7 +244,7 @@
  }
 
  .offer_container {
-  width: 100%;
+  /*width: 100%;*/
  }
 
  label {
@@ -255,30 +255,144 @@
   width: 300px;
  }
 
- .preferences {
+
+.show-preferences {
+	position: absolute;
+	margin-top: 30px;
+	z-index: 1000;
+	outline: none;
+	width: 120px;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.preferences {
   width: 325px;
-  background: #ccc;
-  padding: 20px 30px;
+  background: #e6e6e6;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right:20px;
+  padding-bottom: 20px;
   margin-left: -325px;
+  margin-top: 45px;
+  z-index: 100;
+  position: absolute;
+  float: left;
   transition: 1s margin-left ease;
+  border-right: #e6e6e6;
+  border-right-style:solid;
+  border-right-width:1px;	 
+  -moz-box-shadow: 0px 0px 10px 0px #cccccc;
+  -webkit-box-shadow: 0px 0px 10px 0px #cccccc;
+  box-shadow: 0px 0px 10px 0px #cccccc;  
+  line-height: 0px;
 }
 
 .preferences.revealed {
-  margin-left: 0;
+  	margin-left: 0;
+  	font-size: 12px;
 }
 
+.preferences p {
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+  vertical-align: baseline; 
+  font-size: 12px;
+}
+
+.follower_count {
+	visibility: hidden;
+}
+
+.business {
+	width: 172px;
+	background-color: #e6e6e6;
+}
+
+#name_and_follow {
+	margin-bottom: 5px;
+	height: 40px;
+	-moz-box-shadow: 0px 0px 5px 0px #cccccc;
+	-webkit-box-shadow: 0px 0px 5px 0px #cccccc;
+	box-shadow: 0px 0px 5px 0px #cccccc;		
+}
+
+#name_for_follow {
+	width: 70px;
+	height: 40px;
+	background-color: #fff;
+	float: left;
+	padding-top: 20px;
+	padding-left: 5px;
+}
+
+#follow_for_follow {
+	margin-top: 10px;
+}
+
+#avatar_for_follow {
+	float: left;
+	margin-top: -1px;
+}
+
+.follow_avatar {
+	margin-top: 1px;
+	border-top-left-radius: 3;
+	border-bottom-left-radius: 3;
+}
+
+.follow {
+	outline: none;
+	height: 40px;
+	font-size: 12px;
+	margin-bottom: 0rem;
+	width: 60px;
+	padding: 0px;
+	background-color: #e6e6e6;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #4285f4;
+	color: #4285f4;
+
+}
+
+/*.awesome_follow {
+	margin-top: 2px;
+}
+
+.awesome_unfollow {
+	margin-top: 2px;
+	color: #4285f4;
+	background-color: #fff;
+}*/
+
 /* VIEWING ALL OFFERS */
+#whole_page {
+	width: 100%;
+}
 
 #container {
 	width: 838px;
 	margin: 0 auto;
-	margin-top: -20px;
 }
 
 #stream {
 	width: 500px;
 	margin: 0 auto;
-	padding-top: 50px;
+	padding-top: 30px;
 	background-color: #e6e6e6;
 	border-left: #CCCCCC;
 	border-left-style:solid;
@@ -286,6 +400,7 @@
 	border-right: #CCCCCC;
 	border-right-style:solid;
 	border-right-width:1px;
+	position: relative;
 }
 
 
@@ -315,8 +430,8 @@
 
 }
 
-#feed_avatar {
-	
+.feed_avatar {
+	margin-top: 3px;
 }
 
 #offer_owner_avatar {
@@ -345,6 +460,7 @@
 	background-image: url('/assets/offer_test/nike_index2.png');
 	background-size: cover;
 	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 }
 
 #small_offer_image2 {

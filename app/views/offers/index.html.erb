@@ -1,8 +1,8 @@
 <% if current_customer %>
 
-	<button class="show-preferences">Show/Change Preferences</button>
+	<button class="show-preferences"><i class="fa fa-cog"></i>&nbsp;&nbsp;Preferences</button>
 	<div class="preferences">
-		<h6>Please select from the categories below</h6>
+		<p>Please select from the categories below</p>
 		<%= form_for current_customer do |f| %>
 	    <% Category.all.each do |category| %>
 	      <%= check_box_tag "category_ids[]", category.id, already_checked?(category.id), { id: "category_#{category.id}", type: "checkbox", :class => 'submittable' } %>
@@ -18,25 +18,35 @@
 						<span class="follower_count">
 							<%= business.customers.length %>
 						</span>
-						<%= business.company_name %>
-						<button class="follow" data-id="<%= business.id %>" data-customer="<%=current_customer.id %>">
-							<% if current_customer.businesses.include?(business) %>
-								Unfollow
-							<% else %>
-								Follow 
-							<% end %>
-						</button>
+						<div id="name_and_follow">
+							<div id="avatar_for_follow">
+								<img src="/assets/offer_test/nike_logo.png" class="follow_avatar">
+							</div>
+							<div id="name_for_follow">
+								<%= business.company_name %>
+							</div>
+							<div id="follow_for_follow">
+							<button class="follow" data-id="<%= business.id %>" data-customer="<%=current_customer.id %>">
+								<% if current_customer.businesses.include?(business) %>
+									Unfollow
+									<!-- <div id="follow_button_for_follow"><i class="fa fa-minus-square fa-3x awesome_unfollow"></i></div> -->
+								<% else %>
+									Follow
+									<!-- <div id="follow_button_for_follow"><i class="fa fa-plus-square-o fa-3x awesome_follow"></i></div> -->
+								<% end %>
+							</button>
+						</div>
+						</div>
 					<% end %>
 				</div>
 			<% end %>
 		</div>
-	</div>
+	</div>	
+
 
 	<div class="offer_container" id="container">
+
 		<section class="offer_list stream" id="stream">
-			<h1>
-				Available Offers
-			</h1>
 			<div class="available_offers">
 			</div>
 		</section>
@@ -119,3 +129,5 @@
 	  </div>
 	</div>
 </script>
+
+
