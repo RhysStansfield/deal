@@ -115,15 +115,7 @@ $(document).ready(function () {
         $.post( "/impressions", { "offer_id": offerId } );
         $(this).unbind('inview');
       }
-    } else {
-      console.log("whole element is visible");
-      var offerId = $(this).data('offer-id');
-      $.post( "/impressions", { "offer_id": offerId } );
-      $(this).unbind('inview');
     }
-  } else {
-    // console.log("element has left viewport");
-  }
 });
   
 $('.see-offer-link').click(function() {
