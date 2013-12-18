@@ -50,13 +50,12 @@ $(document).ready(function() {
           //     }
           //   });
           // });
- 
+         });
         // });
 
   if($('.available_offers').length) {
     $.get('/businesses.json', function(businesses) {
       businesses.forEach(function(business) {
-        console.log(business.company_name)
         addOffersForBusiness(business);
       })
     });
