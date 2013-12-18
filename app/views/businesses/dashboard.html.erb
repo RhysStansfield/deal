@@ -139,7 +139,7 @@
 		<td><%= @business.clicks_for(offer) %></td>
     <td><%= @business.conversions_for(offer) %></td>
     <td><%= @business.conversions_per_click_for(offer) %></td>
-    <td><%= @business.click_thrus_for(offer) %></td>
+    <td><%= @business.click_thrus_for(offer).round(2) %></td>
     <td><%= offer.average_time_to_conversion %></td>
     <td><%= @business.total_revenue_for(offer) %></td>
     <td><%= offer.active? ? "Yes" : "No" %></td>

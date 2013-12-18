@@ -87,11 +87,9 @@ $(".submittable").click(function() {
 
     data.forEach(function(business) {
       var businessElem = $('<div class="business"/>')
-      businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
+      // businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
       businessElem.append(
-        $('<button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>')
-      )
-
+        $('<div id="name_and_follow"><div id="avatar_for_follow"><img src="/assets/offer_test/nike_logo.png" class="follow_avatar"></div><div id="name_for_follow">' + business.name + '</div><div id="follow_for_follow"><button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>'))
       $('.businesses').append(businessElem);
     })
 

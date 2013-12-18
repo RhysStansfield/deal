@@ -90,11 +90,6 @@ $(document).ready(function() {
 $(document).ready(function () {
   $('.show-preferences').on('click', function(){
     $('.preferences').toggleClass('revealed');
-    if($('.preferences').hasClass('revealed')) {
-      $(this).text('Hide Preferences')
-    } else {
-      $(this).text('Show/Change Preferences')
-    }
   })
 });
 
