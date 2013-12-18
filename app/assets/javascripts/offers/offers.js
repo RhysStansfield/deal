@@ -97,22 +97,20 @@ $(document).ready(function () {
 // https://github.com/patik/within-viewport
 // http://www.appelsiini.net/projects/viewport
 
-$('.available_offers').on('inview', '.available', function(event, isInView, visiblePartX, visiblePartY) {
-  if (isInView) {
-    // element is now visible in the viewport
-    if (visiblePartY == 'top') {
-      // console.log("top is visible");
-    } else if (visiblePartY == 'bottom') {
-      // console.log("bottom is visible");
-    } else {
-      console.log("whole element is visible");
-      var offerId = $(this).data('offer-id');
-      $.post( "/impressions", { "offer_id": offerId } );
-      $(this).unbind('inview');
+  $('.available_offers').on('inview', '.available', function(event, isInView, visiblePartX, visiblePartY) {
+    if (isInView) {
+      // element is now visible in the viewport
+      if (visiblePartY == 'top') {
+        // console.log("top is visible");
+      } else if (visiblePartY == 'bottom') {
+        // console.log("bottom is visible");
+      } else {
+        console.log("whole element is visible");
+        var offerId = $(this).data('offer-id');
+        $.post( "/impressions", { "offer_id": offerId } );
+        $(this).unbind('inview');
+      }
     }
-  } else {
-    // console.log("element has left viewport");
-  }
 });
   
 $('.see-offer-link').click(function() {

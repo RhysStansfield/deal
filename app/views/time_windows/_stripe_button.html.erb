@@ -1,0 +1,27 @@
+<%= form_tag offer_charges_path(@time_window.offer), id: 'payment-form' do %>
+  <%= hidden_field_tag :stripeToken %>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <button data-id="<%= @offer.id %>" id="stripeButton">Purchase</button>
+  <script>
+    var handler = StripeCheckout.configure({
+      key: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
+      token: function(token, args) {
+        console.log(token)
+        $('#stripeToken').val(token.id);
+        $('#payment-form').submit();
+      }
+    });
+
+    document.getElementById('stripeButton').addEventListener('click', function(e) {
+      // Open Checkout with further options
+      handler.open({
+        name: 'Pinch',
+        description: 'Purchase offer',
+        amount: <%= (@time_window.offer.price * 100).to_i %>,
+        currency: 'GBP',
+        email: "<%= current_user.email %>"
+      });
+      e.preventDefault();
+    });
+  </script>
+<% end %>

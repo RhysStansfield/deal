@@ -2,7 +2,7 @@ json.new_follow_count @business.customers.size
 json.(@business, :id)
 
 if @business.customers.include?(current_user)
-  json.follow_button_text 'Unfollow'    
+  json.follow_button_text 'Unfollow'
   json.offers @offers do |offer|
     json.(offer, :id)
     json.created_at time_ago_in_words(offer.created_at) + ' ago'
