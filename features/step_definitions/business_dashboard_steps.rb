@@ -23,7 +23,6 @@ When(/^a user visits the offers page and sees that offer$/) do
   check 'category_10'
   sleep 0.5
   first(".follow").click
-  expect(page).to have_content Business.last.company_name
   sleep 0.5
   visit '/offers'
   page.evaluate_script "$('.example-basic:first').trigger('inview')"
@@ -37,10 +36,9 @@ Then(/^I should see the offer impressions increase by one$/) do
   fill_in 'Email', with: business.email
   fill_in 'Password', with: '12345678'
   click_button 'Login'
-  expect(current_path).to eq dashboard_business_path(business.id)
-  expect(page).to have_content 1
   expect(page).to have_content "Impressions: 1"
 end
+
 
 When(/^I visit the offer page and see that offer$/) do
   visit '/offers'

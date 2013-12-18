@@ -53,13 +53,13 @@ $(document).ready(function() {
   });
         // });
 
-  if($('.available_offers').length) {
-    $.get('/businesses.json', function(businesses) {
-      businesses.forEach(function(business) {
-        addOffersForBusiness(business);
-      })
-    });
-  }
+  // if($('.available_offers').length) {
+  //   $.get('/businesses.json', function(businesses) {
+  //     businesses.forEach(function(business) {
+  //       addOffersForBusiness(business);
+  //     })
+  //   });
+  // }
 // });
   // $.get('/offers.json', function(businesses) {
   //     addOffersForBusiness(businesses);
@@ -85,6 +85,7 @@ $(document).ready(function() {
 
 
 
+
 $(document).ready(function () {
   $('.show-preferences').on('click', function(){
     $('.preferences').toggleClass('revealed');
@@ -100,12 +101,35 @@ $(document).ready(function () {
 // https://github.com/patik/within-viewport
 // http://www.appelsiini.net/projects/viewport
 
+$('.available_offers').on('inview', '.available', function(event, isInView, visiblePartX, visiblePartY) {
+  if (isInView) {
+    // element is now visible in the viewport
+    if (visiblePartY == 'top') {
+      // console.log("top is visible");
+    } else if (visiblePartY == 'bottom') {
+      // console.log("bottom is visible");
+    } else {
+      console.log("whole element is visible");
+      var offerId = $(this).data('offer-id');
+      $.post( "/impressions", { "offer_id": offerId } );
+      $(this).unbind('inview');
+    }
+  } else {
+    // console.log("element has left viewport");
+  }
+});
+  
+$('.see-offer-link').click(function() {
+  console.log("clicked")
+  var offerId = $(this).data('offer-id');
+  $.post( "/clicks", { "offer_id": offerId } );
+});
 
-// google search: jquery check if something is in the view
-// http://imakewebthings.com/jquery-waypoints/#get-started
+// });
 
+$.get('/businesses.json', function(businesses) {
+  businesses.forEach(function(business) {
+    addOffersForBusiness(business);
+  })
+});
 
-// THEN: page visibility api
-// https://github.com/protonet/jquery.inview
-// http://www.w3.org/TR/page-visibility/
-// http://www.samdutton.com/pageVisibility/
