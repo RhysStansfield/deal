@@ -67,7 +67,7 @@
 
       <div class='tile_column tile_width' id="business_tile_time">
         <div id="tile_attribute_left">
-          <div id="tile_attribute_value">?!s</div>
+          <div id="tile_attribute_value"><%= @business.average_conversion_time %></div>
           <div id="tile_attribute_metric">Ave. Time</div>
         </div>
         <div id="tile_attribute_right">
@@ -105,8 +105,8 @@
   <div id="js_chart">
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-    <%= line_chart @all_statistics.map{|statistic|
-        {:name => statistic.name, :data => statistic.group_by_minute(:created_at).count }
+    <%= column_chart @all_statistics.map{|statistic|
+        {:name => statistic.name, :data => statistic.group_by_day(:created_at).count }
     } %>
   </div>
 </div>
