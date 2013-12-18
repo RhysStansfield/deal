@@ -99,6 +99,15 @@
 </div>
 </div>
 
+<% else %>
+
+	<h1>Your Offers:</h1>
+ 	<% @offers.each do |offer| %>
+  	<% if current_business.id == offer.business_id %>
+    	<%= render partial: "offer", locals: { offer: offer } %>
+    <% end %>
+   <% end %>
+   
 <% end %>
 
 <script id="stream-offer" type="text/html">
