@@ -71,8 +71,8 @@ class User < ActiveRecord::Base
   end
 
   has_attached_file :avatar, :styles => {
-    thumb: '100x100>', tiny: '40x40>'
-  }
+    thumb: "100x100>", tiny: "40x40>"
+  }, :default_url => "/assets/avatar.png"
 
   def follow(business)
     unless business.customers.include? self
