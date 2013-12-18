@@ -82,7 +82,7 @@ class Business < User
     average_times = offers.map do |offer|
       offer.average_time_to_conversion unless offer.average_time_to_conversion == nil
     end.compact
-    (average_times.inject(:+) / average_times.size).round
+    (average_times.inject(:+) / average_times.size).round unless average_times.size == 0
   end
 
   def total_followers
