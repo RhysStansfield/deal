@@ -12,11 +12,8 @@
     <%= f.input :email, :required => true, :autofocus => true, placeholder: 'Email', label: false %>
     <%= f.input :password, :required => true, placeholder: 'Password', label: false %>
     <%= f.input :password_confirmation, :required => true, placeholder: 'Confirm Password', label: false %>
-      <%= f.input :company_name, required: true, placeholder: 'Company Name', label: false %>
-      <% Category.all.each do |category| %>
-        <%= f.label :category_id, category.name, value: category.id %>
-        <%= f.radio_button :category_id, category.id %>
-      <% end %>
+    <%= f.input :company_name, required: true, placeholder: 'Company Name', label: false %>
+    <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
     <%= f.button :submit, "Sign up" %>
   </fieldset>
 <% end %>
