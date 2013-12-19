@@ -72,7 +72,7 @@ As a team of five we employed the Agile practices, as well as taking advantage o
 ####Screenshots
 
 Homepage <br>
-![alt text](https://github.com/NadiDami/deal/blob/master/app/assets/images/Pinch%20Homepage.png)
+![alt text](/app/assets/images/pinch_homepage.png)
 
 Business Dashboard <br>
 ![alt text](https://github.com/NadiDami/deal/blob/master/app/assets/images/Pinch%20Dashboard.png)
