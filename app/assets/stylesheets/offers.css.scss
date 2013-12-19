@@ -591,19 +591,34 @@ input[type="radio"] + label {
 	width: 430px;
 	/*border: 1px #000000 solid;*/
 	border-radius: 3px;
-	-moz-box-shadow: 0px 0px 10px 0px #222222;
-	-webkit-box-shadow: 0px 0px 10px 0px #222222;
-	box-shadow: 0px 0px 10px 0px #222222;
+	-moz-box-shadow: 0px 0px 10px 0px #838383;
+	-webkit-box-shadow: 0px 0px 10px 0px #838383;
+	box-shadow: 0px 0px 10px 0px #838383;
+}
+
+#small_offer_image {
+	width: 430px;
+	height: 230px;
+	background-color: #ffffff;
+	background-size: cover;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;	
 }
 
 #small_offer_image img {
 	width: 430px;
-	height: 230px;
+	height: 232px;
 	background-color: #ffffff;
-	background-image: url('/assets/offer_test/nike_index2.png');
 	background-size: cover;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
+	-moz-box-shadow: 0px 0px 0px 0px #222222;
+	-webkit-box-shadow: 0px 0px 0px 0px #222222;
+	box-shadow: 0px 0px 0px 0px #222222;
 }
 
 #small_offer_image2 {
@@ -632,13 +647,14 @@ input[type="radio"] + label {
 	height: 60px;
 	background-color: #fff;
 	padding-top: 10px;
-	border-top: #ccc;
+	border-top: #f2f2f2;
 	border-top-style:solid;
 	border-top-width:1px;
 	/*-moz-box-shadow: inset 0px 0px 5px 0px #888888;
 	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
 	box-shadow: inset 0px 0px 5px 0px #888888;*/
-	border-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 
 #small_offer_name_time {
