@@ -31,8 +31,8 @@ Business.create company_name: 'Toys R Us', email: 'ceo@toysrus.com', password: '
 Business.create company_name: 'Burberry', email: 'ceo@burberry.com', password: '123456789', password_confirmation: '123456789', category: clothes_shoes_and_jewellery, avatar: seed_image('burberry.jpg')
 Business.create company_name: 'Wilson', email: 'ceo@wilson.com', password: '123456789', password_confirmation: '123456789', category: sports_and_outdoors, avatar: seed_image('wilson.jpg')
 Business.create company_name: 'Adidas', email: 'ceo@adidas.com', password: '123456789', password_confirmation: '123456789', category: sports_and_outdoors, avatar: seed_image('adidas_index.png')
-Business.create company_name: 'Origins', email: 'ceo@origins.com', password: '123456789', password_confirmation: '123456789', category: grocery_health_and_beauty, avatar: seed_image('adidas_index.png')
-Business.create company_name: 'Ford', email: 'ceo@ford.com', password: '123456789', password_confirmation: '123456789', category: car_and_motorbike, avatar: seed_image('origins.jpg')
+Business.create company_name: 'Origins', email: 'ceo@origins.com', password: '123456789', password_confirmation: '123456789', category: grocery_health_and_beauty, avatar: seed_image('origins.jpg')
+Business.create company_name: 'Ford', email: 'ceo@ford.com', password: '123456789', password_confirmation: '123456789', category: car_and_motorbike, avatar: seed_image('ford-logo.jpg')
 
 # Offer.delete_all
 # Offer.create product: 'Harry Potter and the Philosophers Stone', product_description: 'A delightful romp through happy wizard land with a variety of memorable characters', price: 8, :RRP => 14, business_id: 1, available_from: "13/12/2013", available_to: "21/12/2013", users_time_availablity: 30, avatar: seed_image('Harry_Potter_atps.jpg')
