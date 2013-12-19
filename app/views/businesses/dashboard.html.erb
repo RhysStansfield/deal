@@ -131,7 +131,7 @@
   </tr>
 <% @offers.each do |offer| %>
   <tr>
-  	<td><a href="<%= offer_path(offer) %>"><%= offer.product %></a></td>
+  	<td><a href="<%= edit_offer_path(offer) %>"><%= offer.product %></a></td>
     <td><%= number_to_currency(offer.price, unit: "&pound;") %></td>
     <td><%= offer.users_time_availablity %></td>
     <td><%= @business.impressions_for(offer) %></td>
