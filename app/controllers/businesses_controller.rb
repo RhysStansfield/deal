@@ -37,7 +37,7 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
-    @offers = @business.offers
+    @offers = customer.eligible_offers(@business)
     
 
     unless request.xhr?
