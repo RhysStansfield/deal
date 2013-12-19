@@ -5,14 +5,8 @@ class OffersController < ApplicationController
 	def index
 		@offers = current_user.eligible_offers
 		@businesses = Business.all
-		# render template: 'offers/indexHAML'
-		# if request.xhr?
 	end
 
-	# def index2
-	# 	@offers = Offer.all
-	# 	@businesses = Business.all
-	# end
 
 	def new
 		@offer = Offer.new
@@ -36,9 +30,6 @@ class OffersController < ApplicationController
 	end
 
 	def show
-		# if current_customer
-		# 	redirect_to offer_time_windows_path(Offer.last.id), method: :post
-		# end
 		@offer = Offer.find(params[:id])
 	end
 

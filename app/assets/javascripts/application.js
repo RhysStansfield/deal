@@ -19,58 +19,17 @@
 //= require mustache
 //= require_directory .
 
-// function filterByTime(business) {
-//   business.offers.forEach(function(offer){
-//     var beginningTime = offer.start_at;
-//     var endTime = offer.end_at;
-//     var timeNow = new Date().getTime();
-//     console.log(timeNow/1000);
-//     console.log(beginningTime);
-
-//     if(timeNow >= beginningTime && timeNow <= endTime) {
-//       availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
-//       $('.available_offers').prepend(availableOffers);
-//     }
-//   });
-// };
-
-// function timeFiltering(offer) {
-
-// }
-
 
 function addOffersForBusiness(business) {
 
   business.offers.forEach(function(offer) {
     var mustache = $('#stream-offer').html();
 
-    console.log(offer)
     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
-    // var beginningTime = offer.start_at;
-    // var endTime = offer.end_at;
-    // var timeNow = new Date().getTime();
-    // console.log(timeNow);
 
-    // if(timeNow >= Date.parse(beginningTime) && timeNow <= Date.parse(endTime)) {
-    //   console.log("Hello")
       availableOffers.append(Mustache.render(mustache, offer))
       $('.available_offers').prepend(availableOffers);
-    // }
-    // console.log(Date.parse(beginningTime));
-    // console.log(Date.parse(endTime);
 
-  // business.offers.forEach(function(offer) {
-  //   var availableOffers = $('<div class="available" /div>')
-  //   availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post' data-offer-id=" + offer.id + "> See offer</a>")
-  // $('.available_offers').prepend(availableOffers);
-  // });
-
-// =======
-//   business.offers.forEach(function(offer){
-//     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
-//     availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + "Created" + " " + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>")
-//     $('.available_offers').prepend(availableOffers);
-// >>>>>>> 8b987326d75b6d33801ad5c86eb584a65ce1ca86
   });
 };
 
@@ -87,8 +46,6 @@ $(".submittable").click(function() {
 
     data.forEach(function(business) {
       var businessElem = $('<div class="business"/>')
-      console.log(business)
-      // businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
       businessElem.append(
         $('<div id="name_and_follow"><div id="avatar_for_follow"><img src="' + business.logo + '" class="follow_avatar"></div><div id="name_for_follow">' + business.name + '</div><div id="follow_for_follow"><button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>'))
         $('.businesses').append(businessElem);
@@ -107,8 +64,6 @@ $('.businesses').on('click', '.follow', function() {
     $followerCount.text(data.new_follow_count);
     $button.text(data.follow_button_text);
     if(data.offers) {
-      console.log('adding offers')
-      console.log(data.offers)
       addOffersForBusiness(data)
     } else {
       removeOffers(data);
@@ -117,6 +72,7 @@ $('.businesses').on('click', '.follow', function() {
 });
 
 function removeOffers(business) {
+  console.log(business)
   $('[data-company-id=' + business.id + ']').remove();
 }
 
@@ -134,53 +90,5 @@ setTimeout(function() {
 $(document).foundation();
 var dropdown = $('.right-dropdown').remove()
 dropdown.appendTo('.home_top_width');
-// $(".top-bar").css("width","838");
-// $(".top-bar").css("margin","0 auto");
 
-
-
-// function preferences() {
-//   $('.available_offers').html('')
-
-//     data.offers.forEach(function(offer){
-//       var availableOffers = $('<div class="available" /div>')
-//       availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + offer.created_at);
-//     $('.available_offers').prepend(availableOffers);
-//     });
-//   };
-
-// var $offers = Offer.all
-
-// $('.available_offers').html('')
-
-//       offers.forEach(function(offer){
-//         var availableOffers = $('<div class="available" />')
-//         if (current_customer.businesses.include? offer.business){
-//           availableOffers.html(<%= render partial: "offer", locals: { offer: offer});
-//         }
-//           $('.available').append(availableOffers);
-
-
-
-
-// function follow() {
-//   $.get(url, function(data) {
-//     $('.follow').html('Follow');
-//   })
-// }
-
-// all customers in business array so we can count the size (business.customers.size)
-// business 
-
-// def follow(business)
-//     unless business.customers.include? self
-//       business.customers << self
-//     else
-//       business.customers.delete(self)
-//     end 
-//   end
-
-// $(document.createElement('div') {
-//   // $.get
-// });
 
