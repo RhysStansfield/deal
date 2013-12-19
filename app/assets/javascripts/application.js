@@ -87,10 +87,11 @@ $(".submittable").click(function() {
 
     data.forEach(function(business) {
       var businessElem = $('<div class="business"/>')
+      console.log(business)
       // businessElem.html('<span class="follower_count">' + business.followers + '</span>' + ' ' + business.name);
       businessElem.append(
-        $('<div id="name_and_follow"><div id="avatar_for_follow"><img src="/assets/offer_test/nike_logo.png" class="follow_avatar"></div><div id="name_for_follow">' + business.name + '</div><div id="follow_for_follow"><button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>'))
-      $('.businesses').append(businessElem);
+        $('<div id="name_and_follow"><div id="avatar_for_follow"><img src="' + business.logo + '" class="follow_avatar"></div><div id="name_for_follow">' + business.name + '</div><div id="follow_for_follow"><button class="follow" data-id=' + business.id + '>' + business.follow_button_text + '</button>'))
+        $('.businesses').append(businessElem);
     })
 
   }, 'json');
@@ -124,11 +125,11 @@ function removeOffers(business) {
 
 setTimeout(function() {
   $(".notice").slideUp().empty();
-}, 1500);
+}, 1800);
 
 setTimeout(function() {
   $(".alert").slideUp().empty();
-}, 1500);
+}, 1800);
 
 $(document).foundation();
 var dropdown = $('.right-dropdown').remove()
@@ -182,22 +183,4 @@ dropdown.appendTo('.home_top_width');
 // $(document.createElement('div') {
 //   // $.get
 // });
-
-// var longAss = '<div id="offer_card">' +
-    // '<div id="avatar_name_time">' + 
-    // '<div id="offer_owner_name_time">' +
-    // offer.company_name + 
-    // '<br />' + 
-    // '<small>' + offer.created_at + '</small>' +
-    // '</div>' +
-    // '<div id="offer_owner_avatar">' + '<img src="/assets/offer_test/nike_logo.png" class="feed_avatar">' + 
-    // '</div>' +
-    // '<div id="small_offer_card_background">' +
-    // '<div id="small_offer_image">' + '</div>' +
-    // '<div id="small_offer_info">' + 
-    // '<div id="small_offer_name_time">' + '<h4>' + '</h4>' + '</div>' + 
-    // '<div id="small_offer_see_offer">' + '<h4>' + "<a href=" + offer.offer_path + " data-method='post'> See offer</a>" + "&raquo;" + '</h4>' + '</div>' + 
-    // '</div>' + '</div>' + '</div>';
-
-
 

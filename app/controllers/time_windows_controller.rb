@@ -12,7 +12,13 @@ class TimeWindowsController < ApplicationController
 
   def time_remaining
     time_window = TimeWindow.find params[:id]
-    render json: {seconds: (time_window.end_time.to_i - Time.now.to_i)}
+    seconds_remaining = time_window.end_time.to_i - Time.now.to_i
+    render json: {seconds: (seconds_remaining), deal_length: time_window.end_time.to_i - time_window.start_time.to_i }
+  end
+
+  def percentage_remaining
+    time_window = TimeWindow.find params[:id]
+    render json: {}
   end
 
   def create
