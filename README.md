@@ -71,19 +71,19 @@ As a team of five we employed the Agile practices, as well as taking advantage o
 
 ####Screenshots
 
-Homepage <br>
+#####Homepage <br>
 ![alt text](/app/assets/images/pinch_homepage.png)
 
-Business Dashboard <br>
+#####Business Dashboard <br>
 ![alt text](/app/assets/images/pinch_dashboard.png)
 
-Preferences and Deal Stream <br>
+#####Preferences and Deal Stream <br>
 ![alt text](/app/assets/images/pinch_deal_stream_and_preferences.png)
 
-Viewing a Deal <br>
+#####Viewing a Deal <br>
 ![alt text](/app/assets/images/pinch_viewing_deal.png)
 
-Order Confirmation <br>
+#####Order Confirmation <br>
 ![alt text](/app/assets/images/pinch_order_confirmation.png)
 
 
