@@ -3,16 +3,16 @@ class OffersController < ApplicationController
 	helper_method :already_checked?
 
 	def index
-		@offers = Offer.all
+		@offers = current_user.eligible_offers
 		@businesses = Business.all
 		# render template: 'offers/indexHAML'
 		# if request.xhr?
 	end
 
-	def index2
-		@offers = Offer.all
-		@businesses = Business.all
-	end
+	# def index2
+	# 	@offers = Offer.all
+	# 	@businesses = Business.all
+	# end
 
 	def new
 		@offer = Offer.new

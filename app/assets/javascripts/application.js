@@ -46,16 +46,16 @@ function addOffersForBusiness(business) {
 
     console.log(offer)
     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
-    var beginningTime = offer.start_at;
-    var endTime = offer.end_at;
-    var timeNow = new Date().getTime();
-    console.log(timeNow);
+    // var beginningTime = offer.start_at;
+    // var endTime = offer.end_at;
+    // var timeNow = new Date().getTime();
+    // console.log(timeNow);
 
-    if(timeNow >= Date.parse(beginningTime) && timeNow <= Date.parse(endTime)) {
-      console.log("Hello")
+    // if(timeNow >= Date.parse(beginningTime) && timeNow <= Date.parse(endTime)) {
+    //   console.log("Hello")
       availableOffers.append(Mustache.render(mustache, offer))
       $('.available_offers').prepend(availableOffers);
-    }
+    // }
     // console.log(Date.parse(beginningTime));
     // console.log(Date.parse(endTime);
 

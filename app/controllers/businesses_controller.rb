@@ -12,6 +12,7 @@ class BusinessesController < ApplicationController
   def index
     if request.xhr?
       @businesses = current_user.businesses
+      @offers = current_customer.eligible_offers
     else
       @businesses = Business.all
     end
@@ -37,7 +38,8 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
-    @offers = @business.offers
+    # @offers = @business.offers
+    @offers = customer.eligible_offers
     
 
     unless request.xhr?
