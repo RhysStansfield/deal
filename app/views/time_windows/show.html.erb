@@ -22,7 +22,9 @@
               <div class="time_remaining" id="product_time"><%= (@time_window.end_time - Time.now).to_i %>s</div>
             </div>
             <div id="product_description"><%= @time_window.offer.product_description %></div>
-            <%= render 'stripe_button' %>
+            <div id="buy_now_button">
+              <%= render 'stripe_button' %>
+            </div>
           </div>
         </div>
       </div>
