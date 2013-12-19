@@ -2,8 +2,8 @@
 ###A 'Snapchat meets Groupon' Makers Academy Final Project
 
 ####Concept
-*Follow the brands you like.*<br>
-*Love the deals you get.*
+*Follow the brands you love.*<br>
+*Get exclusive offers.*
 
 Pinch is the new way for businesses to connect with fans of their brand.
 
@@ -14,11 +14,11 @@ Businesses post special deals to their followers, each with a 30-120s time limit
 
 * Account creation, with profile avatar
 * Set business category preferences
-* Follow/unfollow from a list of participating business
+* Follow/unfollow businesses from a list of participating companies
 * View deal preview cards posted by businesses
 * View a deal, complete with countdown timer
 * When the timer runs out, the user is redirected back to the deal page
-* Purchase offers using built in Stripe Checkout API
+* Purchase deals using built-in Stripe Checkout API
 
 
 *Business features*<br>
@@ -41,7 +41,7 @@ Businesses post special deals to their followers, each with a 30-120s time limit
 * Ruby 2.0
 * PostgreSQL
 * RSpec, Capybara, Poltergeist & Cucumber
-* SimpleCov (to monitor test coverage)
+* SimpleCov 
 * Factory Girl, Shoulda-Matchers and Database Cleaner
 * HTML5, HAML, CSS3, SCSS
 * Zurb Foundation 5
