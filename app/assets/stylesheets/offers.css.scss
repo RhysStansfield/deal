@@ -46,6 +46,16 @@
 	background-color: #000000;
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
+	position: relative;
+}
+
+#elapsed_bar {
+	top: 0;
+	width: 20px;
+	height: 0%;
+	background: #000;
+	position: absolute;
+
 }
 
 #actual_time_bar {
@@ -127,6 +137,80 @@
 }
 
 
+input[type="file"] {
+	width: 100%;
+/*	background-color: #ff0000;
+	background-color: #F2F2F2;
+	border:thin double #4285f4;
+	border-radius: 3px;*/
+	color: #4285f4;
+	cursor: pointer;
+	font-family: Open Sans;
+	font-size: 10px;
+	text-transform: uppercase;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+input[type="submit"] {
+	background-color: #F2F2F2;
+	border:thin double #4285f4;
+	border-radius: 3px;
+	color: #4285f4;
+	cursor: pointer;
+	font-family: Open Sans;
+	height: 50px;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 100%;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+input[type="submit"]:hover {
+	background-color: #4285f4;
+	border:thin double #4285f4;
+	border-radius: 3px;
+	color: #f2f2f2;
+	cursor: pointer;
+ 	-webkit-appearance:none;
+ 	outline: none;
+}
+
+a#stripeButton {
+background-color: #F2F2F2;
+border: thin double #4285f4;
+border-radius: 3px;
+color: #4285f4;
+cursor: pointer;
+font-family: Open Sans;
+height: 40px;
+text-align: center;
+font-size: 16px;
+padding-top: 8px;
+padding-bottom: 8px;
+/*padding-left: 32px;
+padding-right: 32px;*/
+text-transform: uppercase;
+-webkit-appearance: none;
+outline: none;
+}
+
+a#stripeButton:hover{
+background-color: #4285f4;
+border: thin double #4285f4;
+border-radius: 3px;
+color: #f2f2f2;
+cursor: pointer;
+-webkit-appearance: none;
+outline: none;
+}
+
+.uploads {
+	font-size: 14px;
+	margin-bottom: 0.25rem;
+}
+
 #company_name_preview {
 	width: 150px;
 	height: 40px;
@@ -143,6 +227,34 @@
 	background-color: #f2f2f2;
 	color: #4d4d4d;
 	text-align: right;
+}
+
+.rrp {
+	color: #db4437;
+	text-decoration: line-through;
+}
+
+/*.strikethrough {
+  position: relative;
+}
+.strikethrough:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 1px solid;
+  border-color: inherit;
+
+  -webkit-transform:rotate(-5deg);
+  -moz-transform:rotate(-5deg);
+  -ms-transform:rotate(-5deg);
+  -o-transform:rotate(-5deg);
+  transform:rotate(-5deg);
+}
+*/
+.offer_price {
+	font-weight: 600;
 }
 
 #product_profile {
@@ -322,9 +434,30 @@ input[type="radio"] + label {
 	visibility: hidden;
 }
 
+.follower_count_discover {
+
+}
+
+#search_discover {
+	margin-top: 30px;
+}
+
 .business {
 	width: 172px;
 	background-color: #e6e6e6;
+}
+
+.businesses_discover {
+	width: 205px;
+	margin: 0 auto;
+	background-color: #f2f2f2;
+	margin-top: -10px;
+}
+
+.business_discover {
+	width: 202px;
+	background-color: #f2f2f2;
+	height: 50px;
 }
 
 #name_and_follow {
@@ -342,6 +475,16 @@ input[type="radio"] + label {
 	float: left;
 	padding-top: 20px;
 	padding-left: 5px;
+}
+
+#name_for_follow_discover {
+	width: 100px;
+	height: 40px;
+	background-color: #fff;
+	float: left;
+	padding-top: 15px;
+	padding-left: 5px;
+	font-size: 12px;
 }
 
 #follow_for_follow {
@@ -372,6 +515,11 @@ input[type="radio"] + label {
 	border-color: #4285f4;
 	color: #4285f4;
 
+}
+
+.follow:hover {
+	background-color: #4285f4;
+	color: #fff;
 }
 
 /*.awesome_follow {
@@ -442,7 +590,7 @@ input[type="radio"] + label {
 #offer_owner_avatar {
 	float: right;
 	margin-right: 5px;
-	margin-top: -3px;
+	margin-top: -1px;
 	width: 40px;
 	height: 40px;
 }
@@ -453,19 +601,34 @@ input[type="radio"] + label {
 	width: 430px;
 	/*border: 1px #000000 solid;*/
 	border-radius: 3px;
-	-moz-box-shadow: 0px 0px 10px 0px #222222;
-	-webkit-box-shadow: 0px 0px 10px 0px #222222;
-	box-shadow: 0px 0px 10px 0px #222222;
+	-moz-box-shadow: 0px 0px 10px 0px #838383;
+	-webkit-box-shadow: 0px 0px 10px 0px #838383;
+	box-shadow: 0px 0px 10px 0px #838383;
+}
+
+#small_offer_image {
+	width: 430px;
+	height: 230px;
+	background-color: #ffffff;
+	background-size: cover;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;	
 }
 
 #small_offer_image img {
 	width: 430px;
-	height: 230px;
+	height: 232px;
 	background-color: #ffffff;
-	background-image: url('/assets/offer_test/nike_index2.png');
 	background-size: cover;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
+	-moz-box-shadow: 0px 0px 0px 0px #222222;
+	-webkit-box-shadow: 0px 0px 0px 0px #222222;
+	box-shadow: 0px 0px 0px 0px #222222;
 }
 
 #small_offer_image2 {
@@ -494,13 +657,14 @@ input[type="radio"] + label {
 	height: 60px;
 	background-color: #fff;
 	padding-top: 10px;
-	border-top: #ccc;
+	border-top: #f2f2f2;
 	border-top-style:solid;
 	border-top-width:1px;
 	/*-moz-box-shadow: inset 0px 0px 5px 0px #888888;
 	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
 	box-shadow: inset 0px 0px 5px 0px #888888;*/
-	border-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 
 #small_offer_name_time {

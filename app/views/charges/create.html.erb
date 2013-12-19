@@ -1,0 +1,17 @@
+<div id="container">
+	<div id="thank_you_wrapper">
+		<h1>Pinched!</h1>
+		<div id="thank_you_picture"></div>
+		<div id="thank_you_amounts">
+			<h5>
+			  Thank You!<br /> 
+			  Your payment of <strong><%= number_to_currency(@offer.price, unit: '£') %></strong>
+			  has been processed.<br />
+			  You saved <strong><%= number_to_currency((@offer.RRP - @offer.price), unit: '£') %></strong>!
+			</h5>
+		</div>
+	</div>
+	<div id="back_link">
+		<center><%= link_to 'Back to offers', deals_path %></center>
+	</div>
+</div>

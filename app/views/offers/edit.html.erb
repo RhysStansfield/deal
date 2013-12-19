@@ -55,9 +55,7 @@
         </div>
         <div id="offer_logo_name_price">
           <div id="logo_preview">
-            <% if current_user.avatar.exists? %>
-              <%= image_tag current_user.avatar.url(:tiny), :class => 'business_avatar_preview' %>
-            <% end %>
+            <%= image_tag current_user.avatar.url(:thumb), :class => 'business_avatar_preview' %>
           </div>
           <div id="company_name_preview">
             <h4><%= @offer.business.company_name %></h4>

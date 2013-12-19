@@ -4,13 +4,14 @@
       <div id="actual_card_div">
         <div id="card_background">
           <div id="time_bar">
+            <div id='elapsed_bar'></div>
             <div id="actual_time_bar"></div>
           </div>
           <div id="offer_image_placeholder"></div>
           <div id="offer_logo_name_price">
             <div id="logo_preview">
               <% if @time_window.offer.avatar.exists? %>
-                <%= image_tag @time_window.offer.business.avatar.url(:tiny), :class => 'business_avatar_preview' %>
+                <%= image_tag @time_window.offer.business.avatar.url(:thumb), :class => 'business_avatar_preview' %>
               <% end %>
             </div>
             <div id="company_name_preview"><h4><%= @offer.business.company_name %></h4></div>
@@ -22,7 +23,9 @@
               <div class="time_remaining" id="product_time"><%= (@time_window.end_time - Time.now).to_i %>s</div>
             </div>
             <div id="product_description"><%= @time_window.offer.product_description %></div>
-            <%= render 'stripe_button' %>
+            <div id="buy_now_button">
+              <%= render 'stripe_button' %>
+            </div>
           </div>
         </div>
       </div>

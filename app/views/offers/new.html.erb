@@ -5,13 +5,9 @@
     <% if @offer.avatar.exists? %>
       <%= image_tag @offer.avatar.url(:large), class: 'uploaded-offer-photo' %>
     <% end %>
-    <p>
-      <%= f.file_field :avatar %>
-      <br/>
-    </p>
-    <p>
+    <p class="uploads">Offer Image: <%= f.file_field :avatar %>
+    <br />Teaser Image:
       <%= f.file_field :teaser %>
-      <br/>
     </p>
 
     <p>
@@ -54,14 +50,14 @@
         <div id="offer_logo_name_price">
           <div id="logo_preview">
             <% if current_user.avatar.exists? %>
-              <%= image_tag current_user.avatar.url(:tiny), :class => 'business_avatar_preview' %>
+              <%= image_tag current_user.avatar.url(:thumb), :class => 'business_avatar_preview' %>
             <% end %>
           </div>
           <div id="company_name_preview">
             <h4><%= @offer.business.company_name %></h4>
           </div>
           <div id="price_review_buy">
-            <h4><strong>£{{ price }}</strong></h4>
+            <h4><span class="rrp strikethrough">£{{ RRP }}</span>&nbsp;&nbsp;<span class="offer_price">£{{ price }}</span></h4>
           </div>
         </div>
         <div id="product_profile">

@@ -3,6 +3,10 @@ class Business < User
   has_and_belongs_to_many :customers, -> { uniq }
   
   has_many :offers
+  has_many :impressions, through: :offers
+  has_many :clicks, through: :offers
+  has_many :conversions, through: :offers
+
 
   belongs_to :category
 

@@ -18,7 +18,7 @@
     / %script.stripe-button{"data-amount" => (@time_window.offer.price * 100).to_i, "data-currency" => "GBP", "data-description" => "Purchase offer", "data-key" => Rails.configuration.stripe[:publishable_key], "data-label" => "Purchase offer", src: "https://checkout.stripe.com/checkout.js"}
 
     %script{:src => "https://checkout.stripe.com/checkout.js"}
-    %button#stripeButton{:"data-id" => @offer.id } Purchase
+    %button#stripeButton.firstStripe{:"data-id" => @offer.id } Purchase
     :javascript
       var handler = StripeCheckout.configure({
         key: "#{ ENV['STRIPE_PUBLISHABLE_KEY'] }",

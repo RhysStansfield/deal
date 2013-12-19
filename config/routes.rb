@@ -29,6 +29,8 @@ Deal::Application.routes.draw do
 
   get '/discover' => "businesses#index"
 
+  post '/discover' => "businesses#create"
+
   get '/deals' => "offers#index"
 
   resources :customers 

@@ -37,7 +37,7 @@ class BusinessesController < ApplicationController
     @business = Business.find params[:id]
     customer.follow(@business)
 
-    @offers = @business.offers
+    @offers = customer.eligible_offers(@business)
     
 
     unless request.xhr?
@@ -54,7 +54,7 @@ class BusinessesController < ApplicationController
   	@business = current_business
     redirect_to '/' and return unless @business
 
-    @all_statistics = [Impression, Conversion, Click]
+    @all_statistics = [@business.impressions, @business.conversions, @business.clicks]
   	@offers = @business.offers
   end
 

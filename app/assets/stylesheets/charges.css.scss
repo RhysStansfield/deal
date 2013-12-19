@@ -1,3 +1,40 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#thank_you_wrapper {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+	border-color: #e6e6e6;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 0px 10px 0px #838383;
+	-webkit-box-shadow: 0px 0px 10px 0px #838383;
+	box-shadow: 0px 0px 10px 0px #838383;	
+}
+
+#thank_you_picture {
+	width: 500px;
+	height: 250px;
+	background-image: url('/assets/thankyou.jpg');
+	background-size: cover;
+	margin-left: -1px;
+}
+
+#thank_you_amounts {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #e6e6e6;
+	width: 100%;
+	padding-top: 10px;
+	height: 105px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+#back_link {
+	margin-top: 20px;
+}

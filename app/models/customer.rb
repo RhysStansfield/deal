@@ -15,7 +15,8 @@ class Customer < User
         following: following,
         id: business.id,
         followers: business.customers.length,
-        follow_button_text: (following ? 'Unfollow' : 'Follow')
+        follow_button_text: (following ? 'Unfollow' : 'Follow'),
+        logo: business.avatar.url(:thumb)
       }
     end
   end

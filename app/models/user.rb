@@ -71,8 +71,8 @@ class User < ActiveRecord::Base
   end
 
   has_attached_file :avatar, :styles => {
-    thumb: '100x100>', tiny: '40x40>'
-  }
+    thumb: "100x100>", tiny: "40x40>"
+  }, :default_url => "/assets/avatar.png"
 
   def follow(business)
     unless business.customers.include? self
@@ -82,8 +82,8 @@ class User < ActiveRecord::Base
     end 
   end
 
-  def eligible_offers
-    offers_from_followed_businesses = businesses.map(&:offers).flatten
+  def eligible_offers(business = nil)
+    offers_from_followed_businesses = business ? business.offers : businesses.map(&:offers).flatten 
 
     eligible = offers_from_followed_businesses.select do |offer|
       offer.eligible_for?(self)

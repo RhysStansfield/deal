@@ -2,8 +2,10 @@
   <%= nil %>
 <% else %>
   <% unless business.customers.include?(current_user) %>
-    <%= button_to 'Follow', follow_business_path(business), :id => "business_#{business.id}" %>
+    <%= button_to 'Follow', follow_business_path(business), :id => "business_#{business.id}", class: 'follow' %>
   <% else %>
-    <%= button_to 'Unfollow', follow_business_path(business) %>
+    <%= button_to 'Unfollow', follow_business_path(business), class: 'follow' %>
   <% end %>
 <% end %>
+
+
