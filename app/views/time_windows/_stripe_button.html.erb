@@ -1,7 +1,7 @@
 <%= form_tag offer_charges_path(@time_window.offer), id: 'payment-form' do %>
   <%= hidden_field_tag :stripeToken %>
   <script src="https://checkout.stripe.com/checkout.js"></script>
-  <button data-id="<%= @offer.id %>" id="stripeButton">Purchase</button>
+  <a data-id="<%= @offer.id %>" id="stripeButton">BUY NOW!</a>
   <script>
     var handler = StripeCheckout.configure({
       key: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
