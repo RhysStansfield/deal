@@ -75,16 +75,16 @@ Homepage <br>
 ![alt text](/app/assets/images/pinch_homepage.png)
 
 Business Dashboard <br>
-![alt text](https://github.com/NadiDami/deal/blob/master/app/assets/images/Pinch%20Dashboard.png)
+![alt text](/app/assets/images/pinch_dashboard.png)
 
 Preferences and Deal Stream <br>
-![alt text](https://github.com/NadiDami/deal/blob/master/app/assets/images/Pinch%20Deal%20Stream%20and%20Preferences.png)
+![alt text](/app/assets/images/pinch_deal_stream_and_preferences.png)
 
 Viewing a Deal <br>
-![alt text](https://github.com/NadiDami/deal/blob/master/app/assets/images/Pinch%20Viewing%20Deal.png)
+![alt text](/app/assets/images/pinch_viewing_deal.png)
 
 Order Confirmation <br>
-![alt text](https://github.com/NadiDami/deal/blob/master/app/assets/images/Pinch%20Order%20Confirmation.png)
+![alt text](/app/assets/images/pinch_order_confirmation.png)
 
 
 ####Team and Background
