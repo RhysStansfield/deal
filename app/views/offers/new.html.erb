@@ -5,13 +5,9 @@
     <% if @offer.avatar.exists? %>
       <%= image_tag @offer.avatar.url(:large), class: 'uploaded-offer-photo' %>
     <% end %>
-    <p>
-      <%= f.file_field :avatar %>
-      <br/>
-    </p>
-    <p>
+    <p class="uploads">Offer Image: <%= f.file_field :avatar %>
+    <br />Teaser Image:
       <%= f.file_field :teaser %>
-      <br/>
     </p>
 
     <p>
