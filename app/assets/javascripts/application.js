@@ -40,7 +40,7 @@
 
 
 function addOffersForBusiness(business) {
-// <<<<<<< HEAD
+
   business.offers.forEach(function(offer) {
     var mustache = $('#stream-offer').html();
 
@@ -64,6 +64,7 @@ function addOffersForBusiness(business) {
   //   availableOffers.html('<span class="company_name">' + offer.company_name + '</span>' + ' ' + '<small>' + offer.created_at + '</small>' + ' ' + "<a href=" + offer.offer_path + " data-method='post' data-offer-id=" + offer.id + "> See offer</a>")
   // $('.available_offers').prepend(availableOffers);
   // });
+
 // =======
 //   business.offers.forEach(function(offer){
 //     var availableOffers = $('<div data-company-id=' + business.id +' data-offer-id=' + offer.id + ' class="available" />')
