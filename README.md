@@ -7,7 +7,7 @@
 
 Pinch is the new way for businesses to connect with fans of their brand.
 
-Companies post special offers to their followers, each with a 30-120s time limit which indicates how long each person has to decide whether they're going to purchase the offer or not. If time runs out and a purchase hasn't yet been made, the deal is gone forever!
+Businesses post special deals to their followers, each with a 30-120s time limit. This time limit indicates how long a user has to decide whether they're going to purchase the offer or not. If the time runs out and a purchase hasn't yet been made, the deal is gone forever!
 
 ####Features
 *Customer features* <br>
@@ -15,9 +15,9 @@ Companies post special offers to their followers, each with a 30-120s time limit
 * Account creation, with profile avatar
 * Set business category preferences
 * Follow/unfollow from a list of participating business
-* View offer preview cards posted by businesses
-* View an offer, complete with countdown timer
-* When the timer runs out, the user is redirected back to the offer page
+* View deal preview cards posted by businesses
+* View a deal, complete with countdown timer
+* When the timer runs out, the user is redirected back to the deal page
 * Purchase offers using built in Stripe Checkout API
 
 
@@ -61,7 +61,7 @@ Companies post special offers to their followers, each with a 30-120s time limit
 
 
 ####Working as a team
-As a team of five we employed the Agile practices, as well as taking advantage of other online tools, including:
+As a team of five we employed Agile practices, as well as taking advantage of other online tools, including:
 
 * Trello
 * HipChat
@@ -89,7 +89,7 @@ As a team of five we employed the Agile practices, as well as taking advantage o
 
 ####Team and Background
 
-The team behind this app consists of:
+The team behind this app is:
 
 [Hemang Patel](https://github.com/HemangPatel1)<br>
 [Michael Bottyer](https://github.com/MBottjer)<br>
@@ -97,4 +97,4 @@ The team behind this app consists of:
 [Nadia Odunayo](https://github.com/NadiDami)<br>
 [Rhys Stansfield](https://github.com/RhysStansfield)<br>
 
-[Makers Academy](http://www.makersacademy.com) is a 12-week intensive software development course. For the final 10 days, participants have to produce a final project which showcases what they've learnt while on the course. 
+[Makers Academy](http://www.makersacademy.com) is a 12-week intensive software development course. For the final 10 days, participants have to produce a web app which showcases what they have learnt whilst on the course. 
