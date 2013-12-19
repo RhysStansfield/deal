@@ -1,8 +1,9 @@
 .edit_profile
-  %h3
+  %h4
     Edit #{resource_name.to_s.humanize} Profile
   = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f|
     = f.error_notification
+    =f.label 'Profile picture'
     - if @user.avatar.exists?
       = image_tag @user.avatar.url(:thumb), class: 'uploaded-avatar'
     .form-inputs
@@ -11,9 +12,13 @@
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %p
           Currently waiting confirmation for: #{resource.unconfirmed_email}
-      = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
+      %small
+        Leave the following two fields blank if you don't wish to change your password:
+      = f.input :password, :autocomplete => "off", :required => false
       = f.input :password_confirmation, :required => false
-      = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
+      %small
+        We need your current password to confirm your changes:
+      = f.input :current_password, :required => true
     .form-actions
       = f.button :submit, "Update"
   .line 
