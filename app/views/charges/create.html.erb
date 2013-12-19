@@ -1,6 +1,9 @@
+<div id="container">
 <h5>
   Thanks! Your payment of
   <%= number_to_currency(@offer.price, unit: '£') %>
   has been processed.
+  You saved <%= number_to_currency((@offer.RRP - @offer.price), unit: '£') %>
 </h5>
 <%= link_to 'Back to offers', deals_path %>
+</div>
