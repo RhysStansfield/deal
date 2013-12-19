@@ -1,8 +1,14 @@
-<h2>Sign up</h2>
+<div class="container">
+<div id="splash_left">
+  <img src="assets/left1.png" width="470" height="430" class="splash_image" />
+</div>
+
+<div id="signup">
 <%= simple_form_for(@business, :as => :business, :url => discover_path) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+  
+  <fieldset>
+    <h1 class="signup_title">Sign Up</h1>
     <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
@@ -11,10 +17,9 @@
         <%= f.label :category_id, category.name, value: category.id %>
         <%= f.radio_button :category_id, category.id %>
       <% end %>
-  </div>
-  <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
-  </div>
+  </fieldset>
 <% end %>
 
-
+</div>
+</div>
