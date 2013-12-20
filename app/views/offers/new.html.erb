@@ -5,7 +5,7 @@
     <% if @offer.avatar.exists? %>
       <%= image_tag @offer.avatar.url(:large), class: 'uploaded-offer-photo' %>
     <% end %>
-    <p class="uploads">Offer Image: <%= f.file_field :avatar %>
+    <p class="uploads">Offer Image: <%= f.file_field :avatar, :class => 'file' %>
     <br />Teaser Image:
       <%= f.file_field :teaser %>
     </p>
@@ -45,7 +45,8 @@
         <div id="actual_time_bar">
         </div>
       </div>
-        <div id="offer_image_placeholder">
+        <div id="offer_image_placeholder_new" class="upload-preview">
+          <img class="offer_card_image_new" />
         </div>
         <div id="offer_logo_name_price">
           <div id="logo_preview">

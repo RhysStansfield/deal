@@ -80,8 +80,15 @@
 #offer_image_placeholder {
 	width: 430px;
 	height: 230px;
-	background-color: #ff0000;
 	background-image: url('/assets/offer_test/nike_shoes.png');
+	background-size: cover;
+	border-top-left-radius: 3px;
+}
+
+#offer_image_placeholder_new {
+	width: 430px;
+	height: 230px;
+	background-image: url('/assets/defaultoffer.png');
 	background-size: cover;
 	border-top-left-radius: 3px;
 }
@@ -145,6 +152,32 @@
 	background-color: #f2f2f2;
 	margin-top: 1px;
 	/*float: left;*/
+	z-index: 4;
+	border-radius: 0px;
+	border-top-right-radius: 3px;
+	/*box-shadow: inset 0px 0px 5px 0px #888888;
+	-moz-box-shadow: inset 0px 0px 5px 0px #888888;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;*/
+}
+
+.offer_card_image_new {
+	width: 430px;
+	height: 230px;
+	margin-top: 1px;
+	/*float: left;*/
+	z-index: 4;
+	border-radius: 0px;
+	border-top-right-radius: 3px;
+	/*box-shadow: inset 0px 0px 5px 0px #888888;
+	-moz-box-shadow: inset 0px 0px 5px 0px #888888;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;*/
+}
+
+.upload_preview img {
+	width: 430px;
+	height: 230px;
+	/*float: left;*/
+	margin-top: 10px;
 	z-index: 4;
 	border-radius: 0px;
 	border-top-right-radius: 3px;
