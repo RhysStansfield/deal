@@ -308,11 +308,23 @@ outline: none;
 	z-index: 3;
 }
 
+#product_description2 {
+	width: 100%;
+	height: 100px;
+	float: left;
+	margin-top: -25px;
+	line-height: 20px;
+	color: #4d4d4d;
+	white-space: pre-line;
+}
+
 #product_description {
 	width: 100%;
 	height: 100px;
 	float: left;
 	color: #4d4d4d;
+	margin-top: -5px;
+	line-height: 20px;	
 	white-space: pre-line;
 }
 
