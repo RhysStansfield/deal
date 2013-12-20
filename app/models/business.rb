@@ -53,7 +53,7 @@ class Business < User
   end
 
   def total_click_thrus
-    return nil if total_clicks == 0 || total_impressions == 0
+    return "-" if total_clicks == 0 || total_impressions == 0
     (total_clicks.to_f / total_impressions).round(2)
   end
 
@@ -82,11 +82,8 @@ class Business < User
   end
 
   def average_conversion_time
-    return nil if offers.empty?
-    average_times = offers.map do |offer|
-      offer.average_time_to_conversion unless offer.average_time_to_conversion == nil
-    end.compact
-    (average_times.inject(:+) / average_times.size).round unless average_times.size == 0
+    return 0 if conversions.empty?
+    conversions.average(:time_taken_to_buy)
   end
 
   def total_followers
