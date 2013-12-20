@@ -81,11 +81,11 @@ function removeOffers(business) {
 
 setTimeout(function() {
   $(".notice").slideUp().empty();
-}, 1800);
+}, 2000);
 
 setTimeout(function() {
   $(".alert").slideUp().empty();
-}, 1800);
+}, 2000);
 
 $(document).foundation();
 var dropdown = $('.right-dropdown').remove()
