@@ -7,7 +7,9 @@
             <div id='elapsed_bar'></div>
             <div id="actual_time_bar"></div>
           </div>
-          <div id="offer_image_placeholder"></div>
+          <div id="offer_image_placeholder">
+              <%= image_tag @offer.avatar.url(:large), :class => 'offer_card_image' %>
+          </div>
           <div id="offer_logo_name_price">
             <div id="logo_preview">
               <% if @time_window.offer.avatar.exists? %>
@@ -15,15 +17,19 @@
               <% end %>
             </div>
             <div id="company_name_preview"><h4><%= @offer.business.company_name %></h4></div>
-            <div id="price_review_buy"><h4><strong><%= number_to_currency(@time_window.offer.price, unit: '£') %></strong></h4></div>
+            <div id="price_review_buy_show">
+              <h4>
+                <span class="rrp strikethrough"><%= number_to_currency(@time_window.offer.RRP, unit: '£') %></span>&nbsp;&nbsp;
+                 <span class="offer_price"><%= number_to_currency(@time_window.offer.price, unit: '£') %></span>
+              </h4>
           </div>
           <div id="product_profile">
             <div id="product_name_and_time">
-              <div id="product_name"><%= @time_window.offer.product %></div>
+              <div id="product_name_show"><%= @time_window.offer.product %></div>
               <div class="time_remaining" id="product_time"><%= (@time_window.end_time - Time.now).to_i %>s</div>
             </div>
-            <div id="product_description"><%= @time_window.offer.product_description %></div>
-            <div id="buy_now_button">
+            <div id="product_description_show"><%= @time_window.offer.product_description %></div>
+            <div id="buy_now_button_show">
               <%= render 'stripe_button' %>
             </div>
           </div>
