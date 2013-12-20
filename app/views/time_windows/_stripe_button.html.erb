@@ -6,9 +6,12 @@
     var handler = StripeCheckout.configure({
       key: "<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>",
       token: function(token, args) {
-        console.log(token)
-        $('#stripeToken').val(token.id);
-        $('#payment-form').submit();
+        // console.log(token)
+        $.post( "/conversions", { "offer_id": $('#stripeButton').data('id') }, function(){
+          $('#stripeToken').val(token.id);
+          $('#payment-form').submit();
+        });
+     
       }
     });
 
