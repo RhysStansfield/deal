@@ -7,7 +7,9 @@
             <div id='elapsed_bar'></div>
             <div id="actual_time_bar"></div>
           </div>
-          <div id="offer_image_placeholder"></div>
+          <div id="offer_image_placeholder">
+              <%= image_tag @offer.avatar.url(:large), :class => 'offer_card_image' %>
+          </div>
           <div id="offer_logo_name_price">
             <div id="logo_preview">
               <% if @time_window.offer.avatar.exists? %>

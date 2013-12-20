@@ -22,11 +22,13 @@
 
 #card_preview {
 	float: right;
+	border-top-right-radius: 3px;
 }
 
 #actual_card_div {
 	width: 450px;
 	margin-left: 50px;
+	border-top-right-radius: 3px;
 }
 
 #card_background {
@@ -55,6 +57,7 @@
 	height: 0%;
 	background: #000;
 	position: absolute;
+	border-top-right-radius: 3px;	
 
 }
 
@@ -134,6 +137,20 @@
 	box-shadow: inset 0px 0px 5px 0px #888888;
 	-moz-box-shadow: inset 0px 0px 5px 0px #888888;
 	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;
+}
+
+.offer_card_image {
+	width: 430px;
+	height: 230px;
+	background-color: #f2f2f2;
+	margin-top: 1px;
+	/*float: left;*/
+	z-index: 4;
+	border-radius: 0px;
+	border-top-right-radius: 3px;
+	/*box-shadow: inset 0px 0px 5px 0px #888888;
+	-moz-box-shadow: inset 0px 0px 5px 0px #888888;
+	-webkit-box-shadow: inset 0px 0px 5px 0px #888888;*/
 }
 
 
